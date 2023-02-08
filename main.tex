@@ -1,0 +1,219 @@
+\documentclass[10.75pt,a4paper,openright,bottom=2cm]{article}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{auto-pst-pdf} 
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{textcomp}
+\usepackage{geometry}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{wrapfig}
+\usepackage{lipsum} 
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{bbm}
+\usepackage{braket}
+\usepackage{amssymb}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\usepackage[table]{xcolor, colortbl}
+\usepackage{cancel}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{multicol}
+\usepackage{physics}
+\usepackage[super]{nth}
+\newcommand{\beginbox}[1]{\begin{tcolorbox}[width=\textwidth,colback={black!40},title={#1},colbacktitle={purple!55},coltitle=black]}
+\renewcommand{\endbox}{\end{tcolorbox}\noindent}
+% \begin{tcolorbox}[width=\textwidth,colback={yellow!50},title={Rosenbluth Cross Section},colbacktitle={gray!50},coltitle=black]
+\title{Neutrinos and Dark Matter}
+\author{Matteo D'Errigo}
+
+\begin{document}
+\maketitle
+\tableofcontents
+% \begin{abstract}
+% \end{abstract}
+\newpage
+\section{Cosmology}
+We know that the universe is expanding so the question is: \textit{is it accelerating?} We can answer this question by using the \textbf{comoving coordinates}, defining with $r$ the comoving distance. Moreover, we introduce a \textbf{scale factor} $a(t)$ which defines how the space expands and contracts. Therefore, the distance between the two objects is given by:
+\[
+d(t)=r\cdot a(t)\to\Dot{d}(t)=r\cdot\Dot{a}(t)
+\]
+Putting these two expressions together gives us:
+\beginbox{Hubble Constant}
+\[
+v(t):=\Dot{d}(t)=\frac{\Dot{a}(t)}{a(t)}d(t)=H(t)d(t)
+\]
+\endbox
+Where we have defined the ratio $\frac{\Dot{a}(t)}{a(t)}$ as the \textbf{Hubble constant} $H(t)$ (although it is \textit{not} really constant). At a reference time $t_0$ chosen to be today, it is possible to compute the value of the Hubble constant:
+\[
+v(t_0)=H_0\cdot d(t_0)\to H_0=68\,\text{km/(Mpc$\cdot$s)}=2\cdot10^{-18}\,\text{s$^{-1}$}
+\]
+Knowing now the value of $H_0$, it is then possible to solve the differential equation $\Dot{d}(t_0)=H_0\cdot d(t_0)$, which gives us:
+\[
+d(t)=d(t_0)\exp{H_0(t-t_0)}\simeq d(t_0)[1+H_0(t-t_0)]
+\]
+where we have performed a first order approximation since $H_0$ is small. Moreover, we can also see how the volume increases:
+\[
+V(t)=V(t_0)\exp{3H_0(t-t_0)}\simeq V(t_0)[1+3H_0(t-t_0)]
+\]
+Taking now the ratio of these two expressions allows us to compute the \textbf{Hubble time}.
+\beginbox{Hubble Time}
+\[
+t_H:=\frac{1}{H_0}=\frac{d(t_0)}{V(t_0)}=14.4\,\text{Gy}
+\]
+\endbox
+This value is really close to the actual age of the Universe, 13.7 Gy. This discrepancy can be explained by considering the fact that the Hubble constant was greater in the past.\\
+If we compute the distance that light has travelled during this time, we end up with:
+\[
+d(t_0)=c\cdot t_H=\frac{c}{H_0}=4300\,\text{Mpc}
+\]
+Light is not fast enough to reach objects from this distance. However, this is not in contrast with relativity because at this distance objects cannot \textit{talk} to each other. This distance tells us the size of what we can see in the Universe.\\
+A phenomenon strictly related to the Hubble constant is the one of \textbf{redshift}:
+\[
+Z=\frac{\lambda_{\text{obs}}-\lambda_{\text{e}}}{\lambda_{\text{e}}}
+\]
+The scale factor $a(t_0)$ today is, by definition, 1, hence:
+\[
+\lambda_{\text{obs}}=\lambda_{\text{e}}\frac{a(t_0)}{a(t_{\text{e}})}
+\]
+The scale factor $a(t_{\text{e}})$ is smaller than 1 so today we observe longer wavelengths with respect to the time of their emission. It is possible to obtain a relationship between the redshift and the scale factor. To do that, start with rewriting $Z$ as follows:
+\[
+Z=\frac{\lambda_{\text{obs}}}{\lambda_{\text{e}}}-1=\frac{a(t_0)}{a(t_{\text{e}})}-1=\frac{1}{a(t_{\text{e}})}-1
+\]
+Moreover, we know that $d(t)=r\cdot a(t)$, from which we can write:
+\[
+a(t)=a(t_0)[1+H_0(t-t_0)]=1+H_0(t-t_0)\to\frac{1}{a(t_{\text{e}})}=\frac{1}{1+H_0(t_{\text{e}}-t_0)}\simeq1-H_0(t_{\text{e}}-t_0)
+\]
+Therefore, at first order in our expansion we have:
+\beginbox{Redshift}
+\[
+Z=H_0(t_0-t_{\text{e}})
+\]
+\endbox
+Typically, what is observed is light for which it holds true that:
+\[
+d=c\Delta t=\frac{Zc}{H_0}
+\]
+This is how the Hubble constant was firstly measured.\\
+With all this machinery, our goal is now to derive the \textbf{Friedmann equations}. Suppose to have a test mass $m$ on the edge of a sphere with radius $R$ which encloses a total mass $M$. The dynamics of the test mass is:
+\[
+m\Ddot{R}(t)=-G\frac{mM}{R^2(t)}
+\]
+We are interested in $\Ddot{R}(t)$ which is the acceleration per unit mass. Take into account now the \textbf{energy density}, defined as follows:
+\[
+\varepsilon=\int dt\Ddot{R}(t)\Dot{R}(t)=\int d\Dot{R}\Dot{R}(t)=\frac{\Dot{R}^2}{2}
+\]
+However, we can express $\Ddot{R}(t)$ from the dynamics of the test mass, resulting in:
+\[
+\varepsilon=\int dt\left(-G\frac{M}{R^2(t)}\right)\Dot{R}(t)=-GM\int \frac{dR}{R^2(t)}=\frac{GM}{R(t)}\Rightarrow\frac{\Dot{R}^2}{2}=\frac{GM}{R(t)}+U
+\]
+We take a look at the possible values of $U$:
+\begin{itemize}
+    \item $U>0$: the object escapes the gravitational force since $\Dot{R}(0)>$\,escape velocity
+    \item $U=0$: $\Dot{R}(0)=$\,escape velocity
+    \item $U<0$: $\Dot{R}(0)<$\,escape velocity
+\end{itemize}
+At this point we have to take into account that the sphere we are considering might change its volume and density, assuming that the total mass $M$ stays fixed:
+\[
+M=\frac{4}{3}\pi R^3(t)\rho(t)\to\Dot{R}^2=R_0^2\Dot{a}^2(t)=\frac{8}{3}\pi G\rho(t)R_0^2a^2(t)+2U
+\]
+where we used the fact that $R(t)=R_0a(t)$. Last thing left to do is to divide both sides by $R_0^2a^2(t)$ which gives us:
+\beginbox{Friedmann Equation (classical derivation)}
+\[
+H^2(t)=\left(\frac{\Dot{a}(t)}{a(t)}\right)^2=\frac{8}{3}\pi G\rho(t)+\frac{2U}{R_0^2a^2(t)}
+\]
+\endbox
+What we have done so far was a classical treatment, now we move to the relativistic case where the energy density can be expressed as $\varepsilon(t)=\rho(t)c^2$. The tricky part comes when we have to define the initial conditions, which were simply given by the factor proportional to $U$ in the previous formulation. Working with \textbf{Minkowski metric}, we know that:
+\[
+ds^2=-cdt^2+dr^2+r^2d\Omega^2=-cdt^2+dr^2+r^2[d\theta^2+\sin^2\theta d\varphi^2]
+\]
+However, instead of working with $r^2d\Omega^2$ we use $S_k^2(r)d\Omega^2$ where $S_k$ is defined as:
+\[
+S_k=\left\{\begin{aligned}
+&R_0\sin(r/R_0) &&\text{if $k=1$, positive curvature}\\
+&r &&\text{if $k=0$, zero curvature}\\
+&R_0\sinh(r/R_0) &&\text{if $k=-1$, negative curvature}
+\end{aligned}\right.
+\]
+The \textbf{Robertson-Walker metric} for a homogeneous, isotropic and expanding (or contracting) Universe is:
+\[
+ds^2=-cdt^2+a^2(t)[dr^2+S_k^2(r)d\Omega^2]
+\]
+General relativity tells us that $2U$ goes into $-kc^2$, therefore we have:
+\beginbox{Friedmann Equation (relativistic version)}
+\[
+H^2(t)=\left(\frac{\Dot{a}(t)}{a(t)}\right)^2=\frac{8\pi G}{3c^2}\varepsilon(t)-\frac{kc^2}{R_0^2a^2(t)}
+\]
+\endbox
+Now we can perform some tricks, i.e. dividing everything by $H^2(t)$ and defining the \textbf{critical density} as:
+\[
+\frac{1}{\varepsilon_c(t)}:=\frac{8\pi G}{3c^2H^2(t)}
+\]
+Plugging this into the previous expression one gets:
+\[
+1-\frac{\varepsilon(t)}{\varepsilon_c(t)}=-\frac{kc^2}{R_0^2a^2(t)H^2(t)}
+\]
+This tells us that if we are able to measure the ratio $\frac{\varepsilon(t)}{\varepsilon_c(t)}$ we can tell the sign of $k$, hence the curvature of the Universe. The expression above can be rewritten in a more compact and elegant form:
+\[
+1=\Omega_\varepsilon+\Omega_c
+\]
+where $\Omega_\varepsilon=\frac{\varepsilon(t)}{\varepsilon_c(t)}$ and $\Omega_c=-\frac{kc^2}{R_0^2a^2(t)H^2(t)}$. Now we want to move even further and compute the ratio $\frac{\Ddot{a}(t)}{a(t)}$:
+\[
+\Dot{a}^2(t)=\frac{8\pi G}{3c^2}\varepsilon(t)a^2(t)-\frac{kc^2}{R_0^2}\xrightarrow[\text{derivative}]{}2\Dot{a}(t)\Ddot{a}(t)=\frac{8\pi G}{3c^2}[\Dot{\varepsilon}(t)a^2(t)+2\varepsilon(t)a(t)\Dot{a}(t)]
+\]
+Dividing everything by $2a(t)\Dot{a}(t)$ we get:
+\[
+\frac{\Ddot{a}(t)}{a(t)}=\frac{4\pi G}{3c^2}\left[\frac{a(t)}{\Dot{a}(t)}\Dot{\varepsilon}(t)+2\varepsilon(t)\right]
+\]
+$\Dot{\varepsilon}(t)$ can be computed using some \textbf{thermodynamics}. The Universe is isolated, therefore one can write:
+\[
+0=dQ=dE+pdV=\Dot{\varepsilon}(t)V(t)+\varepsilon(t)\Dot{V}(t)+p\Dot{V}(t)
+\]
+where we used the fact that the energy can be expressed as $E=\varepsilon(t)V(t)$. Moreover, we know that:
+\[
+V(t)=\frac{4}{3}\pi R^3(t)=\frac{4}{3}R_0^3a^3(t)\to\Dot{V}(t)=4\pi a^2(t)\Dot{a}(t)R_0^3=3V(t)\frac{\Dot{a}(t)}{a(t)}
+\]
+We substitute this in the expression above to find:
+\[
+\Dot{\varepsilon}(t)+3(\varepsilon(t)+p)\frac{\Dot{a}(t)}{a(t)}=0\Rightarrow\Dot{\varepsilon}(t)=-3\frac{\Dot{a}(t)}{a}(\varepsilon(t)+p)
+\]
+Now that we know the expression for $\Dot{\varepsilon}(t)$ we can write:
+\[
+\frac{\Ddot{a}(t)}{a(t)}=\frac{4\pi G}{3c^2}\left[-3\varepsilon(t)-3p+2\varepsilon(t)\right]=-\frac{4\pi G}{3c^2}[\varepsilon(t)+3p]
+\]
+This is telling us that with \textit{only} gravitational force the Universe would \textbf{contract}, there should be something else in opposition to the negative sign. This \textit{something else} is the \textbf{cosmological constant} $\Lambda$:
+\beginbox{Cosmological Constant} 
+\[
+\frac{\Ddot{a}(t)}{a(t)}=-\frac{4\pi G}{3c^2}[\varepsilon(t)+3p]+\frac{\Lambda}{3}
+\]
+\endbox
+Assume now that the contribution of the cosmological constant $\Lambda$ is the dominant one and that $H(t)$ is constant over a short time-scale, hence:
+\[
+\Ddot{a}(t)=H(t)\Dot{a}(t)=H^2(t)a(t)\to H^2(t)\frac{\Ddot{a}(t)}{a(t)}\simeq\frac{\Lambda}{3}
+\]
+It is therefore possible to extend the Friedmann equation:
+\beginbox{Full Metal Friedmann Equation}
+\[
+H^2(t)=\left(\frac{\Dot{a}(t)}{a(t)}\right)^2=\frac{8\pi G}{3c^2}\varepsilon(t)-\frac{kc^2}{R_0^2a^2(t)}+\frac{\Lambda}{3}
+\]
+\endbox
+Dividing everything by $H^2(t)$ gives us:
+\[
+1=\Omega_\varepsilon(t)+\Omega_c(t)+\Omega_\lambda(t)
+\]
+It is also possible to divide by $H^2(t_0)$ to get:
+\[
+\frac{H^2(t)}{H^2(t_0)}=\frac{\Omega_m^0}{a^3(t)}+\frac{\Omega_r^0}{a^4(t)}+\frac{\Omega_c^0}{a^2(t)}+\Omega_\Lambda^0
+\]
+\end{document}
