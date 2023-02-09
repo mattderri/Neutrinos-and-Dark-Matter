@@ -35,8 +35,38 @@
 \newcommand{\beginbox}[1]{\begin{tcolorbox}[width=\textwidth,colback={black!40},title={#1},colbacktitle={purple!55},coltitle=black]}
 \renewcommand{\endbox}{\end{tcolorbox}\noindent}
 % \begin{tcolorbox}[width=\textwidth,colback={yellow!50},title={Rosenbluth Cross Section},colbacktitle={gray!50},coltitle=black]
-\title{Neutrinos and Dark Matter}
+\title{\textbf{Neutrinos and Dark Matter}}
 \author{Matteo D'Errigo}
+
+% \begin{titlepage}
+%    \begin{center}
+%        \vspace*{1cm}
+
+%        \textbf{Thesis Title}
+
+%        \vspace{0.5cm}
+%         Thesis Subtitle
+            
+%        \vspace{1.5cm}
+
+%        \textbf{Author Name}
+
+%        \vfill
+            
+%        A thesis presented for the degree of\\
+%        Doctor of Philosophy
+            
+%        \vspace{0.8cm}
+     
+%        \includegraphics[width=0.4\textwidth]{university}
+            
+%        Department Name\\
+%        University Name\\
+%        Country\\
+%        Date
+            
+%    \end{center}
+% \end{titlepage}
 
 \begin{document}
 \maketitle
@@ -59,7 +89,8 @@ Where we have defined the ratio $\frac{\Dot{a}(t)}{a(t)}$ as the \textbf{Hubble 
 \[
 v(t_0)=H_0\cdot d(t_0)\to H_0=68\,\text{km/(Mpc$\cdot$s)}=2\cdot10^{-18}\,\text{s$^{-1}$}
 \]
-Knowing now the value of $H_0$, it is then possible to solve the differential equation $\Dot{d}(t_0)=H_0\cdot d(t_0)$, which gives us:
+Knowing now the value of $H_0$, it is then possible to solve the differential equation\\
+$\Dot{d}(t_0)=H_0\cdot d(t_0)$, which gives us:
 \[
 d(t)=d(t_0)\exp{H_0(t-t_0)}\simeq d(t_0)[1+H_0(t-t_0)]
 \]
@@ -87,7 +118,7 @@ The scale factor $a(t_0)$ today is, by definition, 1, hence:
 \[
 \lambda_{\text{obs}}=\lambda_{\text{e}}\frac{a(t_0)}{a(t_{\text{e}})}
 \]
-The scale factor $a(t_{\text{e}})$ is smaller than 1 so today we observe longer wavelengths with respect to the time of their emission. It is possible to obtain a relationship between the redshift and the scale factor. To do that, start with rewriting $Z$ as follows:
+The scale factor $a(t_{\text{e}})$ is smaller than 1 so today we observe longer wavelengths with respect to the time of their emission. It is possible to obtain a relation between the redshift and the scale factor. To do that, start with rewriting $Z$ as follows:
 \[
 Z=\frac{\lambda_{\text{obs}}}{\lambda_{\text{e}}}-1=\frac{a(t_0)}{a(t_{\text{e}})}-1=\frac{1}{a(t_{\text{e}})}-1
 \]
@@ -106,7 +137,7 @@ Typically, what is observed is light for which it holds true that:
 d=c\Delta t=\frac{Zc}{H_0}
 \]
 This is how the Hubble constant was firstly measured.\\
-With all this machinery, our goal is now to derive the \textbf{Friedmann equations}. Suppose to have a test mass $m$ on the edge of a sphere with radius $R$ which encloses a total mass $M$. The dynamics of the test mass is:
+With all this machinery, our goal is now to derive the \textbf{Friedmann equation}. Suppose to have a test mass $m$ on the edge of a sphere with radius $R$ which encloses a total mass $M$. The dynamics of the test mass is:
 \[
 m\Ddot{R}(t)=-G\frac{mM}{R^2(t)}
 \]
@@ -210,10 +241,117 @@ H^2(t)=\left(\frac{\Dot{a}(t)}{a(t)}\right)^2=\frac{8\pi G}{3c^2}\varepsilon(t)-
 \endbox
 Dividing everything by $H^2(t)$ gives us:
 \[
-1=\Omega_\varepsilon(t)+\Omega_c(t)+\Omega_\lambda(t)
+1=\Omega_\varepsilon(t)+\Omega_c(t)+\Omega_\Lambda(t)
 \]
 It is also possible to divide by $H^2(t_0)$ to get:
 \[
 \frac{H^2(t)}{H^2(t_0)}=\frac{\Omega_m^0}{a^3(t)}+\frac{\Omega_r^0}{a^4(t)}+\frac{\Omega_c^0}{a^2(t)}+\Omega_\Lambda^0
 \]
+Nowadays, the dominant contribution is given by $\Omega_\Lambda^0$ while at the beginning of the Universe with a small value of $a(t)$, the term proportional to $\Omega_r^0$ was the dominant one. In the expression above, the energy contribution of $\varepsilon(t)$ had been splitted into contribution from matter $\varepsilon_m(t)$ and contribution from waves $\varepsilon_r(t)$. The Friedmann equation can be written as:
+\[
+\frac{H^2(t)}{H_0^2}=\frac{8\pi G}{3c^2H_0^2}\left[\frac{\varepsilon_m(0)}{a^3(t)}+\frac{\varepsilon_r(0)}{a^4(t)}\right]-\frac{kc^2}{R_0^2a^2(t)H_0^2}+\frac{\Lambda}{3H_0^2}
+\]
+Moreover, we computed the acceleration/fluid equation, introducing also the cosmological constant. We now want to establish a relation between distance and redshift but to do that we have to go to \nth{2} order in the expansion:
+\[
+\Dot{a}(t)=H(t)a(t)\to\Ddot{a}(t)=\Dot{H}(t)a(t)+H(t)\Dot{a}(t)=\Dot{H}(t)a(t)+H^2(t)a(t)
+\]
+From this expression, it follows that:
+\[
+\frac{\Ddot{a}(t)}{H^2(t)a(t)}=1+\frac{\Dot{H}(t)}{H^2(t)}:=-q
+\]
+where we introduced a new parameter called \textbf{deceleration}. If $q<-1$ it means that the Hubble parameter is increasing. At this point, it is possible to take the scale factor and compute it at the time the light was emitted from the supernova.
+\[
+\begin{aligned}
+a(t_{\text{e}})&=a(t_0)+\Dot{a}(t)\Bigr|_{\substack{t=t_0}}(t_{\text{e}}-t_0)+\frac{1}{2}\Ddot{a}(t)\Bigr|_{\substack{t=t_0}}(t_{\text{e}}-t_0)^2\\
+&=1+H_0(t_{\text{e}}-t_0)+\frac{(-q)}{2}H_0^2(t_{\text{e}}-t_0)^2
+\end{aligned}
+\]
+With the same reasoning, we can perform an expansion also on the redshift $Z$:
+\[
+Z=\frac{1}{a(t_{\text{e}})}-1=H_0(t_{\text{e}}-t_0)+\frac{q}{2}H_0^2(t_{\text{e}}-t_0)^2
+\]
+We now have a \nth{2} order equation for the redshift as a function of the time when the light was emitted. We have to compute to \nth{2} order also the distance:
+\[
+d(t)=\frac{ca(t_0)}{a(t)}dt=\frac{c}{a(t)}dt\Rightarrow d=\int_{t_{\text{e}}}^{t_0}dt\frac{c}{a(t)}
+\]
+Since we need to stay at \nth{2} order, we take only the \nth{1} order contribution from the expansion of $a(t)$, since it will become a \nth{2} order contribution when integrating.
+\[
+d=c\int_{t_{\text{e}}}^{t_0}dt[1-H_0(t-t_0)]=c(t_0-t_{\text{e}})-\int_{t_{\text{e}}-t_0}^{0}dt'H_0t'=c(t_0-t_{\text{e}})+\frac{H_0}{2}(t_0-t_{\text{e}})^2
+\]
+Skipping all the details, we finally obtain the relation between distance and redshift.
+\[
+d=\frac{cZ}{H_0}\left[1-\frac{1+q}{2}Z\right]
+\]
+If we measure $Z$ and $H_0$ and it is not a straight line, then there is a dependence on the $q$ parameter.\\
+To compute $\Omega_r$, we start by looking at the \textbf{black body radiation}. We ask ourselves: \textit{how many photons can we fit in a box at temperature $T$?}
+\[
+1D: \nu_1=\frac{c}{2L}\to\nu_m=\frac{c}{2L}m\;m=1,2,\dots,\infty \quad 3D: \nu=\frac{c}{2L}\sqrt{m_x^2+m_y^2+m_z^2}
+\]
+Since it can go up to infinity, a better choice is to compute the density of modes.
+\[
+N_mdm=\frac{4\pi}{8}m^2dm=\frac{\pi}{2}m^2dm\to N_md\nu=\frac{\pi}{2}\left(\frac{2L}{c}\right)^3\nu^2d\nu
+\]
+To know the number photons, we use the Bose statistics.
+\[
+N_\gamma d\nu=\frac{2}{\exp{\frac{h\nu}{kT}}-1}N_md\nu=\frac{8\pi L^3}{c^3}\frac{\nu^2}{\exp{\frac{h\nu}{kT}}-1}d\nu
+\]
+We do not want a dependence on $L$, so we compute the density $n_\gamma$.
+\[
+n_\gamma d\nu=\frac{N_\gamma}{L^3}d\nu=\frac{8\pi}{c^3}\frac{\nu^2}{\exp{\frac{h\nu}{kT}}-1}d\nu
+\]
+Moreover, from this expression it also possible to obtain the energy density:
+\[
+\varepsilon_\gamma(\nu)=h\nu n_\gamma=\frac{8\pi h}{c^3}\frac{\nu^3}{\exp{\frac{h\nu}{kT}}-1}\to\varepsilon_\gamma=\int_0^\infty d\nu\varepsilon_\gamma(\nu)=\alpha T^4
+\]
+where $\alpha=7.6\cdot10^{-16}$\;J/(m$^3$K$^4$). If we repeat the same strategy for $n_\gamma$, we get:
+\[
+n_\gamma=\beta T^3 \quad \beta=2\cdot10^7\;\text{m$^{-3}$K$^{-3}$}
+\]
+At a certain point, hydrogen atoms started to form (\textbf{recombination}) and electrons were removed from this plasma. The electron density decreased so the photons could escape (\textbf{decoupling}). The rate of interaction is given by:
+\[
+\Gamma(t)=n_e(t)\sigma_Tc
+\]
+If $\Gamma(t)<H(t)$ it means that there cannot be any interaction because the Universe is expanding too fast. We then have decoupling of photons at $Z=1090$ and $T=2970$\;K. This results in $a(t)\sim10^{-3}$. Moreover, the wavelength is re-scaled $\lambda_\gamma=\lambda Z$, i.e. the energy is reduced by a factor $\sim1000$ having then $T\sim2.97$\;K. The CMB temperature is precisely measured to be $T_0=2.7$\;K. We know there is a black body distribution, so we can plug this in the expressions obtained before to find:
+\[
+n_\gamma^0=4\cdot10^8\;\text{m$^{-3}$} \quad E_{\text{mean}}=2.7 kT_0=630\,\text{$\mu$eV/photon}\xrightarrow[\text{1 GHz=4 $\mu$eV}]{}160\;\text{GHz}
+\]
+This results in an energy density equal to $\varepsilon_\gamma^0=0.26$\;MeV/m$^3$ but the critical energy density is $\varepsilon_c^0=4.9$\;GeV/m$^3$. This tells us that the contribution from radiation $\Omega_\gamma^0=5\cdot10^{-5}$ is negligible today.
+\section{Dark Matter}
+\textbf{Dark matter} (DM) decoupled way before photons, therefore there was a distribution of DM which created a lot of potential wells and consequently attracted other mass. Density started to become larger, increasing temperature. This lead to an expansion in volume which lead to the temperature decreasing and so on. We then observe \textbf{acoustic oscillations} which propagates at speed $c_s=\frac{c}{\sqrt{3}}$. What distance do they travel?
+\[
+d=c_s\int_0^{t_{\text{ls}}}dt\frac{a(t_{\text{ls}})}{a(t)}=0.145\;\text{Mpc}
+\]
+However, we are able to observe these waves today and we know that the maximum distance a photon can travel to reach us is $d_{\text{hor}}=14$\,Gpc. Taking into account also redshift we end up with $d_{\text{A}}=\frac{d_{\text{hor}}}{Z}=13$\,Mpc.\\
+We computed $\Braket{T}$ but now we are interested in fluctuations, so we define:
+\[
+C(\theta)=\Braket{\frac{\delta T}{T}\Bigr|_{\substack{\Vec{n}}}\cdot\frac{\delta T}{T}\Bigr|_{\substack{\Vec{n}'}}} \quad \frac{\delta T}{T}=\sum_{l,m}a_{l,m}Y_{l,m}(\theta,\varphi)
+\]
+where $\Vec{n}\cdot\Vec{n}'=\cos\theta$. Doing the cross product gives us:
+\[
+C(\theta)=\sum_lC_l(2l+1)P_l(\cos\theta)
+\]
+For unknown reasons, cosmology likes to plot the following quantity:
+\[
+\Delta_T=\frac{l(l+1)}{2\pi}C_l\Braket{T^2}
+\]
+Combining results from supernovae and CMB, we end up with:
+\[
+\Omega_m^0=0.3 \quad \Omega_\Lambda^0=0.7 \quad \Omega_k^0=0
+\]
+Define now $\eta=\frac{n_B^0}{n_\gamma^0}=6\cdot10^{-10}$, this is interesting because we know from the average temperature of CMB $n_\gamma^0=4\cdot10^8$\,m$^{-3}$, therefore we can compute $n_B^0$:
+\[
+n_B^0=6\cdot10^{-10}\cdot4\cdot10^8\,\text{m$^{-3}$}=0.24\,\text{m$^{-3}$}\Rightarrow\varepsilon_B^0=0.24\,\text{GeV/m$^3$}
+\]
+Since $\varepsilon_c^0=5$\,GeV/m$^3$ this results in $\Omega_B^0=0.05$. There is another piece in the puzzle, $\Omega_m^0=0.3$ so there is another 0.25 missing which is an evidence for the existence of dark matter.\\
+Another evidence comes from \textbf{rotational velocity} of galaxies. The surface brightness is given by $I(R)=I_0e^{-R/R_v}$. It typically falls off exponentially with distance from the center. For $R>R_v$ we are basically enclosing all the visible mass of the galaxy. For our galaxy, $R_v=4$\,kpc. If we are at a distance $R>R_v$, from the Gauss law we get:
+\[
+\frac{v^2}{R}=\frac{GM(R)}{R^2}\to v=\sqrt{\frac{GM(R)}{R}}
+\] 
+However, this is not what is measured: this is telling us that the mass we are enclosing cannot be just the visible one. There are different models to describe dark matter density:
+\beginbox{Navarro-Frank-White Model}
+\[
+\rho=\frac{\rho_0}{\left(\frac{R}{R_d}\right)^\gamma\left[1+\left(\frac{R}{R_d}\right)^\alpha\right]^{\frac{\beta-\gamma}{\alpha}}}
+\]
+\endbox
+For our galaxy the parameter $\gamma=\alpha=1$, $\beta=3$, $R_d=20$\,kpc. For $R<R_v$, the density goes like $\rho\sim\frac{1}{R}$ and we get $\rho_0=0.3$\, Gev/cm$^3$. 
 \end{document}
