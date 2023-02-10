@@ -32,6 +32,7 @@
 \usepackage{multicol}
 \usepackage{physics}
 \usepackage[super]{nth}
+\usepackage{bbm}
 \newcommand{\beginbox}[1]{\begin{tcolorbox}[width=\textwidth,colback={black!40},title={#1},colbacktitle={purple!55},coltitle=black]}
 \renewcommand{\endbox}{\end{tcolorbox}\noindent}
 % \begin{tcolorbox}[width=\textwidth,colback={yellow!50},title={Rosenbluth Cross Section},colbacktitle={gray!50},coltitle=black]
@@ -458,5 +459,176 @@ The recoil energy of the nucleus after the scatter of an angle $\theta$ in the c
 \[
 E_{\text{NR}}=E_\chi 4\frac{m_\chi m_A}{(m_\chi+m_A)^2}\frac{1-\cos\theta}{2}
 \]
-We assume that the scatterings are isotropic, i.e. uniform in $\cos\theta$ so that the recoils are uniformly distributed in $E_{\text{NR}}$. The signal is measured in counts/(keV$\cdot$day$\cdot$kg) which is the Dark Matter Rate Unity (DRU). The main challenge for experimental detection is given by the presence of \textbf{background} which does not allow to have a clear signal.
+We assume that the scatterings are isotropic, i.e. uniform in $\cos\theta$ so that the recoils are uniformly distributed in $E_{\text{NR}}$. The signal is measured in counts/(keV$\cdot$day$\cdot$kg) which is the Dark Matter Rate Unity (DRU). The main challenge for experimental detection is given by the presence of \textbf{background} which does not allow to have a clear signal.\\
+Particles from the cosmos that, interacting with the atmosphere, produce other particles. At the surface, we detect mostly muons and neutrons. Neutrons interact through strong force and low-energy neutrons can do elastic scattering and mimic the signal we are looking for. The only way to protect our experiment from them is by providing some shielding. Hydrogen and polyethylene for example slow down the neutrons but a more convenient and used solution is to go \textbf{underground}. The Gran Sasso Laboratory in Italy is the largest one, SNOLAB in Canada is the deepest one (as Vignati said \textit{"there is an active mine there, so when you go to the laboratory you hear explosions and it is full of dust. Moreover, in Canada it is cold and underground it is hot so you arrive at the laboratory all dirty and sweaty. But you cannot go in like that, you would contaminate everything so all the scientists get naked and take a shower"}).\\
+Together with WIMPs, another possible DM particle candidates are the \textbf{azions}. To understand how they come up, we need to take a step back and look at the neutron electrical dipole moment. We know the neutron is made of three quarks, $n=udd$. We expect these three quarks to be randomly distributed and from QCD we expect:
+\[
+|d_n|\approx10^{-13}\sqrt{1-\cos\theta}\,e\,\text{cm}
+\]
+However, from measurements we get $|d_n|\le10^{-26}\,e$\,cm. Therefore, there must be an additional potential related to $\theta$, the system relaxes to the minimum energy when $\theta=0$ and the dipole is zero. This is related to CP because CPT is a good symmetry, P alone is not (it is violated in weak interaction), CP alone either (the CKM matrix allows to have CP violation) and T alone neither. Consider now a neutron where the electric dipole moment $d$ and the spin $s$ are aligned.
+\[
+\left\{
+\begin{aligned}
+&\text{P}:&&d\to-d \quad &&&s\to+s\\
+&\text{T}:&&d\to+d \quad &&&s\to-s
+\end{aligned}
+\right.
+\]
+This can only be satisfied by $d=0$ so the measurements tell us that CP is not violated and this is sort of a problem. Axions were proposed to solve the \textbf{strong CP problem}: no CP violation is observed in experiments even if the theory allows it. There must be a scalar field $a$ which relaxes the potential related to $\theta$. The QCD Lagrangian term related to the axions is:
+\[
+\pazocal{L}_a=-\frac{g_3^3}{32\pi^2}\frac{a}{f_a}\epsilon^{\mu\nu\rho\sigma}G_{\mu\nu}^aG_{\rho\sigma}^a
+\]
+where $f_a$ is a new mass scale which gives us:
+\[
+m_A=5.70\,\text{$\mu$eV}\left(\frac{10^{12}\,\text{GeV}}{f_a}\right)
+\]
+Axions interact with gluons and with fermions and, at loop level, also with photons:
+\[
+\pazocal{L}_{a\gamma\gamma}=-g_{a\gamma\gamma}a\Vec{E}\cdot\Vec{B}
+\]
+This particular mechanism can be used to produce (solar) or detect (DM halo) axions. QCD tells us that the mass range is between 1 and 100 $\mu$eV and they are considered as cold DM candidates, even if experiments are much more difficult. Axions searches were usually left behind but they are now starting to consider them seriously since WIMPs are not in a good shape.
+\section{Neutrinos}
+We now move our attention to \textbf{neutrinos} and see when they decoupled from plasma:
+\[
+\Gamma=\sigma n_ec\to\Gamma\le H
+\]
+Neutrinos are weakly interactive particles:
+\[
+\left\{
+\begin{aligned}
+&\sigma\propto G_F^2E_\nu E_e=G_F^2(kT)^2\\
+&n_e\propto(kT)^3
+\end{aligned}
+\right.
+\Rightarrow\Gamma\simeq G_F^2(kT)^5
+\]
+$H$ is proportional to $\sqrt{G_F}(kT)^2$ so we find:
+\[
+\frac{\Gamma}{H}=\frac{G_F^2}{\sqrt{G_F}}(kT)^3=1\Rightarrow T=10^{10}\,\text{K}
+\]
+Which means one second after the Big Bang, resulting in C$\nu$B. As the Universe expanded, temperature decreased and at a certain point, corresponding to a temperature $T_1$ photons disentangled from neutrinos, resulting in a sort of \textit{jump} to $T_2$ for photons. The CMB temperature today is $T_0=2.7$\,K: if we could know the jump from $T_1$ from $T_2$, we would be able to know the temperature of neutrinos today. The ides is that the conserved quantity in this system is the \textbf{entropy}:
+\[
+S\propto g\frac{\varepsilon(T)}{T}
+\]
+where we are considering only photons. Since $\varepsilon(T)\propto gT^4$, we have $S\propto gT^3$ hence:
+\[
+g_1T_1^3=g_2T_2^3
+\]
+By integrating $\frac{d\varepsilon}{d\nu}$ to find $\varepsilon$, we obtain $g_2=2$ and $g_1=2+\frac{7}{4}+\frac{7}{4}$ resulting in:
+\[
+\frac{T_1}{T_2}=\left(\frac{g_2}{g_1}\right)^{1/3}=0.7
+\]
+Therefore we finally find $T_{0,\nu}=0.7\cdot2.7$\,K$=1.05$\,K. With similar arguments we can also compute the number of neutrinos $n_\nu$:
+\[
+n_{\nu_i}=\frac{3}{11}n_\gamma\Rightarrow n_\nu=\frac{9}{11}n_\gamma=3.4\cdot10^8\,\text{m$^{-3}$}
+\]
+where the index $i$ is the one for the three families $e,\mu,\tau$. The number of neutrinos and photons are roughly the same, energy density tells us:
+\[
+\frac{\varepsilon}{\varepsilon_c}=\frac{n_\nu m_\nu}{\varepsilon_c}=\Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}
+\]
+From this, it is possible to put an upper limit to the neutrino mass:
+\[
+m_\nu=\sum_im_i<0.3\,\text{eV}
+\]
+This is just from cosmology, there is actually no experiment on Earth which can compete with this measure.\\
+How can we measure C$\nu$B? We look at some possibilities and we start with \textbf{single interaction detection}:
+\[
+\left\{
+\begin{aligned}
+&\text{$\beta$ decay}: &&(A,Z)\to(A,Z+1)+e^-+\overline{\nu}_e &&E_e=Q-E_\nu-m_\nu\\
+&\text{Neutrino capture}: &&\nu_e+(A,Z)\to(A,Z+1)+e^- &&E_e=Q+m_\nu
+\end{aligned}
+\right.
+\]
+The observable here is the $Q$-value. In choosing the proper $\beta$ decaying nuclei, we would like to have a small half-life, a high fraction of decays at the endpoint and low $Q$-values are needed for neutrino mass experiments. How about electronic capture?
+\[
+(A,Z)\to(A,Z-1)^*+\nu_e \quad (A,Z-1)^*\to(A,Z-1)+E_i
+\]
+Here the measurable quantity is $E_i$, i.e. the de-excitation energy of the i-th atomic shell. In principle, the energy spectrum is given by a series of lines shaped by the neutrino phase-space and it does not allow us to measure the spectrum endpoint. However, due to uncertainty principle the lines have a natural width and this allows $E$ to reach the $Q$-value and produce a neutrino with zero energy. We need a nucleus with $E_i$ close to $Q$ to have a small suppression from the Breit-Wigner in the phase space.\\
+\textit{[bla bla bla manca mezza lezione dell'11 novembre ma mi stava facendo schifo rimedierò in futuro]}\\
+We have seen that neutrinos produced with a certain flavour at a source can be detected as neutrinos with a different flavour:
+\[
+\ket{\nu_\alpha}\longrightarrow\ket{\nu_\alpha},\ket{\nu_\beta},\ket{\nu_\gamma}
+\]
+This implies that neutrino states of flavour $\alpha$ can be seen as the following superposition:
+\[
+\ket{\nu_\alpha}=\sum_jU_{\alpha j}^*\ket{\nu_j}
+\]
+with $UU^\dagger=\mathbbm{1}$. Treating $\ket{\nu_j}$ as plane wave states, the wave function at a distance
+$L$ from the production point and at a time $T$ after production is given by:
+\[
+\ket{\nu_alpha(T,L)}=\sum_jU^*_{\alpha j}\exp{-i(E_jT-p_jL)}\ket{\nu_j}
+\]
+Note that the energy $E_j$ and the momentum $p_j$ are in general different for the different
+mass eigenstates because the kinematics of the production process is different for different
+masses. The detector measures the neutrino flavour, i.e. it detects neutrinos in a state:
+\[
+\bra{\nu_\beta}=\sum_jU_{\beta j}\bra{\nu_j}
+\]
+Therefore, the amplitude for a neutrino produced as $\ket{\nu_\alpha}$ to be detected as $\bra{\nu_\beta}$ is:
+\[
+\braket{\nu_\beta}{\nu_\alpha(T,L)}=\sum_{jk}U_{\alpha j}^*U_{\beta k}\exp{-i(E_jT-p_jL)}\braket{\nu_k}{\nu_j}=\sum_jU_{\alpha j}^*U_{\beta j}\exp{-i(E_jT-p_jL)}
+\]
+where we used the fact that $\braket{\nu_k}{\nu_j}$ form an orthogonal basis, resulting in a factor $\delta_{ij}$. Hence, the oscillation probability is:
+\[
+\text{prob}(\nu_\alpha\to\nu_\beta)=p_{\alpha\beta}=|\braket{\nu_\beta}{\nu_\alpha(T,L)}|^2=\sum_{jk}U_{\alpha j}^*U_{\beta j}U_{\alpha k}U_{\beta k}^*\exp{-i(E_j-E_k)T+i(p_j-p_k)L}
+\]
+The sum of the exponential will be the sum of random vectors which averages to zero, unless $E_j=E_k$. This results in:
+\[
+p_j=\sqrt{E_j^2-m_j^2}\underset{E_j\gg m_j}{\simeq}E_j\left(1-\frac{m_j^2}{2E_j^2}+\dots\right)\Rightarrow p_j-p_k=-\frac{(m_j^2-m_k^2)}{2E}
+\]
+We can define $\Delta m_{jk}^2:=m_j^2-m_k^2$, so we have:
+\[
+p_{\alpha\beta}=\sum_{jk}U_{\alpha j}^*U_{\beta j}U_{\alpha k}U_{\beta k}^*\exp{-i\frac{\Delta m_{jk}^2L}{2E}}
+\]
+Consider now the simple case of having just 2 flavours. The mixing matrix can be written as:
+\[
+U=\left(\begin{array}{cc}
+    \cos\theta & \sin\theta \\
+    -\sin\theta & \cos\theta
+\end{array}\right)
+\]
+We explicitly compute $p_{\alpha\beta}$:
+\begin{align*}
+p_{\alpha\beta}=&\sin^2\theta\cos^2\theta-\sin^2\theta\cos^2\theta\exp{-i\frac{\Delta m^2L}{2E}}\\
+&-\cos^2\theta\sin^2\theta\exp{-i\frac{\Delta m^2L}{2E}}+\cos^2\theta\sin^2\theta\\
+=&2\sin^2\theta\cos^2\theta\left[1-\cos^2\left(\frac{\Delta m^2L}{2E}\right)\right]=\sin^2(2\theta)\sin^2\left(\frac{\Delta m^2L}{4E}\right)
+\end{align*}
+It follows that $p_{\alpha\alpha}=1-p_{\alpha\beta}$ and in the case of no mixing, i.e. $\theta=0$, $p_{\alpha\alpha}=1$ and $p_{\alpha\beta}=0$. In the matrix form, we can write:
+\begin{align*}
+p_{\alpha\beta}&=\left|U\mqty(\dmat{\exp{-i\frac{m_1^2L}{2E}},\exp{-i\frac{m_2^2L}{2E}},\exp{-i\frac{m_3^2L}{2E}}})U^\dagger\right|^2\\
+&=\left|U\mqty(\dmat{1,\exp{-i\frac{m_{21}^2L}{2E}},\exp{-i\frac{m_{31}^2L}{2E}}})U^\dagger\right|^2
+\end{align*}
+From this, we can define:
+\[
+H_{\text{osc}}=U\mqty(\dmat{0,\frac{\Delta m^2_{21}L}{2E},\frac{\Delta m^2_{31}}{2E}})U^\dagger
+\]
+$\Delta m^2$ is really small, so to see neutrinos oscillations with standard sources we need $L\sim10^3$\,km. Considering the neutrinos going through a medium, we add a term $\mqty(\dmat{V,0,0})$ to our Hamiltonian. For the case of 2 families, we get:
+\begin{align*}
+H_{\text{osc}}^{\text{matter}}&=U\mqty(\dmat{0,\frac{\Delta m^2}{2E}})U^\dagger+\mqty(\dmat{V,0})+\mqty(\dmat{-\frac{V}{2},-\frac{V}{2}})\\
+&=\frac{\Delta m^2}{4E}U\mqty(\dmat{-1,+1})U^\dagger+\mqty(\dmat{\frac{V}{2},-\frac{V}{2}})\\
+&=\frac{\Delta m^2}{4E}\left(\begin{array}{cc}
+    -\cos(2\theta) & \sin(2\theta) \\
+    \sin(2\theta) & \cos(2\theta)
+\end{array}\right)+\frac{V}{2}\mqty(\dmat{1,-1})
+\end{align*}
+By defining $x:=\frac{2EV}{\Delta m^2}$ we can write:
+\[
+H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2}{4E}\left(\begin{array}{cc}
+    -\cos(2\theta)+x & \sin(2\theta) \\
+    \sin(2\theta) & \cos(2\theta)-x
+\end{array}\right)
+\]
+The determinant of this matrix is $-Z=[\cos(2\theta)-x]^2+\sin^2(2\theta)$ and from this we define:
+\[
+\Delta m^2_{\text{eff}}:=\Delta m^2\sqrt{-Z} \quad \sin(2\theta_{\text{eff}}):=\frac{\sin(2\theta))}{\sqrt{-Z}} \quad \cos(2\theta_{\text{eff}}):=\frac{\cos(2\theta)-x}{\sqrt{-Z}}
+\]
+The oscillation Hamiltonian in matter gets written as:
+\[
+H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2_{\text{eff}}}{4E}\left(\begin{array}{cc}
+    -\cos(2\theta_{\text{eff}}) & \sin(2\theta_{\text{eff}}) \\
+    \sin(2\theta_{\text{eff}}) & \cos(2\theta_{\text{eff}})
+\end{array}\right)
+\]
+The quantity $x$ is equal to $x=\frac{2EG_Fn_e\sqrt{2}}{\Delta m^2}$
 \end{document}
