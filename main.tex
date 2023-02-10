@@ -353,5 +353,110 @@ However, this is not what is measured: this is telling us that the mass we are e
 \rho=\frac{\rho_0}{\left(\frac{R}{R_d}\right)^\gamma\left[1+\left(\frac{R}{R_d}\right)^\alpha\right]^{\frac{\beta-\gamma}{\alpha}}}
 \]
 \endbox
-For our galaxy the parameter $\gamma=\alpha=1$, $\beta=3$, $R_d=20$\,kpc. For $R<R_v$, the density goes like $\rho\sim\frac{1}{R}$ and we get $\rho_0=0.3$\, Gev/cm$^3$. 
+For our galaxy the parameter $\gamma=\alpha=1$, $\beta=3$, $R_d=20$\,kpc. For $R<R_v$, the density goes like $\rho\sim\frac{1}{R}$ and we get $\rho_0=0.3$\, Gev/cm$^3$.\\
+\hline\\
+\noindent\\
+We want to prove that for relativistic particles the pressure is negligible, to do that we do a little exercise.\\
+\textit{Exercise: compute the pressure of a non-relativistic gas of particles.}\\
+From thermodynamics, it is well known that $pV=NkT=nRT$. Now we assume that $p=f(\varepsilon)$:
+\[
+p=f(\varepsilon)=\frac{N}{V}kT=nkT \quad n=\frac{\rho}{\mu}
+\]
+where $n$ is the number of particles per unit volume, expressed as the ratio between the density and the mean mass $\mu$ of the particle. Since we are dealing with a non-relativistic gas:
+\[
+\rho=\frac{\varepsilon}{c^2}\to n=\frac{\varepsilon}{\mu c^2}\Rightarrow p=\frac{kT}{\mu c^2}\varepsilon=W\varepsilon
+\]
+Moreover, we know how to link the average velocity of the particles and the temperature of the gas:
+\[
+\frac{3}{2}kT=\frac{1}{2}\mu\Braket{v}^2\to W=\frac{kT}{\mu c^2}=\frac{\Braket{v}^2}{3c^2}\ll1
+\]
+Because we are in a non-relativistic regime. In the relativistic case instead, we find $W_R=\frac{1}{3}$ which leads to:
+\[
+p=W\varepsilon=W\rho c^2\to c_s=\sqrt{\frac{dp}{d\rho}}=c\sqrt{W}=\frac{c}{\sqrt{3}}
+\]
+Exactly what we found for the acoustic oscillations.\\
+\textit{Exercise: compute the value of $a$ and $Z$ at which the Universe started expanding.}\\
+The input parameters are $\Omega_m^0=0.3$ and $\Omega_\Lambda^0=0.7$.
+\[
+-q=\frac{\Ddot{a}(t)}{a(t)H^2}=-\frac{\Omega_m}{2}+\Omega_\Lambda=-\frac{\Omega_m^0}{2a^3(t)}+\Omega_\Lambda=0
+\]
+This tells us that the values we want are:
+\[
+a(t)=\left(\frac{\Omega_m^0}{2\Omega_\Lambda}\right)^{1/3}=0.6 \quad Z=\frac{1}{a(t)}-1=0.67
+\]
+\hline\\
+\noindent\\
+So far, we know that $\Omega_m=0.3$ but $\Omega_B=0.05$ therefore $\Omega_{DM}=0.25$. Now we ask ourselves: \textit{what is dark matter made of?} There are some hypothesis on its nature. With CMB, we looked at a surface of photons, now we are more interested in the 3D distribution. 
+\[
+\delta(\Vec{r})\xrightarrow[\text{FT}]{}\Vec{k}=\frac{1}{V}\int d^3re^{i\Vec{k}\cdot\Vec{r}}\delta(\Vec{r})
+\]
+From measurements, we understand that the large majority of dark matter is due to non-relativistic particles, i.e. \textbf{cold dark matter}. Given a DM particle $\chi$, in principle we could observe two processes: annihilation of $\chi\chi$ into two Standard Model particles \textit{or} production of two $\chi\chi$ starting from two Standard Model particles. There is also a dilution effect due to the factor $a^3(t)$: given a density $n(t)=\frac{N}{a^3(t)}$ we can see how it evolves with time.
+\[
+\Dot{n}(t)=-\frac{3N}{a^4(t)}\Dot{a}(t)-3n(t)H(t)
+\]
+Then, for annihilation and production one finds:
+\[
+\Gamma_a=nv\sigma_a\to\Dot{n}_a(t)=-n(t)\Gamma_a=-n^2(t)v\sigma_a \quad \Gamma_p=n_{SM}v_{SM}\sigma_p\to\Dot{n}_p(t)=n^2_{SM}(t)v_{SM}\sigma_p
+\]
+At the equilibrium, production and annihilation should compensate each other:
+\[
+n_{eq}^2v\sigma_a=n_{SM}^2v_{SM}\sigma_p\Rightarrow\Dot{n}(t)=-3n(t)H(t)+\Dot{n}_p(t)+\Dot{n}_a(t)=-3n(t)H(t)+\sigma_av(n_{eq}^2-n^2)
+\]
+Keeping $n$ close to $n_{eq}$, we get:
+\[
+n_{eq}\propto T^{3/2}\exp{-\frac{m_\chi c^2}{kT}}
+\]
+If we know $\Omega_{DM}^0$ and make some reasonable hypothesis on $m_\chi$ then we can compute $n^0$.
+\[
+\Omega_{DM}^0=\frac{0.24}{\sigma_av/c} \quad \sigma_a=G_F^2m_\chi^2(\hbar c)^2 \Rightarrow m_\chi=5\,\text{GeV}
+\]
+This is telling us that we are dealing with \textbf{weakly interacting massive particles} (WIMP).\\
+In the Minimal Supersymmetric Standard Model (MSSM), every SM particle has a partner with a spin difference of $1/2$. In particular, for the gauge bosons we have the neutralinos $\chi_1, \chi_2, \chi_3$. Suppose now that $\chi_1$ is the lightest supsersymmetric particle and it is a WIMP candidate: how do we detect it? The idea is to observe nuclear recoil in elastic scattering. We do not look at electron recoil because in order to get the maximum energy transfer the mass of the target should be similar to the mass of the projectile. It is a better idea to use heavy nuclei, which can vary in a wide mass range since $m_\chi\in[5,100]$\,GeV. But even with all these ingredients how can we model an interaction we know nothing about? We have to make some hypothesis on the interaction, i.e. on the cross section.
+\[
+\left\{
+\begin{aligned}
+&\text{Axial:}&&\alpha_A(\overline{\chi}\gamma^\mu\gamma^5\chi)(\overline{n}\gamma_\mu\gamma^5n)\to\text{spin dependent}\\
+&\text{Vector:}&&\alpha_V(\overline{\chi}\gamma^\mu\chi)(\overline{n}\gamma_\mu n)\to\text{spin independent}\\
+&\text{Scalar:}&&\alpha_S(\overline{\chi}\chi)(\overline{n}n)\to\text{spin independent}
+\end{aligned}
+\right.
+\]
+For the spin independent interactions, we have:
+\[
+\sigma_{\text{SI}}^0\propto G_F^2\mu^2A^2
+\]
+where $\mu$ is the reduced mass. For the axial case instead, we see the total spin of the nucleus:
+\[
+\sigma_{\text{SD}}^0\propto G_F^2\mu^2J^2
+\]
+In general, the total cross section as a function of the momentum transfer $q$ can be expressed as:
+\[
+\sigma(q)=\sigma_{\text{SI}}F_{\text{SI}}(q)+\sigma_{\text{SD}}F_{\text{SD}}(q)
+\]
+This is usually written as:
+\[
+\sigma(q)=\sigma_{0,\text{nucleon}}\left[\frac{\mu(\chi,A)}{\mu(\chi,\text{nucleon})}A\right]^2
+\]
+However, we do not directly measure the cross section but rather the rate of interaction $R$, more precisely the rate per unit mass.
+\[
+R=\frac{N_A}{A}\sigma v_\chi n_\chi
+\]
+We know that $n_\chi=0.3$\,GeV/m$^3$, we need to make some assumption on $v_\chi$. Let's move back to our galaxy, where we assume that we are surrounded by a sphere of dark matter.
+\[
+f(\Vec{v}_\chi)=\exp{-\frac{\Vec{v}_\chi^2}{2v_{\text{mean}}^2}}
+\]
+After some non interesting calculations that we will not do, it turns out that $2v_{\text{mean}}^2=v_0^2$ which is the disk velocity at the solar system, hence it is possible to write in the end:
+\[
+f(\Vec{v}_\chi)=\exp{-\frac{\Vec{v}_\chi^2}{v_0^2}}
+\]
+Since it is rotating, we have an apparent wind of DM arriving from the Cygnus constellation (just an apparent movement).
+\[
+\Vec{v}=\Vec{v}_\chi-\Vec{v}_{\text{Earth}}\Rightarrow f(\Vec{v})\propto\exp{-\frac{(\Vec{v}_E+\Vec{v})}{v_0^2}}
+\]
+where $v_0=230$\,km/s is the velocity of the disk, $v_E=240$\,km/s is the Earth velocity, $v_\chi$ is the DM velocity in the rest frame and $v$ is the DM velocity observed at the Earth. The relative difference between $v_0$ and $v_E$ gives birth to a \textbf{modulation} of the interaction rate through the year.\\
+The recoil energy of the nucleus after the scatter of an angle $\theta$ in the center of mass is given by:
+\[
+E_{\text{NR}}=E_\chi 4\frac{m_\chi m_A}{(m_\chi+m_A)^2}\frac{1-\cos\theta}{2}
+\]
+We assume that the scatterings are isotropic, i.e. uniform in $\cos\theta$ so that the recoils are uniformly distributed in $E_{\text{NR}}$. The signal is measured in counts/(keV$\cdot$day$\cdot$kg) which is the Dark Matter Rate Unity (DRU). The main challenge for experimental detection is given by the presence of \textbf{background} which does not allow to have a clear signal.
 \end{document}
