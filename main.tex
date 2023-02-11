@@ -33,6 +33,11 @@
 \usepackage{physics}
 \usepackage[super]{nth}
 \usepackage{bbm}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{circuitikz}
+\usetikzlibrary{arrows,shapes,positioning}
+\usepackage{subfig}
 \newcommand{\beginbox}[1]{\begin{tcolorbox}[width=\textwidth,colback={black!40},title={#1},colbacktitle={purple!55},coltitle=black]}
 \renewcommand{\endbox}{\end{tcolorbox}\noindent}
 % \begin{tcolorbox}[width=\textwidth,colback={yellow!50},title={Rosenbluth Cross Section},colbacktitle={gray!50},coltitle=black]
@@ -557,7 +562,7 @@ This implies that neutrino states of flavour $\alpha$ can be seen as the followi
 with $UU^\dagger=\mathbbm{1}$. Treating $\ket{\nu_j}$ as plane wave states, the wave function at a distance
 $L$ from the production point and at a time $T$ after production is given by:
 \[
-\ket{\nu_alpha(T,L)}=\sum_jU^*_{\alpha j}\exp{-i(E_jT-p_jL)}\ket{\nu_j}
+\ket{\nu_\alpha(T,L)}=\sum_jU^*_{\alpha j}\exp{-i(E_jT-p_jL)}\ket{\nu_j}
 \]
 Note that the energy $E_j$ and the momentum $p_j$ are in general different for the different
 mass eigenstates because the kinematics of the production process is different for different
@@ -630,5 +635,128 @@ H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2_{\text{eff}}}{4E}\left(\begin{ar
     \sin(2\theta_{\text{eff}}) & \cos(2\theta_{\text{eff}})
 \end{array}\right)
 \]
-The quantity $x$ is equal to $x=\frac{2EG_Fn_e\sqrt{2}}{\Delta m^2}$
+The quantity $x$ is equal to $x=\frac{2EG_Fn_e\sqrt{2}}{\Delta m^2}$, to give some numbers we find $n_e=6.4\cdot10^{31}$\,m$^{-3}$ in the Sun, $G_F=1.1\cdot10^{-5}$\,GeV, $\Delta m^2=7.6\cdot10^{-5}$\,eV$^2$ and $E=(0-10)$\,MeV resulting in $x=0.27[(0-10)\,\text{MeV}]$. Assuming now $E=10$\,MeV, we obtain $\sin(2\theta_{\text{eff}})=0$ and $\cos(2\theta_{\text{eff}})=1$, hence $\theta_{\text{eff}}=\frac{\pi}{2}$:
+\[
+\ket{\nu_e}=\cos\theta_{\text{eff}}\ket{\nu_1}+\sin\theta_{\text{eff}}\ket{\nu_2}\simeq\ket{\nu_2}
+\]
+This results in:
+\[
+|\braket{\nu_e}{\nu_e(T,L)}|^2=\left\{
+\begin{aligned}
+&1-\frac{\sin^2(2\theta)}{2} &&\text{low energy}\\
+&\sin^2\theta &&\text{high energy}
+\end{aligned}\right.
+\]
+Considering the three families, the mixing matrix $U$ is a $3\times3$ complex matrix with 18 parameters, 9 real ones and 9 phases. However, there are some constraints which reduces these degrees of freedom:
+\[
+\begin{aligned}
+&\bullet \sum_i|U_{\alpha i}|^2=1 &&\text{removes 3 real parameters}\\
+&\bullet \sum_iU_{\alpha i}U_{\beta i}^*=0 &&\text{removes 3 real parameters and 3 phases}\\
+&\bullet \ket{\nu_\alpha}\to e^{i\varphi}\ket{\nu_\alpha} &&\text{removes 5 phases}
+\end{aligned}
+\]
+At the end of the day we are left with three real parameters identified with the mixing angles $\theta_{12}, \theta_{13}, \theta_{23}$ and one phase $\delta$. $U$ is usually written in the following form:
+\[
+U=\begin{pmatrix}
+    1 & 0 & 0\\
+    0 & c_{23} & s_{23}\\
+    0 & -s_{23} & c_{23}
+\end{pmatrix}
+\begin{pmatrix}
+    c_{13} & 0 & s_{13}e^{-i\delta}\\
+    0 & 1 & 0\\
+    -s_{13}e^{+i\delta} & 0 & c_{13}
+\end{pmatrix}
+\begin{pmatrix}
+    c_{12} & s_{12} & 0\\
+    -s_{12} & c_{12} & 0\\
+    0 & 0 & 1
+\end{pmatrix}
+\]
+The phase $\delta$ is responsible for \textbf{CP violation} and it is crucial to have three families. CP violation means that:
+\[
+p(\nu_\alpha\to\nu_\beta)\neq p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)
+\]
+Is this possible with only two families? With just two families we have (the size of the box represent the probability of oscillating into one family or another):
+\[
+\left\{
+\begin{aligned}
+&\nu_\alpha\to\begin{tabular}{|p{0.8cm}|p{0.7cm}|}
+\hline
+    $\nu_\alpha$ & $\nu_\beta$ \\
+    \hline
+\end{tabular}\\
+&\overline{\nu}_\alpha\to\begin{tabular}{|p{0.8cm}|p{0.7cm}|}
+\hline
+    $\overline{\nu}_\alpha$ & $\overline{\nu}_\beta$ \\
+    \hline
+\end{tabular}
+\end{aligned}
+\right.
+\]
+From CPT conservation we have that:
+\[
+p(\nu_\alpha\to\nu_\alpha)=p(\overline{\nu}_\alpha\to\overline{\nu}_\alpha)
+\]
+Since we are working with two families, it follows that:
+\[
+p(\nu_\alpha\to\nu_\beta)=p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)
+\]
+Therefore, with two families we cannot have CP violation. Let's look now at the case with three families:
+\[
+\left\{
+\begin{aligned}
+&\nu_\alpha\to\begin{tabular}{|p{0.5cm}|p{0.5cm}|p{0.5cm}|}
+\hline
+    $\nu_\alpha$ & $\nu_\beta$ & $\nu_\gamma$\\
+    \hline
+\end{tabular}\\
+&\overline{\nu}_\alpha\to\begin{tabular}{|p{0.5cm}|p{0.35cm}|p{0.65cm}|}
+\hline
+    $\overline{\nu}_\alpha$ & $\overline{\nu}_\beta$ & $\overline{\nu}_\gamma$ \\
+    \hline
+\end{tabular}
+\end{aligned}
+\right.
+\]
+In this case, it might be possible that $p(\nu_\alpha\to\nu_\beta)\neq p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)$. The amount of CP violation can be quantified:
+\begin{align*}
+p(\nu_\alpha\to\nu_\beta)*p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)&=\sum_{jk}U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*\exp{-i\frac{\Delta m^2L}{4E}}-\sum_{jk}(\text{h.c.})\exp{-i\frac{\Delta m^2L}{4E}}\\
+&=\sum_{jk}2\mathfrak{Im}[U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*]\exp{-i\frac{\Delta m^2L}{4E}}
+\end{align*}
+The quantity between square brackets is the \textbf{Jarlskog invariant}:
+\[
+J=c_{12}s_{12}c_{23}s_{23}c_{13}^2s_{13}\sin(\delta)
+\]
+What we do not know about neutrinos is the \textbf{hierarchy} of their masses and whether they are a Dirac or Majorana particle, i.e. if neutrinos are their own anti-particle or not.
+\begin{center}
+\begin{tikzpicture}[
+%roundnode/.style={circle, draw=green!60, fill=green!5, very thick, minimum size=7mm},
+%squarednode/.style={rectangle, draw=red!60, fill=red!5, very thick, minimum size=5mm},
+]
+%Nodes
+\node(nuL) {$\nu_L$};
+\node(antinuR)[below=of nuL] {$\overline{\nu}_R$};
+\node(nuR)[right=of nuL] {$\nu_R$};
+\node(antinuL)[below=of nuR] {$\overline{\nu}_L$};
+
+%Lines
+\draw[<->] (antinuR.north) -- (nuL.south) node [pos=0.5,left] {\footnotesize CPT};
+\draw[<->] (nuL.east) -- (nuR.west) node [pos=0.5,above] {\footnotesize LT};
+\draw[<->] (nuR.south) -- (antinuL.north) node [pos=0.5,right] {\footnotesize CPT};
+\draw[<->] (antinuR.east) -- (antinuL.west) node [pos=0.5,below] {\footnotesize LT};
+\end{tikzpicture}
+\end{center}
+\begin{center}
+\begin{tikzpicture}
+\node(nuL) {$\nu_L$};
+\node(nuR)[right=of nuL] {$\nu_R$};
+\node(e-)[below=of nuL] {$e^-$};
+\node(e+)[below=of nuR] {$e^+$};
+
+\draw[<->] (nuL.east) -- (nuR.west);
+\draw[->] (nuL.south) -- (e-.north);
+\draw[->] (nuR.south) -- (e+.north);
+\end{tikzpicture}
+\end{center}
 \end{document}
