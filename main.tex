@@ -34,6 +34,7 @@
 \usepackage[super]{nth}
 \usepackage{bbm}
 \usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
 \usetikzlibrary{positioning}
 \usepackage{circuitikz}
 \usetikzlibrary{arrows,shapes,positioning}
@@ -728,7 +729,7 @@ The quantity between square brackets is the \textbf{Jarlskog invariant}:
 \[
 J=c_{12}s_{12}c_{23}s_{23}c_{13}^2s_{13}\sin(\delta)
 \]
-What we do not know about neutrinos is the \textbf{hierarchy} of their masses and whether they are a Dirac or Majorana particle, i.e. if neutrinos are their own anti-particle or not.
+What we do not know about neutrinos is the \textbf{hierarchy} of their masses and whether they are a Dirac or Majorana particle, i.e. if neutrinos are their own anti-particle or not. In the case neutrinos are Dirac particles, it is possible to switch from left- to right-handed and vice-versa with a Lorentz transformation (LT) and to their respective anti-particle with a CPT transformation.
 \begin{center}
 \begin{tikzpicture}[
 %roundnode/.style={circle, draw=green!60, fill=green!5, very thick, minimum size=7mm},
@@ -747,6 +748,11 @@ What we do not know about neutrinos is the \textbf{hierarchy} of their masses an
 \draw[<->] (antinuR.east) -- (antinuL.west) node [pos=0.5,below] {\footnotesize LT};
 \end{tikzpicture}
 \end{center}
+Majorana tackles the problem of reformulating the Dirac theory without the problems connected to the idea of negative energy states, underlining the non-existence for some particles of their respective anti-particles. Basic transitions of the Fermi theory are:
+\[
+n\to p+e^-+\overline{\nu}_e \quad p\to n+e^++\nu_e
+\]
+Neutrinos emitted in these two processes have different helicity, which might in principle be the two spin states predicted by Majorana, which requires $\nu=\overline{\nu}$.
 \begin{center}
 \begin{tikzpicture}
 \node(nuL) {$\nu_L$};
@@ -759,4 +765,37 @@ What we do not know about neutrinos is the \textbf{hierarchy} of their masses an
 \draw[->] (nuR.south) -- (e+.north);
 \end{tikzpicture}
 \end{center}
+The particle emitted with $e^-$ has positive helicity. If neutrinos have mass, then $\nu\to e^-$ is dominant with respect to $\nu\to e^+$. Theories are pushing in favour of the Majorana hypothesis but there is no experimental evidence for that.\\
+The only process in which it is possible to distinguish between Majorana and Dirac neutrinos is \textbf{double beta-decay without neutrinos}, $\beta\beta0\nu$. Neutrinos are produced in weak decays, which normally produce one electron/positron, emit a neutrino/anti-neutrino and increase the nucleus' proton number by one. There are a number of elements that cannot emit \textit{only} one electron and can decay only by emitting two electrons.
+\[
+(A,Z)\to(A,Z+2)+2e^-+2\overline{\nu}_e
+\]
+A simultaneous decay of two nucleons in the same nucleus is extremely unlikely, the experimentally observed lifetimes of such decay process are in the range $10^{18}-10^{21}$ years. The neutrino-less double beta decay can only occur if neutrinos are Majorana particles and if neutrinos can change between left- and right-handed chirality between emission and absorption, i.e. between the two W vertices, which is possible for a non-zero neutrino mass.
+\begin{center}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (b);
+    \vertex [below=of b] (c);
+    \vertex [below left=1cm and 0.4cm of c] (d);
+    \vertex [above left=1cm and 0.4cm of b] (a);
+    \vertex [left=of a] (i1) {$n$};
+    \vertex [left=of d] (i2) {$n$};
+    \vertex[above right of=a] (f1) {$p$};
+    \vertex[right of=b] (f2) {$e^-$};
+    \vertex[right of=c] (f3) {$e^-$};
+    \vertex[below right of=d] (f4) {$p$};
+
+    \diagram* {
+      (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
+      (i1) -- [fermion] (a),
+      (i2) -- [fermion] (d),
+      (a) -- [fermion] (f1),
+      (b) -- [fermion] (f2),
+      (c) -- [fermion] (f3),
+      (d) -- [fermion] (f4),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+This is called \textbf{matter creation} because it is a process which \textit{favour} creation of matter instead of anti-matter. The cross in the diagram corresponds to the \textbf{chirality flip} which is proportional to $m^2_{\beta\beta}=|\sum_jU_{ej}^2m_j|^2$ and it depends on the effective Majorana neutrino mass. The CUORE experiment is currently investigating for neutrino-less double-beta decay using $^{130}$Te.
 \end{document}
