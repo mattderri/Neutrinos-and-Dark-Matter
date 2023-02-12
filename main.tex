@@ -206,7 +206,8 @@ This tells us that if we are able to measure the ratio $\frac{\varepsilon(t)}{\v
 \[
 1=\Omega_\varepsilon+\Omega_c
 \]
-where $\Omega_\varepsilon=\frac{\varepsilon(t)}{\varepsilon_c(t)}$ and $\Omega_c=-\frac{kc^2}{R_0^2a^2(t)H^2(t)}$. Now we want to move even further and compute the ratio $\frac{\Ddot{a}(t)}{a(t)}$:
+where $\Omega_\varepsilon=\frac{\varepsilon(t)}{\varepsilon_c(t)}$ and $\Omega_c=-\frac{kc^2}{R_0^2a^2(t)H^2(t)}$.\\
+Now we want to move even further and compute the ratio $\frac{\Ddot{a}(t)}{a(t)}$:
 \[
 \Dot{a}^2(t)=\frac{8\pi G}{3c^2}\varepsilon(t)a^2(t)-\frac{kc^2}{R_0^2}\xrightarrow[\text{derivative}]{}2\Dot{a}(t)\Ddot{a}(t)=\frac{8\pi G}{3c^2}[\Dot{\varepsilon}(t)a^2(t)+2\varepsilon(t)a(t)\Dot{a}(t)]
 \]
@@ -220,7 +221,7 @@ $\Dot{\varepsilon}(t)$ can be computed using some \textbf{thermodynamics}. The U
 \]
 where we used the fact that the energy can be expressed as $E=\varepsilon(t)V(t)$. Moreover, we know that:
 \[
-V(t)=\frac{4}{3}\pi R^3(t)=\frac{4}{3}R_0^3a^3(t)\to\Dot{V}(t)=4\pi a^2(t)\Dot{a}(t)R_0^3=3V(t)\frac{\Dot{a}(t)}{a(t)}
+V(t)=\frac{4}{3}\pi R^3(t)=\frac{4}{3}\pi R_0^3a^3(t)\to\Dot{V}(t)=4\pi a^2(t)\Dot{a}(t)R_0^3=3V(t)\frac{\Dot{a}(t)}{a(t)}
 \]
 We substitute this in the expression above to find:
 \[
@@ -238,7 +239,7 @@ This is telling us that with \textit{only} gravitational force the Universe woul
 \endbox
 Assume now that the contribution of the cosmological constant $\Lambda$ is the dominant one and that $H(t)$ is constant over a short time-scale, hence:
 \[
-\Ddot{a}(t)=H(t)\Dot{a}(t)=H^2(t)a(t)\to H^2(t)\frac{\Ddot{a}(t)}{a(t)}\simeq\frac{\Lambda}{3}
+\Ddot{a}(t)=H(t)\Dot{a}(t)=H^2(t)a(t)\to H^2(t)=\frac{\Ddot{a}(t)}{a(t)}\simeq\frac{\Lambda}{3}
 \]
 It is therefore possible to extend the Friedmann equation:
 \beginbox{Full Metal Friedmann Equation}
@@ -275,30 +276,30 @@ a(t_{\text{e}})&=a(t_0)+\Dot{a}(t)\Bigr|_{\substack{t=t_0}}(t_{\text{e}}-t_0)+\f
 \]
 With the same reasoning, we can perform an expansion also on the redshift $Z$:
 \[
-Z=\frac{1}{a(t_{\text{e}})}-1=H_0(t_{\text{e}}-t_0)+\frac{q}{2}H_0^2(t_{\text{e}}-t_0)^2
+Z=\frac{1}{a(t_{\text{e}})}-1=-H_0(t_{\text{e}}-t_0)+\frac{q}{2}H_0^2(t_{\text{e}}-t_0)^2
 \]
 We now have a \nth{2} order equation for the redshift as a function of the time when the light was emitted. We have to compute to \nth{2} order also the distance:
 \[
 d(t)=\frac{ca(t_0)}{a(t)}dt=\frac{c}{a(t)}dt\Rightarrow d=\int_{t_{\text{e}}}^{t_0}dt\frac{c}{a(t)}
 \]
-Since we need to stay at \nth{2} order, we take only the \nth{1} order contribution from the expansion of $a(t)$, since it will become a \nth{2} order contribution when integrating.
+Since we need to stay at \nth{2} order, we take only the \nth{1} order contribution from the expansion of $a(t)$, because it will become a \nth{2} order contribution when integrating.
 \[
-d=c\int_{t_{\text{e}}}^{t_0}dt[1-H_0(t-t_0)]=c(t_0-t_{\text{e}})-\int_{t_{\text{e}}-t_0}^{0}dt'H_0t'=c(t_0-t_{\text{e}})+\frac{H_0}{2}(t_0-t_{\text{e}})^2
+d=c\int_{t_{\text{e}}}^{t_0}dt[1-H_0(t-t_0)]=c(t_0-t_{\text{e}})-c\int_{t_{\text{e}}-t_0}^{0}dt'H_0t'=c(t_0-t_{\text{e}})+\frac{c}{2}H_0(t_{\text{e}}-t_0)^2
 \]
 Skipping all the details, we finally obtain the relation between distance and redshift.
 \[
 d=\frac{cZ}{H_0}\left[1-\frac{1+q}{2}Z\right]
 \]
 If we measure $Z$ and $H_0$ and it is not a straight line, then there is a dependence on the $q$ parameter.\\
-To compute $\Omega_r$, we start by looking at the \textbf{black body radiation}. We ask ourselves: \textit{how many photons can we fit in a box at temperature $T$?}
+To compute $\Omega_r$, we start by looking at the \textbf{black body radiation}. We ask ourselves: \textit{how many photons can we fit in a box of side $L$ at temperature $T$?}
 \[
-1D: \nu_1=\frac{c}{2L}\to\nu_m=\frac{c}{2L}m\;m=1,2,\dots,\infty \quad 3D: \nu=\frac{c}{2L}\sqrt{m_x^2+m_y^2+m_z^2}
+1D: \nu_1=\frac{c}{2L}\to\nu_m=\frac{c}{2L}m\,,\,m=1,2,\dots,\infty \quad 3D: \nu=\frac{c}{2L}\sqrt{m_x^2+m_y^2+m_z^2}
 \]
-Since it can go up to infinity, a better choice is to compute the density of modes.
+Since it can go up to infinity, a better choice is to compute the \textbf{density of modes}.
 \[
 N_mdm=\frac{4\pi}{8}m^2dm=\frac{\pi}{2}m^2dm\to N_md\nu=\frac{\pi}{2}\left(\frac{2L}{c}\right)^3\nu^2d\nu
 \]
-To know the number photons, we use the Bose statistics.
+To know the number of photons, we use the Bose statistics.
 \[
 N_\gamma d\nu=\frac{2}{\exp{\frac{h\nu}{kT}}-1}N_md\nu=\frac{8\pi L^3}{c^3}\frac{\nu^2}{\exp{\frac{h\nu}{kT}}-1}d\nu
 \]
@@ -310,57 +311,75 @@ Moreover, from this expression it also possible to obtain the energy density:
 \[
 \varepsilon_\gamma(\nu)=h\nu n_\gamma=\frac{8\pi h}{c^3}\frac{\nu^3}{\exp{\frac{h\nu}{kT}}-1}\to\varepsilon_\gamma=\int_0^\infty d\nu\varepsilon_\gamma(\nu)=\alpha T^4
 \]
-where $\alpha=7.6\cdot10^{-16}$\;J/(m$^3$K$^4$). If we repeat the same strategy for $n_\gamma$, we get:
+where $\alpha=7.6\cdot10^{-16}$\;J/(m$^3$K$^4$)=4743.55\;eV/(m$^3$K$^4$). If we repeat the same strategy for $n_\gamma$, we get:
 \[
 n_\gamma=\beta T^3 \quad \beta=2\cdot10^7\;\text{m$^{-3}$K$^{-3}$}
 \]
-At a certain point, hydrogen atoms started to form (\textbf{recombination}) and electrons were removed from this plasma. The electron density decreased so the photons could escape (\textbf{decoupling}). The rate of interaction is given by:
+At a certain point, electrons combined with protons to form hydrogen atoms (\textbf{recombination}), resulting in a sudden drop of the electron density. Photons \textbf{decoupling} occurred when the rate of Compton scattering of photons $\Gamma$ was approximately equal to the rate of expansion of the universe $H$. After this, photons were able to stream freely, producing the cosmic microwave background as we know it, and the universe became transparent. The interaction rate of the photons is given by:
 \[
-\Gamma(t)=n_e(t)\sigma_Tc
+\Gamma(t)=n_e(t)\sigma_ec
 \]
-If $\Gamma(t)<H(t)$ it means that there cannot be any interaction because the Universe is expanding too fast. We then have decoupling of photons at $Z=1090$ and $T=2970$\;K. This results in $a(t)\sim10^{-3}$. Moreover, the wavelength is re-scaled $\lambda_\gamma=\lambda Z$, i.e. the energy is reduced by a factor $\sim1000$ having then $T\sim2.97$\;K. The CMB temperature is precisely measured to be $T_0=2.7$\;K. We know there is a black body distribution, so we can plug this in the expressions obtained before to find:
+where $n_e$ is the electrons density and $\sigma_e$ the electrons cross section.\\
+If $\Gamma(t)<H(t)$ it means that there cannot be any interaction because the Universe is expanding too fast. By working out the dependence of $\Gamma(t)$ and $H(t)$ on the scale factor and then imposing $\Gamma(t)=H(t)$, it is possible to show that photons decoupling occurred at a redshift of $Z=1090$ when the Universe was at a temperature of $T=2970$\;K.\\
+Moreover, the wavelength is re-scaled $\lambda_\gamma=\lambda Z$, i.e. the energy is reduced by a factor $\sim1000$ having then $T\sim2.97$\;K. The CMB temperature is precisely measured to be $T_0=2.7$\;K. We know there is a black body distribution, so we can plug this in the expressions obtained before to find:
 \[
-n_\gamma^0=4\cdot10^8\;\text{m$^{-3}$} \quad E_{\text{mean}}=2.7 kT_0=630\,\text{$\mu$eV/photon}\xrightarrow[\text{1 GHz=4 $\mu$eV}]{}160\;\text{GHz}
+n_\gamma^0=\beta T_0^3\approx4\cdot10^8\;\text{m$^{-3}$} \quad \varepsilon_\gamma^0\approx0.26\;\text{MeV/m$^3$}
 \]
-This results in an energy density equal to $\varepsilon_\gamma^0=0.26$\;MeV/m$^3$ but the critical energy density is $\varepsilon_c^0=4.9$\;GeV/m$^3$. This tells us that the contribution from radiation $\Omega_\gamma^0=5\cdot10^{-5}$ is negligible today.
+However, the critical energy density is $\varepsilon_c^0=4.9$\;GeV/m$^3$. This tells us that the contribution from radiation is equal to $\Omega_\gamma^0\approx5\cdot10^{-5}$ and therefore it is negligible today.
+\newpage
 \section{Dark Matter}
+The dipole distortion of the CMB results from the fact that the Universe is not perfectly homogeneous today. The distortions on a smaller angular scale tell us that the universe was not perfectly homogeneous at the time of last scattering either, at $Z\approx1100$. The angular size of the temperature fluctuations reflects in part the physical size of the density
+and velocity fluctuations at $Z\approx1100$.\\
 \textbf{Dark matter} (DM) decoupled way before photons, therefore there was a distribution of DM which created a lot of potential wells and consequently attracted other mass. Density started to become larger, increasing temperature. This lead to an expansion in volume which lead to the temperature decreasing and so on. We then observe \textbf{acoustic oscillations} which propagates at speed $c_s=\frac{c}{\sqrt{3}}$. What distance do they travel?
 \[
 d=c_s\int_0^{t_{\text{ls}}}dt\frac{a(t_{\text{ls}})}{a(t)}=0.145\;\text{Mpc}
 \]
-However, we are able to observe these waves today and we know that the maximum distance a photon can travel to reach us is $d_{\text{hor}}=14$\,Gpc. Taking into account also redshift we end up with $d_{\text{A}}=\frac{d_{\text{hor}}}{Z}=13$\,Mpc.\\
-We computed $\Braket{T}$ but now we are interested in fluctuations, so we define:
+The angular size $\delta\theta$ of a temperature fluctuation in the CMB is related to the physical size $l$ on the last scattering surface by:
 \[
-C(\theta)=\Braket{\frac{\delta T}{T}\Bigr|_{\substack{\Vec{n}}}\cdot\frac{\delta T}{T}\Bigr|_{\substack{\Vec{n}'}}} \quad \frac{\delta T}{T}=\sum_{l,m}a_{l,m}Y_{l,m}(\theta,\varphi)
+d_{\text{A}}=\frac{l}{\delta\theta}
 \]
-where $\Vec{n}\cdot\Vec{n}'=\cos\theta$. Doing the cross product gives us:
+where $d_{\text{A}}$ is the angular-diameter distance to the last scattering surface. However, we are able to observe these waves today and we know that the maximum distance a photon can travel to reach us is $d_{\text{hor}}(t_0)=14$\,Gpc. Since we have seen that the last scattering surface is at $Z\approx1100\gg1$, a good approximation for $d_{\text{A}}$ is given by:
 \[
-C(\theta)=\sum_lC_l(2l+1)P_l(\cos\theta)
+d_{\text{A}}\approx\frac{d_{\text{hor}}(t_0)}{Z}=13\,\text{Mpc}
 \]
-For unknown reasons, cosmology likes to plot the following quantity:
+We computed the average temperature of the CMB $\Braket{T}$ but now we are interested in fluctuations. $\frac{\delta T}{T}$ is defined on the surface of a sphere, so it is useful to expand it in spherical harmonics:
 \[
-\Delta_T=\frac{l(l+1)}{2\pi}C_l\Braket{T^2}
+\frac{\delta T}{T}(\theta,\varphi)=\sum_{l,m}a_{l,m}Y_{l,m}(\theta,\varphi)
+\]
+What concerns cosmologists is not the exact pattern of hot and cold spots on the sky, but their statistical properties. The most important one is the \textbf{correlation function} $C(\theta)$. Take two points on the last scattering surface, they are in directions $\hat{n}$ and $\hat{n}'$, separated by an angle $\theta$ given by $\hat{n}\cdot\hat{n}'=\cos\theta$. To find the correlation function, we multiply the values $\frac{\delta T}{T}$ at the two points and then average this product over all points separated by the angle $\theta$:
+\[
+C(\theta)=\Braket{\frac{\delta T}{T}\Bigr|_{\substack{\hat{n}}}\cdot\frac{\delta T}{T}\Bigr|_{\substack{\hat{n}'}}}_{\hat{n}\cdot\hat{n}'=\cos\theta}
+\]
+Using the expansion in spherical harmonics, we can write the correlation function as:
+\[
+C(\theta)=\frac{1}{4\pi}\sum_lC_l(2l+1)P_l(\cos\theta)
+\]
+where $P_l$ are the Legendre polynomials. In this way, a measured correlation function $C(\theta)$ can be broken down into its multiple moments $C_l$. Generally speaking, a term $C_l$ is
+a measure of temperature fluctuations on the angular scale $\theta\sim180^\circ/l$. Cosmologists like to plot the following quantity:
+\[
+\Delta_T=\left(\frac{l(l+1)}{2\pi}C_l\right)^{1/2}\Braket{T}
 \]
 Combining results from supernovae and CMB, we end up with:
 \[
 \Omega_m^0=0.3 \quad \Omega_\Lambda^0=0.7 \quad \Omega_k^0=0
 \]
-Define now $\eta=\frac{n_B^0}{n_\gamma^0}=6\cdot10^{-10}$, this is interesting because we know from the average temperature of CMB $n_\gamma^0=4\cdot10^8$\,m$^{-3}$, therefore we can compute $n_B^0$:
+Define now $\eta=\frac{n_B^0}{n_\gamma^0}=6\cdot10^{-10}$, this is interesting because we know from the average temperature of CMB $n_\gamma^0\approx4\cdot10^8$\,m$^{-3}$, therefore we can compute $n_B^0$:
 \[
 n_B^0=6\cdot10^{-10}\cdot4\cdot10^8\,\text{m$^{-3}$}=0.24\,\text{m$^{-3}$}\Rightarrow\varepsilon_B^0=0.24\,\text{GeV/m$^3$}
 \]
 Since $\varepsilon_c^0=5$\,GeV/m$^3$ this results in $\Omega_B^0=0.05$. There is another piece in the puzzle, $\Omega_m^0=0.3$ so there is another 0.25 missing which is an evidence for the existence of dark matter.\\
-Another evidence comes from \textbf{rotational velocity} of galaxies. The surface brightness is given by $I(R)=I_0e^{-R/R_v}$. It typically falls off exponentially with distance from the center. For $R>R_v$ we are basically enclosing all the visible mass of the galaxy. For our galaxy, $R_v=4$\,kpc. If we are at a distance $R>R_v$, from the Gauss law we get:
+Another evidence comes from \textbf{rotational velocity} of galaxies. The surface brightness is given by $I(R)=I_0e^{-R/R_s}$. It typically falls off exponentially with increasing distance from the center. For $R>R_s$ we are basically enclosing all the visible mass of the galaxy. For our galaxy, $R_s=4$\,kpc. If we are at a distance $R>R_s$, from the Gauss law we get:
 \[
 \frac{v^2}{R}=\frac{GM(R)}{R^2}\to v=\sqrt{\frac{GM(R)}{R}}
 \] 
-However, this is not what is measured: this is telling us that the mass we are enclosing cannot be just the visible one. There are different models to describe dark matter density:
-\beginbox{Navarro-Frank-White Model}
+However, this is not what is measured: this is telling us that the mass we are enclosing cannot be just the visible one.\\
+There are different models to describe dark matter distribution, one of the most used ones is the Navarro-Frenk-White model:
+\beginbox{Navarro-Frenk-White Model}
 \[
-\rho=\frac{\rho_0}{\left(\frac{R}{R_d}\right)^\gamma\left[1+\left(\frac{R}{R_d}\right)^\alpha\right]^{\frac{\beta-\gamma}{\alpha}}}
+\rho(r)=\frac{\rho_0}{\left(\frac{r}{R_d}\right)^\gamma\left[1+\left(\frac{r}{R_d}\right)^\alpha\right]^{\frac{\beta-\gamma}{\alpha}}}
 \]
 \endbox
-For our galaxy the parameter $\gamma=\alpha=1$, $\beta=3$, $R_d=20$\,kpc. For $R<R_v$, the density goes like $\rho\sim\frac{1}{R}$ and we get $\rho_0=0.3$\, Gev/cm$^3$.\\
+For our galaxy $\gamma=\alpha=1$, $\beta=3$, $R_d=20$\,kpc. For $R<R_d$, the density goes like $\rho\sim\frac{1}{R}$ and we get $\rho_0=0.3$\, Gev/cm$^3$.\\
 \hline\\
 \noindent\\
 We want to prove that for relativistic particles the pressure is negligible, to do that we do a little exercise.\\
@@ -493,6 +512,7 @@ Axions interact with gluons and with fermions and, at loop level, also with phot
 \pazocal{L}_{a\gamma\gamma}=-g_{a\gamma\gamma}a\Vec{E}\cdot\Vec{B}
 \]
 This particular mechanism can be used to produce (solar) or detect (DM halo) axions. QCD tells us that the mass range is between 1 and 100 $\mu$eV and they are considered as cold DM candidates, even if experiments are much more difficult. Axions searches were usually left behind but they are now starting to consider them seriously since WIMPs are not in a good shape.
+\newpage
 \section{Neutrinos}
 We now move our attention to \textbf{neutrinos} and see when they decoupled from plasma:
 \[
@@ -678,7 +698,7 @@ The phase $\delta$ is responsible for \textbf{CP violation} and it is crucial to
 \[
 p(\nu_\alpha\to\nu_\beta)\neq p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)
 \]
-Is this possible with only two families? With just two families we have (the size of the box represent the probability of oscillating into one family or another):
+Is this possible with only two families? With just two families we have (the size of the box represents the probability of oscillating into one family or another):
 \[
 \left\{
 \begin{aligned}
@@ -722,7 +742,7 @@ Therefore, with two families we cannot have CP violation. Let's look now at the 
 \]
 In this case, it might be possible that $p(\nu_\alpha\to\nu_\beta)\neq p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)$. The amount of CP violation can be quantified:
 \begin{align*}
-p(\nu_\alpha\to\nu_\beta)*p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)&=\sum_{jk}U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*\exp{-i\frac{\Delta m^2L}{4E}}-\sum_{jk}(\text{h.c.})\exp{-i\frac{\Delta m^2L}{4E}}\\
+p(\nu_\alpha\to\nu_\beta)-p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)&=\sum_{jk}U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*\exp{-i\frac{\Delta m^2L}{4E}}-\sum_{jk}(\text{h.c.})\exp{-i\frac{\Delta m^2L}{4E}}\\
 &=\sum_{jk}2\mathfrak{Im}[U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*]\exp{-i\frac{\Delta m^2L}{4E}}
 \end{align*}
 The quantity between square brackets is the \textbf{Jarlskog invariant}:
@@ -770,7 +790,7 @@ The only process in which it is possible to distinguish between Majorana and Dir
 \[
 (A,Z)\to(A,Z+2)+2e^-+2\overline{\nu}_e
 \]
-A simultaneous decay of two nucleons in the same nucleus is extremely unlikely, the experimentally observed lifetimes of such decay process are in the range $10^{18}-10^{21}$ years. The neutrino-less double beta decay can only occur if neutrinos are Majorana particles and if neutrinos can change between left- and right-handed chirality between emission and absorption, i.e. between the two W vertices, which is possible for a non-zero neutrino mass.
+A simultaneous decay of two nucleons in the same nucleus is extremely unlikely, the experimentally observed lifetimes of such decay processes are in the range $10^{18}-10^{21}$ years. $\beta\beta0\nu$ can only occur if neutrinos are Majorana particles and if neutrinos can change between left- and right-handed chirality between emission and absorption, i.e. between the two W vertices, which is possible for a non-zero neutrino mass.
 \begin{center}
 \begin{tikzpicture}
   \begin{feynman}
@@ -797,5 +817,5 @@ A simultaneous decay of two nucleons in the same nucleus is extremely unlikely, 
   \end{feynman}
 \end{tikzpicture}
 \end{center}
-This is called \textbf{matter creation} because it is a process which \textit{favour} creation of matter instead of anti-matter. The cross in the diagram corresponds to the \textbf{chirality flip} which is proportional to $m^2_{\beta\beta}=|\sum_jU_{ej}^2m_j|^2$ and it depends on the effective Majorana neutrino mass. The CUORE experiment is currently investigating for neutrino-less double-beta decay using $^{130}$Te.
+This is called \textbf{matter creation} because it is a process which \textit{favour} creation of matter instead of anti-matter. The cross in the diagram corresponds to the \textbf{chirality flip} which is proportional to $m^2_{\beta\beta}=|\sum_jU_{ej}^2m_j|^2$ and it depends on the effective Majorana neutrino mass. The CUORE experiment is currently investigating for $\beta\beta0\nu$ using $^{130}$Te.
 \end{document}
