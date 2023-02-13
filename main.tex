@@ -701,18 +701,41 @@ We explicitly compute $p_{\alpha\beta}$:
 \begin{align*}
 p_{\alpha\beta}=&\sin^2\theta\cos^2\theta-\sin^2\theta\cos^2\theta\exp{-i\frac{\Delta m^2L}{2E}}\\
 &-\cos^2\theta\sin^2\theta\exp{-i\frac{\Delta m^2L}{2E}}+\cos^2\theta\sin^2\theta\\
-=&2\sin^2\theta\cos^2\theta\left[1-\cos^2\left(\frac{\Delta m^2L}{2E}\right)\right]=\sin^2(2\theta)\sin^2\left(\frac{\Delta m^2L}{4E}\right)
+=&2\sin^2\theta\cos^2\theta\left[1-\cos\left(\frac{\Delta m^2L}{2E}\right)\right]=\sin^2(2\theta)\sin^2\left(\frac{\Delta m^2L}{4E}\right)
 \end{align*}
-It follows that $p_{\alpha\alpha}=1-p_{\alpha\beta}$ and in the case of no mixing, i.e. $\theta=0$, $p_{\alpha\alpha}=1$ and $p_{\alpha\beta}=0$. In the matrix form, we can write:
-\begin{align*}
-p_{\alpha\beta}&=\left|U\mqty(\dmat{\exp{-i\frac{m_1^2L}{2E}},\exp{-i\frac{m_2^2L}{2E}},\exp{-i\frac{m_3^2L}{2E}}})U^\dagger\right|^2\\
-&=\left|U\mqty(\dmat{1,\exp{-i\frac{m_{21}^2L}{2E}},\exp{-i\frac{m_{31}^2L}{2E}}})U^\dagger\right|^2
-\end{align*}
-From this, we can define:
+It follows that $p_{\alpha\alpha}=1-p_{\alpha\beta}$ and in the case of no mixing, i.e. $\theta=0$, $p_{\alpha\alpha}=1$ and $p_{\alpha\beta}=0$.
+% In the matrix form, we can write:
+% \begin{align*}
+% p_{\alpha\beta}&=\left|U\mqty(\dmat{\exp{-i\frac{m_1^2L}{2E}},\exp{-i\frac{m_2^2L}{2E}}})U^\dagger\right|^2\\
+% &=\left|U\mqty(\dmat{1,\exp{-i\frac{m_{21}^2L}{2E}}})U^\dagger\right|^2
+% \end{align*}
+Using the Hamiltonian formalism, we can write:
 \[
-H_{\text{osc}}=U\mqty(\dmat{0,\frac{\Delta m^2_{21}}{2E},\frac{\Delta m^2_{31}}{2E}})U^\dagger
+i\frac{d}{dt}\ket{\nu_\alpha,t}=U_{\alpha j}^*i\frac{d}{dt}\ket{\nu_j,t}=U_{\alpha j}^*E_j\ket{\nu_j,t}=U_{\alpha j}^*E_jU_{\beta j}\ket{\nu_\beta,t}\Rightarrow i\frac{d}{dt}\ket{\nu_\alpha,t}=(H_{\text{osc}})_{\alpha\beta}\ket{\nu_\beta,t}
 \]
-$\Delta m^2$ is really small, so to see neutrinos oscillations with standard sources we need $L\sim10^3$\,km.\\
+where we have introduced:
+\[
+H_{\text{osc}}=U^*\text{diag}(E)U \quad \text{diag}(E)_{jk}=\left\{\begin{aligned}
+&E_j &&\text{if $j=k$}\\
+&0 &&\text{if $j\neq k$} 
+\end{aligned}
+\right.
+\]
+In the ultra-relativistic approximation $p\sim E$, then we have:
+\[
+E_i=\sqrt{p^2+m_i^2}\simeq p+\frac{1}{2}\frac{m_i^2}{E}
+\]
+The first term gives a contribution proportional to the identity which will result in a phase factor common to all flavours and therefore irrelevant for oscillations. The second term will give the most interesting contribution so that we have:
+\[
+H_{\text{osc}}=\frac{1}{2E}U^*\text{diag}(m^2)U\longleftrightarrow H_{\text{osc}}=\frac{1}{2E}U^*\text{diag}(\Delta m^2)U
+\]
+Working in the simplified model with just two families we have:
+\[
+H_{\text{osc}}=\frac{\Delta m^2}{4E}\left(\begin{array}{cc}
+    -\cos(2\theta) & \sin(2\theta) \\
+    \sin(2\theta) & \cos(2\theta)
+\end{array}\right)
+\]
 Consider now the neutrinos going through matter, they can interact through the following Feynman diagrams:\\
 \begin{minipage}{0.5\textwidth}
 \begin{center}
@@ -761,20 +784,25 @@ Consider now the neutrinos going through matter, they can interact through the f
 \end{center}
 \end{minipage}\\
 The diagram on the left exists for all neutrino flavours and they can couple to electrons, protons, neutrons and neutrinos, while the one on the right exists only for electronic neutrinos and they can couple only to electrons.\\
-The energy of an electronic neutrino $\nu_e$ propagating through matter is enhanced by $V_{CC}$ and in a similar way all neutrino flavours get a potential from the $Z$ exchange $V_{NC}$. We simplify the system and consider only 2 families, so the structure of the matter potential is given by:
+The energy of an electronic neutrino $\nu_e$ propagating through matter is enhanced by $V_{CC}$ and in a similar way all neutrino flavours get a potential from the $Z$ exchange $V_{NC}$. Working with just 2 families, the structure of the matter potential is given by:
 \[
 V=\mqty(\dmat{V_{CC}+V_{NC},V_{NC}})
 \]
-Contributions proportional to the identity (in particular $V_{NC}$) do not affect neutrino oscillations, we then have to diagonalize:
-\begin{align*}
-H_{\text{osc}}^{\text{matter}}&=U\mqty(\dmat{0,\frac{\Delta m^2}{2E}})U^\dagger+\mqty(\dmat{V_{CC},0})\\
-&=\frac{\Delta m^2}{4E}U\mqty(\dmat{-1,+1})U^\dagger+\mqty(\dmat{\frac{V}{2},-\frac{V}{2}})\\
-&=\frac{\Delta m^2}{4E}\left(\begin{array}{cc}
+Contributions proportional to the identity (in particular $V_{NC}$) do not affect neutrino oscillations, therefore we obtain:
+\[
+H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2}{4E}\left(\begin{array}{cc}
     -\cos(2\theta) & \sin(2\theta) \\
     \sin(2\theta) & \cos(2\theta)
-\end{array}\right)+\frac{V}{2}\mqty(\dmat{1,-1})
-\end{align*}
-By defining $x:=\frac{2EV}{\Delta m^2}$ we can write:
+\end{array}\right)+\mqty(\dmat{V_{CC},0})
+\]
+Without modifying the physics, we can subtract the following multiple of the identity $\mqty(\dmat{\frac{V_{CC}}{2},\frac{V_{CC}}{2}})$ to obtain:
+\[
+H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2}{4E}\left(\begin{array}{cc}
+    -\cos(2\theta) & \sin(2\theta) \\
+    \sin(2\theta) & \cos(2\theta)
+\end{array}\right)+\mqty(\dmat{\frac{V_{CC}}{2},-\frac{V_{CC}}{2}})
+\]
+By defining $x:=\frac{2EV_{CC}}{\Delta m^2}$ it is possible to write:
 \[
 H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2}{4E}\left(\begin{array}{cc}
     -\cos(2\theta)+x & \sin(2\theta) \\
@@ -783,7 +811,7 @@ H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2}{4E}\left(\begin{array}{cc}
 \]
 The determinant of this matrix is $-Z=[\cos(2\theta)-x]^2+\sin^2(2\theta)$ and from this we define:
 \[
-\Delta m^2_{\text{eff}}:=\Delta m^2\sqrt{-Z} \quad \sin(2\theta_{\text{eff}}):=\frac{\sin(2\theta))}{\sqrt{-Z}} \quad \cos(2\theta_{\text{eff}}):=\frac{\cos(2\theta)-x}{\sqrt{-Z}}
+\Delta m^2_{\text{eff}}:=\Delta m^2\sqrt{-Z} \quad \sin(2\theta_{\text{eff}}):=\frac{\sin(2\theta)}{\sqrt{-Z}} \quad \cos(2\theta_{\text{eff}}):=\frac{\cos(2\theta)-x}{\sqrt{-Z}}
 \]
 The oscillation Hamiltonian in matter gets written as:
 \[
@@ -792,19 +820,23 @@ H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2_{\text{eff}}}{4E}\left(\begin{ar
     \sin(2\theta_{\text{eff}}) & \cos(2\theta_{\text{eff}})
 \end{array}\right)
 \]
-The quantity $x$ is equal to $x=\frac{2EG_Fn_e\sqrt{2}}{\Delta m^2}$, to give some numbers we find $n_e=6.4\cdot10^{31}$\,m$^{-3}$ in the Sun, $G_F=1.1\cdot10^{-5}$\,GeV, $\Delta m^2=7.6\cdot10^{-5}$\,eV$^2$ and $E=(0-10)$\,MeV resulting in $x=0.27[(0-10)\,\text{MeV}]$. Assuming now $E=10$\,MeV, we obtain $\sin(2\theta_{\text{eff}})=0$ and $\cos(2\theta_{\text{eff}})=1$, hence $\theta_{\text{eff}}=\frac{\pi}{2}$:
+which as usual leads to:
 \[
-\ket{\nu_e}=\cos\theta_{\text{eff}}\ket{\nu_1}+\sin\theta_{\text{eff}}\ket{\nu_2}\simeq\ket{\nu_2}
+\text{prob}(\nu_\alpha\to\nu_\beta)=p_{\alpha\beta}=\sin^2(2\theta_{\text{eff}})\sin^2\left(\frac{\Delta m^2_{\text{eff}}L}{4E}\right)
 \]
-This results in:
-\[
-|\braket{\nu_e}{\nu_e(T,L)}|^2=\left\{
-\begin{aligned}
-&1-\frac{\sin^2(2\theta)}{2} &&\text{low energy}\\
-&\sin^2\theta &&\text{high energy}
-\end{aligned}\right.
-\]
-Considering the three families, the mixing matrix $U$ is a $3\times3$ complex matrix with 18 parameters, 9 real ones and 9 phases. However, there are some constraints which reduce these degrees of freedom:
+% The quantity $x$ is equal to $x=\frac{2EG_Fn_e\sqrt{2}}{\Delta m^2}$, to give some numbers we find $n_e=6.4\cdot10^{31}$\,m$^{-3}$ in the Sun, $G_F=1.1\cdot10^{-5}$\,GeV, $\Delta m^2=7.6\cdot10^{-5}$\,eV$^2$ and $E=(0-10)$\,MeV resulting in $x=0.27[(0-10)\,\text{MeV}]$. Assuming now $E=10$\,MeV, we obtain $\sin(2\theta_{\text{eff}})=0$ and $\cos(2\theta_{\text{eff}})=1$, hence $\theta_{\text{eff}}=\frac{\pi}{2}$:
+% \[
+% \ket{\nu_e}=\cos\theta_{\text{eff}}\ket{\nu_1}+\sin\theta_{\text{eff}}\ket{\nu_2}\simeq\ket{\nu_2}
+% \]
+% This results in:
+% \[
+% |\braket{\nu_e}{\nu_e(T,L)}|^2=\left\{
+% \begin{aligned}
+% &1-\frac{\sin^2(2\theta)}{2} &&\text{low energy}\\
+% &\sin^2\theta &&\text{high energy}
+% \end{aligned}\right.
+% \]
+Considering now the three families, the mixing matrix $U$ is a $3\times3$ complex matrix with 18 parameters, 9 real ones and 9 phases. However, there are some constraints which reduce these degrees of freedom:
 \[
 \begin{aligned}
 &\bullet \sum_i|U_{\alpha i}|^2=1 &&\text{removes 3 real parameters}\\
@@ -879,13 +911,90 @@ Therefore, with two families we cannot have CP violation. Let's look now at the 
 In this case, it might be possible that $p(\nu_\alpha\to\nu_\beta)\neq p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)$. The amount of CP violation can be quantified:
 \begin{align*}
 p(\nu_\alpha\to\nu_\beta)-p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)&=\sum_{jk}U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*\exp{-i\frac{\Delta m^2L}{4E}}-\sum_{jk}(\text{h.c.})\exp{-i\frac{\Delta m^2L}{4E}}\\
-&=\sum_{jk}2\mathfrak{Im}[U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*]\exp{-i\frac{\Delta m^2L}{4E}}
+&=\sum_{jk}2\underbrace{\mathfrak{Im}[U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*]}_{\text{Jarlskog invariant}}\exp{-i\frac{\Delta m^2L}{4E}}
 \end{align*}
-The quantity between square brackets is the \textbf{Jarlskog invariant}:
+The \textbf{Jarlskog invariant} measures the amount of CP violation and it is parametrized as:
 \[
 J=c_{12}s_{12}c_{23}s_{23}c_{13}^2s_{13}\sin(\delta)
 \]
-What we do not know about neutrinos is the \textbf{hierarchy} of their masses and whether they are a Dirac or Majorana particle, i.e. if neutrinos are their own anti-particle or not. In the case neutrinos are Dirac particles, it is possible to switch from left- to right-handed and vice-versa with a Lorentz transformation (LT) and to their respective anti-particle with a CPT transformation.
+Notice that in the case of oscillations in vacuum, we cannot know the sign of $\Delta m^2=m_2^2-m_1^2$. The frequency depends on it, but we do not know if $m_2>m_1$ or $m_2<m_1$. Instead, with oscillations in a medium, we exploit the fact that the sign of $x$ corresponds to the sign of $\Delta m^2$, which modifies the amplitude of oscillations. Oscillations in vacuum do not give us sensitivity on the mass order, while they do when we work with matter.\\
+To have a better control on the frequency, instead of using solar neutrinos we work with reactor neutrinos. Reactors emit neutrons from uranium and plutonium, these neutrons then interact:
+\[
+n\to p+e^-+\overline{\nu}_e
+\]
+This gives us 6 $\overline{\nu}_e$ per fission, i.e. a flux of $2\cdot10^{20}\overline{\nu}_e/s$ per GW. How do we detect these anti-neutrinos? The golden channel is the inverse beta-decay:
+\[
+\overline{\nu}_e+p\to e^++n
+\]
+which has a cross section $\sim63\cdot10^{44}$\,cm$^2$/fission and a threshold of 1.8 MeV. An experiment who used reactor neutrinos is \textbf{KamLAND} located in Japan and surrounded by more than 50 nuclear reactors of various nuclear power plants. We know the average distance and with inverse beta decay it is possible to measure the energy of $\overline{\nu}_e$. The ratio $L_0/E_{\overline{\nu}_e}$ gives a strong proof of neutrino oscillations. SNO measures $\theta_{12}$ but gives no information about $\Delta m^2$, while KamLAND gives us an idea of $\Delta m^2$ from the frequency but it is not very precise. The most precise oscillation parameters are obtained combining reactor and solar results.\\
+Moving now the sources of higher energies we have atmospheric neutrinos, $E\sim$\,GeV. Atmospheric neutrinos are produced in cosmic rays shower:\\
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a) {$\pi^+$};
+    \vertex [right=of a] (b) {$\mu^++\nu_\mu$};
+    \vertex [below=1cm of b] (c);
+    \vertex [right=0.75cm of c] (d) {$e^++\nu_e+\overline{\nu}_\mu$};
+    % \vertex [below left=1cm and 0.4cm of c] (d);
+    % \vertex [above left=1cm and 0.4cm of b] (a);
+    % \vertex [left=of a] (i1) {$n$};
+    % \vertex [left=of d] (i2) {$n$};
+    % \vertex[above right of=a] (f1) {$p$};
+    % \vertex[right of=b] (f2) {$e^-$};
+    % \vertex[right of=c] (f3) {$e^-$};
+    % \vertex[below right of=d] (f4) {$p$};
+
+    \diagram* {
+    (a) -> [plain] (b),
+    (b) -- [plain] (c),
+    (c) -> [plain] (d),
+      % (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
+      % (i1) -- [fermion] (a),
+      % (i2) -- [fermion] (d),
+      % (a) -- [fermion] (f1),
+      % (b) -- [fermion] (f2),
+      % (c) -- [fermion] (f3),
+      % (d) -- [fermion] (f4),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a) {$\pi^-$};
+    \vertex [right=of a] (b) {$\mu^-+\overline{\nu}_\mu$};
+    \vertex [below=1cm of b] (c);
+    \vertex [right=0.75cm of c] (d) {$e^-+\overline{\nu}_e+\nu_\mu$};
+    % \vertex [below left=1cm and 0.4cm of c] (d);
+    % \vertex [above left=1cm and 0.4cm of b] (a);
+    % \vertex [left=of a] (i1) {$n$};
+    % \vertex [left=of d] (i2) {$n$};
+    % \vertex[above right of=a] (f1) {$p$};
+    % \vertex[right of=b] (f2) {$e^-$};
+    % \vertex[right of=c] (f3) {$e^-$};
+    % \vertex[below right of=d] (f4) {$p$};
+
+    \diagram* {
+    (a) -> [plain] (b),
+    (b) -- [plain] (c),
+    (c) -> [plain] (d),
+      % (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
+      % (i1) -- [fermion] (a),
+      % (i2) -- [fermion] (d),
+      % (a) -- [fermion] (f1),
+      % (b) -- [fermion] (f2),
+      % (c) -- [fermion] (f3),
+      % (d) -- [fermion] (f4),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+Summarizing, what we know about neutrinos is that we have three families, What we do not know about neutrinos is the \textbf{hierarchy} of their masses and whether they are a Dirac or Majorana particle, i.e. if neutrinos are their own anti-particle or not. In the case neutrinos are Dirac particles, it is possible to switch from left- to right-handed and vice-versa with a Lorentz transformation (LT) and to their respective anti-particle with a CPT transformation.
 \begin{center}
 \begin{tikzpicture}[
 %roundnode/.style={circle, draw=green!60, fill=green!5, very thick, minimum size=7mm},
