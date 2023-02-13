@@ -558,11 +558,11 @@ This particular mechanism can be used to produce (solar) or detect (DM halo) axi
 QCD tells us that the mass range is between 1 and 100 $\mu$eV while cosmology tells us that they are non-relativistic, although they have a very small mass. they are considered as cold DM candidates, even if experiments are much more difficult. Axions searches were usually left behind but they are now starting to be considered seriously since WIMPs are not in a good shape.
 \newpage
 \section{Neutrinos}
-We now move our attention to \textbf{neutrinos} and see when they decoupled from plasma:
+We now move our attention to \textbf{neutrinos} and, as done before, we start from cosmology to see when they decoupled from plasma. The idea is that this decoupling takes place when $\Gamma\le H$, where $\Gamma$ is given by:
 \[
-\Gamma=\sigma n_ec\to\Gamma\le H
+\Gamma=\sigma n_ec
 \]
-Neutrinos are weakly interactive particles:
+Neutrinos are weakly interactive particles and electrons are fermions, so we find that:
 \[
 \left\{
 \begin{aligned}
@@ -576,7 +576,7 @@ $H$ is proportional to $\sqrt{G_F}(kT)^2$ so we find:
 \[
 \frac{\Gamma}{H}=\frac{G_F^2}{\sqrt{G_F}}(kT)^3=1\Rightarrow T=10^{10}\,\text{K}
 \]
-Which means one second after the Big Bang, resulting in C$\nu$B. As the Universe expanded, temperature decreased and at a certain point, corresponding to a temperature $T_1$ photons disentangled from neutrinos, resulting in a sort of \textit{jump} to $T_2$ for photons.
+We set the ratio $\frac{\Gamma}{H}$ equal to 1 to find the temperature at which the interaction rate starts to be smaller than $H$. The temperature we obtain means that this decoupling took place one second after the Big Bang, resulting in the \textbf{cosmic neutrino background} C$\nu$B. For photons, this decoupling took place roughly 300 years after the Big Bang, which is reasonable since neutrinos are weakly interactive. Unlike CMB, we are not able to detect C$\nu$B, therefore it is not possible to estimate its temperature. However, we can still estimate it indirectly: at very high temperature, the Universe mainly consisted of neutrinos, electrons, positrons and photons all in thermal equilibrium with each other. As temperature cooled down, neutrinos decoupled from the rest of matter and all leptons and photons interactions with these neutrinos stopped. Despite this decoupling, neutrinos and photons remained at the same temperature but when the temperature dropped below the double the mass of electrons $T_1\sim1$\,MeV electrons and positrons annihilated, transferring their heat and entropy to the photons and therefore increasing their temperature, resulting in a sort of \textit{jump} to $T_2$.
 \begin{center}
 \begin{tikzpicture}
   %\draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
@@ -588,7 +588,7 @@ Which means one second after the Big Bang, resulting in C$\nu$B. As the Universe
   \draw[color=black] [domain=0:1.25] plot (\x,-\x+3);
   \draw[color=red] [domain=1.25:2.8] plot(\x,-\x+4) node[right] {$\gamma$};
   \draw[color=red] (1.25,1.75) -- (1.25, 2.75);
-  \draw[dashed, color=black] (1.25,1.75) -- (0,1.75) node[left] {$T_1$};
+  \draw[dashed, color=black] (1.25,1.75) -- (0,1.75) node[left] {$T_1\sim1$\,MeV};
   \draw[dashed, color=black] (1.25,2.75) -- (0,2.75) node[left] {$T_2$};
   \draw[dashed, color=black] (2.8, 1.2) -- (2.8,0) node[below] {today};
   % \x r means to convert '\x' from degrees to _r_adians:
@@ -600,25 +600,26 @@ The CMB temperature today is $T_0=2.7$\,K: if we could know the jump from $T_1$ 
 \[
 S\propto g\frac{\varepsilon(T)}{T}
 \]
-where we are considering only photons. Since $\varepsilon(T)\propto gT^4$, we have $S\propto gT^3$ hence:
+where we are considering only photons and $g$ is the effective number of degrees of freedom. Since from black body radiation we know that $\varepsilon(T)\propto gT^4$, we have $S\propto gT^3$ hence:
 \[
 g_1T_1^3=g_2T_2^3
 \]
-By integrating $\frac{d\varepsilon}{d\nu}$ to find $\varepsilon$, we obtain $g_2=2$ and $g_1=2+\frac{7}{4}+\frac{7}{4}$ resulting in:
+By integrating $\frac{d\varepsilon}{d\nu}$ to find $\varepsilon$, we obtain $g=2$ for photons and $g_=\frac{7}{4}$ for electrons and positrons  resulting in:
 \[
-\frac{T_1}{T_2}=\left(\frac{g_2}{g_1}\right)^{1/3}=0.7
+\frac{T_1}{T_2}=\left(\frac{g_2}{g_1}\right)^{1/3}=\left(\frac{2}{2+\frac{7}{4}+\frac{7}{4}}\right)^{1/3}=0.7
 \]
-Therefore we finally find $T_{0,\nu}=0.7\cdot2.7$\,K$=1.05$\,K. With similar arguments we can also compute the number of neutrinos $n_\nu$:
+Therefore we finally find $T_{0,\nu}=0.7\cdot T_{0,\gamma}=0.7\cdot2.7$\,K$=1.05$\,K.\\
+With similar arguments we can also compute the number of neutrinos $n_\nu$:
 \[
-n_{\nu_i}=\frac{3}{11}n_\gamma\Rightarrow n_\nu=\frac{9}{11}n_\gamma=3.4\cdot10^8\,\text{m$^{-3}$}
+n_{\nu_i}=\frac{3}{11}n_\gamma\Rightarrow n_\nu=\frac{9}{11}n_\gamma\approx3.4\cdot10^8\,\text{m$^{-3}$}
 \]
 where the index $i$ is the one for the three families $e,\mu,\tau$. The number of neutrinos and photons are roughly the same, energy density tells us:
 \[
-\frac{\varepsilon}{\varepsilon_c}=\frac{n_\nu m_\nu}{\varepsilon_c}=\Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}
+\frac{\varepsilon}{\varepsilon_c}=\frac{n_\nu E_\nu}{\varepsilon_c}\ge\frac{n_\nu m_\nu}{\varepsilon_c}=\Omega_\nu
 \]
-From this, it is possible to put an upper limit to the neutrino mass:
+We do not know the energy of a single neutrino, but it cannot be smaller than its mass $m_\nu$. Neutrinos are the best candidate of hot DM so it is possible to put an upper limit to the neutrino mass:
 \[
-m_\nu=\sum_im_i<0.3\,\text{eV}
+\Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}\Rightarrow m_\nu=\sum_im_i<0.3\,\text{eV}
 \]
 This is just from cosmology, there is actually no experiment on Earth which can compete with this measure.\\
 How can we measure C$\nu$B? We look at some possibilities and we start with \textbf{single interaction detection}:
@@ -630,13 +631,31 @@ How can we measure C$\nu$B? We look at some possibilities and we start with \tex
 \end{aligned}
 \right.
 \]
-The observable here is the $Q$-value. In choosing the proper $\beta$ decaying nuclei, we would like to have a small half-life, a high fraction of decays at the endpoint and low $Q$-values are needed for neutrino mass experiments. How about electronic capture?
+The observable here is the Q-value. In choosing the proper $\beta$ decaying nuclei, we would like to have a small half-life, a high fraction of decays at the endpoint and low $Q$-values for neutrino mass experiments. How about electronic capture?
 \[
 (A,Z)\to(A,Z-1)^*+\nu_e \quad (A,Z-1)^*\to(A,Z-1)+E_i
 \]
-Here the measurable quantity is $E_i$, i.e. the de-excitation energy of the i-th atomic shell. In principle, the energy spectrum is given by a series of lines shaped by the neutrino phase-space and it does not allow us to measure the spectrum endpoint. However, due to uncertainty principle the lines have a natural width and this allows $E$ to reach the $Q$-value and produce a neutrino with zero energy. We need a nucleus with $E_i$ close to $Q$ to have a small suppression from the Breit-Wigner in the phase space.\\
-\textit{[bla bla bla manca mezza lezione dell'11 novembre ma mi stava facendo schifo rimedierò in futuro]}\\
-We have seen that neutrinos produced with a certain flavour at a source can be detected as neutrinos with a different flavour:
+Here the measurable quantity is $E_i$, i.e. the de-excitation energy of the i-th atomic shell. In principle, the energy spectrum is given by a series of lines shaped by the neutrino phase-space. The delta function in the phase-space does not allow us to measure the spectrum endpoint. However, due to uncertainty principle the lines have a natural width, the delta function has to be replaced with a Breit-Wigner distribution and this allows $E$ to reach the $Q$-value and produce a neutrino with zero energy. We need a nucleus with $E_i$ close to $Q$ to have a small suppression from the Breit-Wigner. If there is no overdensity in the neutrino distribution at the Earth then the detection is impossible. With no relic neutrinos overdensity, the requirements on the target mass are enormously demanding and upcoming experiments will only be sensitive to overdensity of relic neutrinos.\\
+In the last decade, we have focused on neutrinos coming from the Sun, where the main reaction for neutrinos production is:
+\[
+4p\to\text{$^4$He}+2e^++2\nu_e
+\]
+with a Q-value of $Q=26.73$\,MeV and neutrinos mean energy $\Braket{E_\nu}\approx0.3$\,MeV. There are models which relates the neutrino flux with the Sun luminosity, in particular the Standard Solar Model tells us that:
+\[
+\phi(\nu_e)=\frac{N(\nu_e)}{4\pi D^2}=6.4\cdot10^{10}\,\nu_e/\text{(cm$^2$s)}
+\]
+One of the first experiments to detect neutrinos produced in the Sun was the \textbf{Homestake experiment}, located in South Dakota and operating from 1970 to 1994. The detector used 380 m$^3$ of C$_2$Cl$^4$, with a 24\% abundance of $^{37}$Cl. After an interaction with a neutrino, the reaction which takes place is the following:
+\[
+\nu_e+\text{$^{37}$Cl}\to\text{$^{37}$Ar}+e^-
+\]
+And it has a threshold of $E_\nu=0.814$\,MeV. Due to the relatively short half-life of $^{37}$Ar, helium was periodically pumped in to collect the argon which was produced in the reaction and then infer the neutrino flux. Experimental results were very close to one third of theoretical predictions, but neither the calculations or the experiment seemed to be wrong and this puzzled scientists. This deficit became known as the \textbf{solar neutrinos problem}.\\
+The \textbf{Sudbury Neutrino Observatory} (SNO) in Canada solved this problem. SNO was located 2 km underground and used 1000 tons of ultra-pure heavy water contained in a sphere of 6 meters of radius. The sphere was surrounded by 9500 PMTs, the acrylic vessel surrounding the sphere was filled with 7300 tons of light water to shield from external background. Three types of reactions take place:
+\begin{itemize}
+    \item Charged Current: $\nu_e+d\to p+p+e^-$. Solar neutrinos have energy smaller than the mass of $\mu$ and $\tau$, hence only electron neutrinos can participate in this reaction. Most of the energy is transferred to the electron, which is then detectable via Cherenkov effect. Electrons are produced in all directions but there is a weak preference for the opposite direction with respect to the incoming direction of the neutrinos.
+    \item Neutral Current: $\nu_\alpha+d\to p+n+\nu_\alpha$, where $\alpha=e,\mu,\tau$. This is important because it is sensitive to all flavours with equal cross section. From the flux measured through this interaction it is possible to understand if the deficit observed in other experiments was due to the fact that they were sensitive only to electron neutrinos or if it was due to the theoretical model.
+    \item Elastic Scattering: $\nu_\alpha+e^-\to\nu_\alpha+e^-$, where $\alpha=e,\mu,\tau$. All three flavours of neutrinos can take place in this interaction through the exchange of a $Z$ boson, electronic neutrinos can also exchange a $W$ boson and therefore dominate this interaction. It has a low statistics but a strong direction sensitivity. 
+\end{itemize}
+First results showed that neutrinos changed their flavour during their travel from the Sun to the detector. The neutrino flux for muonic and tauonic flavour agreed with theoretical predictions, while for the electronic neutrinos the flux was roughly one third of the other two. Since the Sun produced only electronic neutrinos, this means that two thirds of the electronic neutrinos changed their flavour. This transition can be explained with the fact that neutrinos \textbf{oscillates}, which implied that they have a non-zero mass.
 \[
 \ket{\nu_\alpha}\longrightarrow\ket{\nu_\alpha},\ket{\nu_\beta},\ket{\nu_\gamma}
 \]
@@ -671,7 +690,7 @@ We can define $\Delta m_{jk}^2:=m_j^2-m_k^2$, so we have:
 \[
 p_{\alpha\beta}=\sum_{jk}U_{\alpha j}^*U_{\beta j}U_{\alpha k}U_{\beta k}^*\exp{-i\frac{\Delta m_{jk}^2L}{2E}}
 \]
-Consider now the simple case of having just 2 flavours. The mixing matrix can be written as:
+Consider now the simple case of having just 2 flavours. The \textbf{mixing matrix} can be written as:
 \[
 U=\left(\begin{array}{cc}
     \cos\theta & \sin\theta \\
@@ -691,11 +710,64 @@ p_{\alpha\beta}&=\left|U\mqty(\dmat{\exp{-i\frac{m_1^2L}{2E}},\exp{-i\frac{m_2^2
 \end{align*}
 From this, we can define:
 \[
-H_{\text{osc}}=U\mqty(\dmat{0,\frac{\Delta m^2_{21}L}{2E},\frac{\Delta m^2_{31}}{2E}})U^\dagger
+H_{\text{osc}}=U\mqty(\dmat{0,\frac{\Delta m^2_{21}}{2E},\frac{\Delta m^2_{31}}{2E}})U^\dagger
 \]
-$\Delta m^2$ is really small, so to see neutrinos oscillations with standard sources we need $L\sim10^3$\,km. Considering the neutrinos going through a medium, we add a term $\mqty(\dmat{V,0,0})$ to our Hamiltonian. For the case of 2 families, we get:
+$\Delta m^2$ is really small, so to see neutrinos oscillations with standard sources we need $L\sim10^3$\,km.\\
+Consider now the neutrinos going through matter, they can interact through the following Feynman diagrams:\\
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a) {$\nu_{e,\mu,\tau}$};
+    \vertex[below right of=a] (v1);
+    \vertex[above right of=v1] (b) {$\nu_{e,\mu,\tau}$};
+    \vertex[below of=v1] (v2);
+    \vertex[below left of=v2] (c) {$e,p,n$};
+    \vertex[below right of=v2] (d) {$e,p,n$};
+    \diagram* {
+    (a) -- [fermion] (v1),
+    (v1) -- [fermion] (b),
+    (v1) -- [photon, edge label=$Z$] (v2),
+    (c) -- [fermion] (v2),
+    (v2) -- [fermion] (d),
+      % (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
+      % (i1) -- [fermion] (a),
+      % (a) -- [fermion] (f1),
+      % (b) -- [fermion] (f2),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a) {$\nu_e$};
+    \vertex[below right of=a] (v1);
+    \vertex[above right of=v1] (b) {$e^-$};
+    \vertex[below of=v1] (v2);
+    \vertex[below left of=v2] (c) {$e^-$};
+    \vertex[below right of=v2] (d) {$\nu_e$};
+    \diagram* {
+    (a) -- [fermion] (v1),
+    (v1) -- [fermion] (b),
+    (v1) -- [photon, edge label=$W$] (v2),
+    (c) -- [fermion] (v2),
+    (v2) -- [fermion] (d),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+\end{minipage}\\
+The diagram on the left exists for all neutrino flavours and they can couple to electrons, protons, neutrons and neutrinos, while the one on the right exists only for electronic neutrinos and they can couple only to electrons.\\
+The energy of an electronic neutrino $\nu_e$ propagating through matter is enhanced by $V_{CC}$ and in a similar way all neutrino flavours get a potential from the $Z$ exchange $V_{NC}$. We simplify the system and consider only 2 families, so the structure of the matter potential is given by:
+\[
+V=\mqty(\dmat{V_{CC}+V_{NC},V_{NC}})
+\]
+Contributions proportional to the identity (in particular $V_{NC}$) do not affect neutrino oscillations, we then have to diagonalize:
 \begin{align*}
-H_{\text{osc}}^{\text{matter}}&=U\mqty(\dmat{0,\frac{\Delta m^2}{2E}})U^\dagger+\mqty(\dmat{V,0})+\mqty(\dmat{-\frac{V}{2},-\frac{V}{2}})\\
+H_{\text{osc}}^{\text{matter}}&=U\mqty(\dmat{0,\frac{\Delta m^2}{2E}})U^\dagger+\mqty(\dmat{V_{CC},0})\\
 &=\frac{\Delta m^2}{4E}U\mqty(\dmat{-1,+1})U^\dagger+\mqty(\dmat{\frac{V}{2},-\frac{V}{2}})\\
 &=\frac{\Delta m^2}{4E}\left(\begin{array}{cc}
     -\cos(2\theta) & \sin(2\theta) \\
@@ -732,7 +804,7 @@ This results in:
 &\sin^2\theta &&\text{high energy}
 \end{aligned}\right.
 \]
-Considering the three families, the mixing matrix $U$ is a $3\times3$ complex matrix with 18 parameters, 9 real ones and 9 phases. However, there are some constraints which reduces these degrees of freedom:
+Considering the three families, the mixing matrix $U$ is a $3\times3$ complex matrix with 18 parameters, 9 real ones and 9 phases. However, there are some constraints which reduce these degrees of freedom:
 \[
 \begin{aligned}
 &\bullet \sum_i|U_{\alpha i}|^2=1 &&\text{removes 3 real parameters}\\
@@ -779,7 +851,7 @@ Is this possible with only two families? With just two families we have (the siz
 \end{aligned}
 \right.
 \]
-From CPT conservation we have that:
+From CPT conservation we get:
 \[
 p(\nu_\alpha\to\nu_\alpha)=p(\overline{\nu}_\alpha\to\overline{\nu}_\alpha)
 \]
