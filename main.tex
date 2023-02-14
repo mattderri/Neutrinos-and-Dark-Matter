@@ -42,38 +42,9 @@
 \newcommand{\beginbox}[1]{\begin{tcolorbox}[width=\textwidth,colback={black!40},title={#1},colbacktitle={purple!55},coltitle=black]}
 \renewcommand{\endbox}{\end{tcolorbox}\noindent}
 % \begin{tcolorbox}[width=\textwidth,colback={yellow!50},title={Rosenbluth Cross Section},colbacktitle={gray!50},coltitle=black]
-\title{\textbf{Neutrinos and Dark Matter}}
+
+\title{\textbf{Appunti del corso di}\\\textbf{Neutrinos and Dark Matter}}
 \author{Matteo D'Errigo}
-
-% \begin{titlepage}
-%    \begin{center}
-%        \vspace*{1cm}
-
-%        \textbf{Thesis Title}
-
-%        \vspace{0.5cm}
-%         Thesis Subtitle
-            
-%        \vspace{1.5cm}
-
-%        \textbf{Author Name}
-
-%        \vfill
-            
-%        A thesis presented for the degree of\\
-%        Doctor of Philosophy
-            
-%        \vspace{0.8cm}
-     
-%        \includegraphics[width=0.4\textwidth]{university}
-            
-%        Department Name\\
-%        University Name\\
-%        Country\\
-%        Date
-            
-%    \end{center}
-% \end{titlepage}
 
 \begin{document}
 \maketitle
@@ -196,7 +167,7 @@ H^2(t)=\left(\frac{\Dot{a}(t)}{a(t)}\right)^2=\frac{8\pi G}{3c^2}\varepsilon(t)-
 \endbox
 Now we can perform some tricks, i.e. dividing everything by $H^2(t)$ and defining the \textbf{critical density} as:
 \[
-\frac{1}{\varepsilon_c(t)}:=\frac{8\pi G}{3c^2H^2(t)}
+\frac{1}{\varepsilon_c(t)}:=\frac{8\pi G}{3c^2H^2(t)} \quad \varepsilon_c(t_0)=4.9\pm0.3\,\text{GeV/m$^3$}
 \]
 Plugging this into the previous expression one gets:
 \[
@@ -427,7 +398,8 @@ There are some hypothesis on its nature,
 % \delta(\Vec{r})\xrightarrow[\text{FT}]{}\Vec{k}=\frac{1}{V}\int d^3re^{i\Vec{k}\cdot\Vec{r}}\delta(\Vec{r})
 % \]
 % From measurements, we understand that
-and measurements tell us that the large majority of dark matter is due to non-relativistic particles, i.e. \textbf{cold dark matter}. To get the correct value of DM amount in the Universe, we have to combine its non-relativistic nature with a cross section comparable with the one of the weak interaction:
+and measurements tell us that the large majority of dark matter is due to non-relativistic particles, i.e. \textbf{cold dark matter}. Observations tell us that hot dark matter contribute is very small, $\Omega_{\text{HDM}}7\cdot10^{-3}$.\\
+To get the correct value of DM amount in the Universe, we have to combine its non-relativistic nature with a cross section comparable with the one of the weak interaction:
 % Given a DM particle $\chi$, in principle we could observe two processes: \textbf{annihilation} of $\chi\chi$ into two Standard Model particles \textit{or} \textbf{production} of two $\chi\chi$ starting from two Standard Model particles. There is also a \textbf{dilution} effect due to the factor $a^3(t)$: given a density $n(t)=\frac{N}{a^3(t)}$ we can see how it evolves with time.
 % \[
 % \Dot{n}(t)=-\frac{3N}{a^4(t)}\Dot{a}(t)=-3n(t)H(t)
@@ -448,7 +420,7 @@ and measurements tell us that the large majority of dark matter is due to non-re
 \sigma=G_F^2m_\chi^2(\hbar c)^2\approx10^{-36}\,\text{cm$^2$} \Rightarrow m_\chi=5\,\text{GeV}
 \]
 This is telling us that we are dealing with \textbf{weakly interacting massive particles} (WIMP).\\
-In the Minimal Supersymmetric Standard Model (MSSM), every SM particle has a partner with a spin difference of $1/2$. In particular, for the gauge bosons we have the neutralinos $\chi_1, \chi_2, \chi_3$. Suppose now that $\chi_1$ is the lightest supsersymmetric particle and it is a WIMP candidate: how do we detect it? The idea is to observe \textbf{nuclear recoil} in elastic scattering. We do not look at electron recoil because in order to get the maximum energy transfer the mass of the target should be similar to the mass of the projectile. It is a better idea to use heavy nuclei, which can vary in a wide mass range since $m_\chi\in[5,100]$\,GeV.The recoil energy of the nucleus after the scatter of an angle $\theta$ in the center of mass is given by:
+In the Minimal Supersymmetric Standard Model (MSSM), every SM particle has a partner with a spin difference of $1/2$. In particular, for the gauge bosons we have the neutralinos $\chi_1, \chi_2, \chi_3$. Suppose now that $\chi_1$ is the lightest supsersymmetric particle and it is a WIMP candidate: how do we detect it? The idea is to observe \textbf{nuclear recoil} in elastic scattering. We do not look at electron recoil because in order to get the maximum energy transfer the mass of the target should be similar to the mass of the projectile. It is a better idea to use heavy nuclei, which can vary in a wide mass range since $m_\chi\in[5,100]$\,GeV. The recoil energy of the nucleus after the scatter of an angle $\theta$ in the center of mass is given by:
 \[
 E_{\text{NR}}=E_\chi 4\frac{m_\chi m_A}{(m_\chi+m_A)^2}\frac{1-\cos\theta}{2}
 \]
@@ -502,6 +474,7 @@ S(E,t)=S_0(E)+S_m(E)\cos[\omega(t-t_0)]
 This type of signal has the advantage of being model independent but it requires detector stability and a good control of the \textbf{background}. This represents the main challenge for experimental detection, presence of background does not allow to have a clear signal.\\
 Particles from the cosmos interact with the atmosphere, producing other particles. At the surface, we detect mostly muons and neutrons. Neutrons interact through strong force and low-energy neutrons can undergo elastic scatterings which mimic the signal we are looking for. The only way to protect our experiment from them is by providing some shielding. Hydrogen and polyethylene for example slow down the neutrons but a more convenient and used solution is to go \textbf{underground}. The Gran Sasso Laboratory in Italy is the largest one, SNOLAB in Canada is the deepest one (as Vignati said \textit{"there is an active mine there, so when you go to the laboratory you hear explosions and it is full of dust. Moreover, in Canada it is cold and underground it is hot so you arrive at the laboratory all dirty and sweaty. But you cannot go in like that, you would contaminate everything so all the scientists get naked and take a shower [big laughs]"}).\\
 Combination of different detection techniques (ionization, phonons and scintillation) allows us to discriminate between electron and nuclear recoils, thus to reduce the background.\\
+At the Gran Sasso Laboratory, \textbf{DAMA/LIBRA} tries to exploit the signal modulation to detect DM particles. The detector consists in 25 highly radiopure NaI(Tl) crystals of 9.70 kg each. Each crystal is coupled to two PMTs which are read in coincidence to reduce the noise. Pulse shape cuts reject PMT noise events and keep only the scintillation ones. The experiment observed a peculiar signal modulation which satisfy all the conditions required for a dark matter particle with high statistical significance. Unfortunately, no other experiment has been able to reproduce such results. The \textbf{COSINE} collaboration in Korea aims to test the DAMA/LIBRA claim by using 61.3 kg of NaI(Tl), improving the event selection, which allows to lower the energy threshold and a better time-dependent background model. The \textbf{SABRE} collaboration is planning to build two detectors still based on NaI(Tl) crystals, one in Italy and one in Australia in order to strengthen the reliability of the result against possible seasonal systematic effects.\\
 Together with WIMPs, another possible DM particle candidates are the \textbf{axions}. To understand how they come up, we need to take a step back and look at the neutron electrical dipole moment. We know the neutron is made of three quarks, $n=udd$. We expect these three quarks to be randomly distributed and from QCD we expect:
 \[
 |d_n|\approx10^{-13}\sqrt{1-\cos\theta}\,e\,\text{cm}
@@ -615,11 +588,11 @@ n_{\nu_i}=\frac{3}{11}n_\gamma\Rightarrow n_\nu=\frac{9}{11}n_\gamma\approx3.4\c
 \]
 where the index $i$ is the one for the three families $e,\mu,\tau$. The number of neutrinos and photons are roughly the same, energy density tells us:
 \[
-\frac{\varepsilon}{\varepsilon_c}=\frac{n_\nu E_\nu}{\varepsilon_c}\ge\frac{n_\nu m_\nu}{\varepsilon_c}=\Omega_\nu
+\Omega_\nu=\frac{\varepsilon}{\varepsilon_c}=\frac{n_\nu E_\nu}{\varepsilon_c}\ge\frac{n_\nu m_\nu}{\varepsilon_c}
 \]
 We do not know the energy of a single neutrino, but it cannot be smaller than its mass $m_\nu$. Neutrinos are the best candidate of hot DM so it is possible to put an upper limit to the neutrino mass:
 \[
-\Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}\Rightarrow m_\nu=\sum_im_i<0.3\,\text{eV}
+\Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}\Rightarrow m_{\text{tot}}=\sum_im_i<0.3\,\text{eV}
 \]
 This is just from cosmology, there is actually no experiment on Earth which can compete with this measure.\\
 How can we measure C$\nu$B? We look at some possibilities and we start with \textbf{single interaction detection}:
@@ -1119,13 +1092,13 @@ $\beta\beta0\nu$ can only occur if neutrinos are Majorana particles and if neutr
     \vertex [above left=1cm and 0.4cm of b] (a);
     \vertex [left=of a] (i1) {$n$};
     \vertex [left=of d] (i2) {$n$};
-    \vertex[above right of=a] (f1) {$p$};
+    \vertex[right of=a] (f1) {$p$};
     \vertex[right of=b] (f2) {$e^-$};
     \vertex[right of=c] (f3) {$e^-$};
-    \vertex[below right of=d] (f4) {$p$};
+    \vertex[right of=d] (f4) {$p$};
 
     \diagram* {
-      (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
+      (a) -- [photon, edge label'=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label'=$W$] (d) ,
       (i1) -- [fermion] (a),
       (i2) -- [fermion] (d),
       (a) -- [fermion] (f1),
@@ -1137,5 +1110,11 @@ $\beta\beta0\nu$ can only occur if neutrinos are Majorana particles and if neutr
 \end{tikzpicture}
 \end{center}
 This is called \textbf{matter creation} because it is a process which \textit{favour} creation of matter instead of anti-matter. The cross in the diagram corresponds to the \textbf{chirality flip} which is proportional to $m^2_{\beta\beta}=|\sum_jU_{ej}^2m_j|^2$ and it depends on the effective Majorana neutrino mass.\\
-The \textbf{CUORE experiment} is currently investigating $\beta\beta0\nu$ in $^{130}$Te. It uses 742 kg of TeO$_2$ crystals ($\sim$246 kg of $^{130}$Te) and it looks for peaks around the known decay energy of $^{130}$Te of $Q\approx2.5$\,MeV.
+The \textbf{CUORE experiment} is currently investigating $\beta\beta0\nu$ in $^{130}$Te. It uses 742 kg of TeO$_2$ crystals ($\sim$246 kg of $^{130}$Te) and it looks for peaks around the known decay energy of $^{130}$Te.\\
+There is still one last topic that we will not cover in detail. The observed flux of reactor neutrinos shows some inconsistencies with three flavour oscillations, especially in the measurements relative to a short baseline, namely the distance from the reactor to the detector. This deficit can be interpreted as a \nth{4} mass eigenstate which does not take place in the interactions, i.e. it does not have a flavour eigenstate, called \textbf{sterile neutrinos}. However, we must remain cautious because it is based on our knowledge of reactor neutrinos, which is hard to know precisely because of the numerous isotopes which can be present in the reaction. Computing such a spectrum is a very difficult job and the point is that no one wants to do this job.\\
+Another problem is the absolute mass scale. As we have seen, we have constraints from cosmology and $\beta\beta0\nu$, together with measurements of beta decay which gives us information about the mass of the electronic neutrino. From beta decay, we count the number of electrons as a function of their energy. To get information near the Q-values, we have to improve our resolution and to do that we have to filter electrons which do not have an energy larger than a chosen threshold. This selection is done by introducing a potential in the experimental apparatus, with a width large enough so that the tunnelling probability is basically zero. However, this is not a flux of collimated electrons, so a magnetic field aligns all the electrons in order to make them parallel to the $\hat{x}$ axis.\\ \textbf{KATRIN} was designed based on this idea and it uses 200 tons of tritium, which has one of the least energetic beta decays:
+\[
+\text{$^3_1$H}\to\text{$^3_2$He}+e^-+\overline{\nu}_e
+\]
+The electron and the neutrino share only 18.6 keV of energy between them.  If the neutrino is a massless particle, there is no lower bound to the energy the neutrino can carry, so the electron energy spectrum should extend all the way to the 18.6 keV limit. On the other hand, if the neutrino has mass, the electron spectrum should drop off short of the total energy limit and have a different shape. First results put an upper bound of electron neutrino mass to 1.1 eV which was reduced nowadays to 0.8 eV. 
 \end{document}
