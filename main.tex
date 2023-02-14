@@ -836,7 +836,104 @@ which as usual leads to:
 % &\sin^2\theta &&\text{high energy}
 % \end{aligned}\right.
 % \]
-Considering now the three families, the mixing matrix $U$ is a $3\times3$ complex matrix with 18 parameters, 9 real ones and 9 phases. However, there are some constraints which reduce these degrees of freedom:
+Notice that in the case of oscillations in vacuum, we cannot know the sign of $\Delta m^2=m_2^2-m_1^2$. The frequency depends on it, but we do not know if $m_2>m_1$ or $m_2<m_1$. Instead, with oscillations in a medium, we exploit the fact that the sign of $x$ corresponds to the sign of $\Delta m^2$, which modifies the amplitude of oscillations. Oscillations in vacuum do not give us sensitivity on the mass order, while they do when we work with matter.\\
+To have a better control on the frequency, instead of using solar neutrinos we work with reactor neutrinos. Reactors emit neutrons from uranium and plutonium, these neutrons then interact:
+\[
+n\to p+e^-+\overline{\nu}_e
+\]
+This gives us 6 $\overline{\nu}_e$ per fission, i.e. a flux of $2\cdot10^{20}\overline{\nu}_e/s$ per GW. How do we detect these anti-neutrinos? The golden channel is the inverse beta-decay:
+\[
+\overline{\nu}_e+p\to e^++n
+\]
+which has a cross section $\sim63\cdot10^{44}$\,cm$^2$/fission and a threshold of 1.8 MeV. An experiment who used reactor neutrinos is \textbf{KamLAND} located in Japan and surrounded by more than 50 nuclear reactors of various nuclear power plants. We know the average distance and with inverse beta decay it is possible to measure the energy of $\overline{\nu}_e$. The ratio $L_0/E_{\overline{\nu}_e}$ gives a strong proof of neutrino oscillations. SNO measures $\theta_{12}$ but gives no information about $\Delta m^2$, while KamLAND gives us an idea of $\Delta m^2$ from the frequency but it is not very precise. The most precise oscillation parameters are obtained combining reactor and solar results.\\
+Moving now the sources of higher energies we have atmospheric neutrinos, $E\sim$\,GeV. Atmospheric neutrinos are produced in cosmic rays shower:\\
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a) {$\pi^+$};
+    \vertex [right=of a] (b) {$\mu^+$};
+    \vertex [below right=0.08cm and 0.65cm  of b] (prova) {$+\;\nu_\mu$};
+    \vertex [below=1cm of b] (c);
+    \vertex [right=0.75cm of c] (d) {$e^++\nu_e+\overline{\nu}_\mu$};
+    % \vertex [below left=1cm and 0.4cm of c] (d);
+    % \vertex [above left=1cm and 0.4cm of b] (a);
+    % \vertex [left=of a] (i1) {$n$};
+    % \vertex [left=of d] (i2) {$n$};
+    % \vertex[above right of=a] (f1) {$p$};
+    % \vertex[right of=b] (f2) {$e^-$};
+    % \vertex[right of=c] (f3) {$e^-$};
+    % \vertex[below right of=d] (f4) {$p$};
+
+    \diagram* {
+    (a) -> [plain] (b),
+    (b) -- [plain] (c),
+    (c) -> [plain] (d),
+      % (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
+      % (i1) -- [fermion] (a),
+      % (i2) -- [fermion] (d),
+      % (a) -- [fermion] (f1),
+      % (b) -- [fermion] (f2),
+      % (c) -- [fermion] (f3),
+      % (d) -- [fermion] (f4),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a) {$\pi^-$};
+    \vertex [right=of a] (b) {$\mu^-$};
+    \vertex [below right=0.08cm and 0.65cm  of b] (prova) {$+\;\overline{\nu}_\mu$};
+    \vertex [below=1cm of b] (c);
+    \vertex [right=0.75cm of c] (d) {$e^-+\overline{\nu}_e+\nu_\mu$};
+    % \vertex [below left=1cm and 0.4cm of c] (d);
+    % \vertex [above left=1cm and 0.4cm of b] (a);
+    % \vertex [left=of a] (i1) {$n$};
+    % \vertex [left=of d] (i2) {$n$};
+    % \vertex[above right of=a] (f1) {$p$};
+    % \vertex[right of=b] (f2) {$e^-$};
+    % \vertex[right of=c] (f3) {$e^-$};
+    % \vertex[below right of=d] (f4) {$p$};
+
+    \diagram* {
+    (a) -> [plain] (b),
+    (b) -- [plain] (c),
+    (c) -> [plain] (d),
+      % (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
+      % (i1) -- [fermion] (a),
+      % (i2) -- [fermion] (d),
+      % (a) -- [fermion] (f1),
+      % (b) -- [fermion] (f2),
+      % (c) -- [fermion] (f3),
+      % (d) -- [fermion] (f4),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+From these processes, we expect a rate of muon neutrinos approximately double the rate of electron neutrinos. \textbf{Super-Kamiokande} in Japan consist of 50000 tons of ultra-pure water surrounded by PMTs. Neutrinos interaction in water can produce a charged particle which will give Cherenkov light. The idea was to detect both neutrinos coming from the top and from the bottom, with the latter having the opportunity to oscillate. By looking at the difference between top and bottom, it is possible to measure neutrinos oscillations. By looking at the data, there was no evidence on oscillation in the $e$-signal, while it was present in the $\mu$-signal. Moreover, if $\nu_\mu$ oscillate into $\nu_e$, we would see more $\nu_e$ at a precise value of $\cos\theta$ but that is not the case: $\nu_\mu$ oscillate into something else, a neutrino of a new flavour $\nu_\tau$.\\
+Oscillations tell us that neutrinos have mass and that neutrinos flavour eigenstates $(\nu_e,\nu_\mu,\nu_\tau)$ are a mixture of mass eigenstates $(\nu_1,\nu_2,\nu_3)$. Measurements tell us the sign of $\Delta m^2$:
+\[
+\Delta m^2_{\text{atm}}\sim2.5\cdot10^{-3}\,\text{eV$^{-2}$} \quad \Delta m^2_{\text{sol}}\sim7.5\cdot10^{-5}\,\text{eV$^{-2}$}
+\]
+However, we do not know the sign of $\Delta m^2$, since the leading order vacuum oscillation formula is only sensitive to $\sin^2(\Delta m^2)$.
+\begin{figure}[h]
+    \centering
+    \includegraphics{hierarchy.jpg}
+    \caption{Pictorial view of current results}
+    \label{hierarchy}
+\end{figure}\\
+\noindent
+The hierarchical structure of the mass is still unknown and this is known as the \textbf{hierarchy problem}. From this, it is possible to conclude that the third mixing angle $\theta_{13}$ which is the amount of $\nu_e$ in the \nth{3} state is much smaller compared to the other two mixing angles.\\
+The \textbf{Daya Bay experiment} consists of eight detectors, clustered in three locations within 1.9 km of six nuclear reactors. Each detector consists of 20 tons of liquid scintillator surrounded by PMTs. The experiment is designed to measure the mixing angle $\theta_{13}$ using anti-neutrinos produced in the nearby reactors, obtaining $\theta_{13}\neq0$:
+\[
+\sin^2(2\theta_{13})=0.084\pm0.005\Rightarrow \theta_{13}\approx8^\circ
+\]
+Considering now the three families, the mixing matrix $U$ becomes a $3\times3$ complex matrix with 18 parameters, 9 real ones and 9 phases. However, there are some constraints which reduce these degrees of freedom:
 \[
 \begin{aligned}
 &\bullet \sum_i|U_{\alpha i}|^2=1 &&\text{removes 3 real parameters}\\
@@ -862,11 +959,11 @@ U=\begin{pmatrix}
     0 & 0 & 1
 \end{pmatrix}
 \]
-The phase $\delta$ is responsible for \textbf{CP violation} and it is crucial to have three families. CP violation means that:
+The phase $\delta$ is responsible for \textbf{CP violation} and it is crucial to have oscillation between three families. CP violation means that:
 \[
 p(\nu_\alpha\to\nu_\beta)\neq p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)
 \]
-Is this possible with only two families? With just two families we have (the size of the box represents the probability of oscillating into one family or another):
+If $\theta_{13}$ was zero, the matrix in the middle would reduce to the identity and we would have mixing between just two families, making it impossible to have CP violation. If this was the case, we would then have (sizes of the boxes represent the probability of oscillating into one family or another):
 \[
 \left\{
 \begin{aligned}
@@ -917,84 +1014,9 @@ The \textbf{Jarlskog invariant} measures the amount of CP violation and it is pa
 \[
 J=c_{12}s_{12}c_{23}s_{23}c_{13}^2s_{13}\sin(\delta)
 \]
-Notice that in the case of oscillations in vacuum, we cannot know the sign of $\Delta m^2=m_2^2-m_1^2$. The frequency depends on it, but we do not know if $m_2>m_1$ or $m_2<m_1$. Instead, with oscillations in a medium, we exploit the fact that the sign of $x$ corresponds to the sign of $\Delta m^2$, which modifies the amplitude of oscillations. Oscillations in vacuum do not give us sensitivity on the mass order, while they do when we work with matter.\\
-To have a better control on the frequency, instead of using solar neutrinos we work with reactor neutrinos. Reactors emit neutrons from uranium and plutonium, these neutrons then interact:
-\[
-n\to p+e^-+\overline{\nu}_e
-\]
-This gives us 6 $\overline{\nu}_e$ per fission, i.e. a flux of $2\cdot10^{20}\overline{\nu}_e/s$ per GW. How do we detect these anti-neutrinos? The golden channel is the inverse beta-decay:
-\[
-\overline{\nu}_e+p\to e^++n
-\]
-which has a cross section $\sim63\cdot10^{44}$\,cm$^2$/fission and a threshold of 1.8 MeV. An experiment who used reactor neutrinos is \textbf{KamLAND} located in Japan and surrounded by more than 50 nuclear reactors of various nuclear power plants. We know the average distance and with inverse beta decay it is possible to measure the energy of $\overline{\nu}_e$. The ratio $L_0/E_{\overline{\nu}_e}$ gives a strong proof of neutrino oscillations. SNO measures $\theta_{12}$ but gives no information about $\Delta m^2$, while KamLAND gives us an idea of $\Delta m^2$ from the frequency but it is not very precise. The most precise oscillation parameters are obtained combining reactor and solar results.\\
-Moving now the sources of higher energies we have atmospheric neutrinos, $E\sim$\,GeV. Atmospheric neutrinos are produced in cosmic rays shower:\\
-\begin{minipage}{0.5\textwidth}
-\begin{center}
-\begin{tikzpicture}
-  \begin{feynman}
-    \vertex (a) {$\pi^+$};
-    \vertex [right=of a] (b) {$\mu^++\nu_\mu$};
-    \vertex [below=1cm of b] (c);
-    \vertex [right=0.75cm of c] (d) {$e^++\nu_e+\overline{\nu}_\mu$};
-    % \vertex [below left=1cm and 0.4cm of c] (d);
-    % \vertex [above left=1cm and 0.4cm of b] (a);
-    % \vertex [left=of a] (i1) {$n$};
-    % \vertex [left=of d] (i2) {$n$};
-    % \vertex[above right of=a] (f1) {$p$};
-    % \vertex[right of=b] (f2) {$e^-$};
-    % \vertex[right of=c] (f3) {$e^-$};
-    % \vertex[below right of=d] (f4) {$p$};
-
-    \diagram* {
-    (a) -> [plain] (b),
-    (b) -- [plain] (c),
-    (c) -> [plain] (d),
-      % (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
-      % (i1) -- [fermion] (a),
-      % (i2) -- [fermion] (d),
-      % (a) -- [fermion] (f1),
-      % (b) -- [fermion] (f2),
-      % (c) -- [fermion] (f3),
-      % (d) -- [fermion] (f4),
-    };
-  \end{feynman}
-\end{tikzpicture}
-\end{center}
-\end{minipage}\hfill
-\begin{minipage}{0.5\textwidth}
-\begin{center}
-\begin{tikzpicture}
-  \begin{feynman}
-    \vertex (a) {$\pi^-$};
-    \vertex [right=of a] (b) {$\mu^-+\overline{\nu}_\mu$};
-    \vertex [below=1cm of b] (c);
-    \vertex [right=0.75cm of c] (d) {$e^-+\overline{\nu}_e+\nu_\mu$};
-    % \vertex [below left=1cm and 0.4cm of c] (d);
-    % \vertex [above left=1cm and 0.4cm of b] (a);
-    % \vertex [left=of a] (i1) {$n$};
-    % \vertex [left=of d] (i2) {$n$};
-    % \vertex[above right of=a] (f1) {$p$};
-    % \vertex[right of=b] (f2) {$e^-$};
-    % \vertex[right of=c] (f3) {$e^-$};
-    % \vertex[below right of=d] (f4) {$p$};
-
-    \diagram* {
-    (a) -> [plain] (b),
-    (b) -- [plain] (c),
-    (c) -> [plain] (d),
-      % (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
-      % (i1) -- [fermion] (a),
-      % (i2) -- [fermion] (d),
-      % (a) -- [fermion] (f1),
-      % (b) -- [fermion] (f2),
-      % (c) -- [fermion] (f3),
-      % (d) -- [fermion] (f4),
-    };
-  \end{feynman}
-\end{tikzpicture}
-\end{center}
-\end{minipage}
-Summarizing, what we know about neutrinos is that we have three families, What we do not know about neutrinos is the \textbf{hierarchy} of their masses and whether they are a Dirac or Majorana particle, i.e. if neutrinos are their own anti-particle or not. In the case neutrinos are Dirac particles, it is possible to switch from left- to right-handed and vice-versa with a Lorentz transformation (LT) and to their respective anti-particle with a CPT transformation.
+Summarizing, what we know about neutrinos is that we have three families and that the flavour eigenstates are different than the mass eigenstates. Moreover, from measurements we know the mixing angles, $\Delta m^2_{12}$ and $|\Delta m^2_{13}|$. What we do not know about neutrinos is the hierarchy of their masses and whether they are a Dirac or Majorana particle, i.e. if neutrinos are their own anti-particle or not.\\
+The \textbf{JUNO experiment} in China aims to determine the neutrino mass hierarchy and perform precise measurements on the mixing matrix elements. The main detector consist of 20000 tons of liquid scintillator surrounded by more than 50000 PMTs located 700 m underground. The larger distance from reactors (compared to the Daya Bay experiment) makes it better able to distinguish between neutrino oscillations. The main approach of this detector is the observation of $\overline{\nu}_e$ coming from two nuclear plants. The expected rate of neutrinos reaching the detector is known, therefore the absence of a certain neutrino flavour can give indication of oscillations.\\
+In the case neutrinos are Dirac particles, it is possible to switch from left- to right-handed and vice-versa with a Lorentz transformation (LT) and to their respective anti-particle with a CPT transformation.
 \begin{center}
 \begin{tikzpicture}[
 %roundnode/.style={circle, draw=green!60, fill=green!5, very thick, minimum size=7mm},
@@ -1013,6 +1035,7 @@ Summarizing, what we know about neutrinos is that we have three families, What w
 \draw[<->] (antinuR.east) -- (antinuL.west) node [pos=0.5,below] {\footnotesize LT};
 \end{tikzpicture}
 \end{center}
+This is a Dirac neutrino, we have 4 states. However, neutrinos does not have a charge, they behave more like neutrons. Neutrinos have a lepton number which is not conserved in the Standard Model, so it can be possible to perform a simple change from left- to right-handed neutrinos.\\
 Majorana tackles the problem of reformulating the Dirac theory without the problems connected to the idea of negative energy states, underlining the non-existence for some particles of their respective anti-particles. Basic transitions of the Fermi theory are:
 \[
 n\to p+e^-+\overline{\nu}_e \quad p\to n+e^++\nu_e
@@ -1026,8 +1049,8 @@ Neutrinos emitted in these two processes have different helicity, which might in
 \node(e+)[below=of nuR] {$e^+$};
 
 \draw[<->] (nuL.east) -- (nuR.west);
-\draw[->] (nuL.south) -- (e-.north);
-\draw[->] (nuR.south) -- (e+.north);
+\draw[->] (nuL.south) -- (e-.north) node [pos=0.5, left] {\footnotesize{emits}};
+\draw[->] (nuR.south) -- (e+.north) node [pos=0.5, right] {\footnotesize{emits}};
 \end{tikzpicture}
 \end{center}
 The particle emitted with $e^-$ has positive helicity. If neutrinos have mass, then $\nu\to e^-$ is dominant with respect to $\nu\to e^+$. Theories are pushing in favour of the Majorana hypothesis but there is no experimental evidence for that.\\
@@ -1035,7 +1058,58 @@ The only process in which it is possible to distinguish between Majorana and Dir
 \[
 (A,Z)\to(A,Z+2)+2e^-+2\overline{\nu}_e
 \]
-A simultaneous decay of two nucleons in the same nucleus is extremely unlikely, the experimentally observed lifetimes of such decay processes are in the range $10^{18}-10^{21}$ years. $\beta\beta0\nu$ can only occur if neutrinos are Majorana particles and if neutrinos can change between left- and right-handed chirality between emission and absorption, i.e. between the two W vertices, which is possible for a non-zero neutrino mass.
+This can happen in some even-even nuclei where a single beta decay is energetically forbidden. Two beta decays are allowed, but a simultaneous decay of two nucleons in the same nucleus is extremely unlikely, the experimentally observed lifetimes of such decay processes are in the range $10^{18}-10^{21}$ years. The Feynman diagrams for such process are the following:
+\begin{center}
+\begin{tikzpicture}
+  \begin{feynman}
+  \vertex (i1) {$n$};
+  \vertex [below=3.5cm of i1] (i2) {$n$};
+  \vertex [right=of i1] (v1);
+  \vertex [right=of i2] (v2);
+  \vertex [right=of v1] (f1) {$p$};
+  \vertex [right=of v2] (f2) {$p$};
+  \vertex [below right=1cm of v1] (v11);
+  \vertex [above right=1cm of v2] (v22);
+  \vertex [right=of v11] (e1) {$e^-$};
+  \vertex [right=of v22] (e2) {$e^-$};
+  \vertex [below right=0.75cm of v11] (nu1) {$\overline{\nu}_e$};
+  \vertex [above right=0.75cm of v22] (nu2) {$\overline{\nu}_e$};
+    % \vertex (b);
+    % \vertex [below=of b] (c);
+    % \vertex [below left=1cm and 0.4cm of c] (d);
+    % \vertex [above left=1cm and 0.4cm of b] (a);
+    % \vertex [left=of a] (i1) {$n$};
+    % \vertex [left=of d] (i2) {$n$};
+    % \vertex[above right of=a] (f1) {$p$};
+    % \vertex[right of=b] (f2) {$e^-$};
+    % \vertex[right of=c] (f3) {$e^-$};
+    % \vertex[below right of=d] (f4) {$p$};
+
+    \diagram* {
+    (i1) -- [fermion] (v1) -- [fermion] (f1),
+    (i2) -- [fermion] (v2) -- [fermion] (f2),
+    (v1) -- [photon, edge label'=$W$] (v11),
+    (v2) -- [photon,edge label=$W$] (v22),
+    (v11) -- [fermion] (e1),
+    (v22) -- [fermion] (e2),
+    (nu1) -- [fermion] (v11),
+    (nu2) -- [fermion] (v22),
+      % (a) -- [photon, edge label=$W$] (b) -- [majorana, insertion=0.5, edge label=$\nu_M$] (c) -- [photon, edge label=$W$] (d) ,
+      % (i1) -- [fermion] (a),
+      % (i2) -- [fermion] (d),
+      % (a) -- [fermion] (f1),
+      % (b) -- [fermion] (f2),
+      % (c) -- [fermion] (f3),
+      % (d) -- [fermion] (f4),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+If neutrinos are their own anti-particle, the two neutrino lines in the diagram above can be connected. In other words, the neutrino emitted in the decay of the first neutron can be absorbed by the second neutron. This leads to neutrinoless double beta decay:
+\[
+(A,Z)\to(A,Z+2)+2e^-
+\]
+$\beta\beta0\nu$ can only occur if neutrinos are Majorana particles and if neutrinos can change between left- and right-handed chirality between emission and absorption, i.e. between the two W vertices, which is possible for a non-zero neutrino mass.
 \begin{center}
 \begin{tikzpicture}
   \begin{feynman}
@@ -1062,5 +1136,6 @@ A simultaneous decay of two nucleons in the same nucleus is extremely unlikely, 
   \end{feynman}
 \end{tikzpicture}
 \end{center}
-This is called \textbf{matter creation} because it is a process which \textit{favour} creation of matter instead of anti-matter. The cross in the diagram corresponds to the \textbf{chirality flip} which is proportional to $m^2_{\beta\beta}=|\sum_jU_{ej}^2m_j|^2$ and it depends on the effective Majorana neutrino mass. The CUORE experiment is currently investigating for $\beta\beta0\nu$ using $^{130}$Te.
+This is called \textbf{matter creation} because it is a process which \textit{favour} creation of matter instead of anti-matter. The cross in the diagram corresponds to the \textbf{chirality flip} which is proportional to $m^2_{\beta\beta}=|\sum_jU_{ej}^2m_j|^2$ and it depends on the effective Majorana neutrino mass.\\
+The \textbf{CUORE experiment} is currently investigating $\beta\beta0\nu$ in $^{130}$Te. It uses 742 kg of TeO$_2$ crystals ($\sim$246 kg of $^{130}$Te) and it looks for peaks around the known decay energy of $^{130}$Te of $Q\approx2.5$\,MeV.
 \end{document}
