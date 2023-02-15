@@ -121,7 +121,7 @@ m\Ddot{R}(t)=-G\frac{mM}{R^2(t)}
 \]
 We are interested in $\Ddot{R}(t)$ which is the acceleration per unit mass. Take into account now the \textbf{energy density}, defined as follows:
 \[
-\varepsilon=\int dt\Ddot{R}(t)\Dot{R}(t)=\int d\Dot{R}\Dot{R}(t)=\frac{\Dot{R}^2}{2}
+\varepsilon=\int dt\Ddot{R}(t)\Dot{R}(t)=\int d\Dot{R}\Dot{R}(t)=\frac{\Dot{R}^2(t)}{2}
 \]
 However, we can express $\Ddot{R}(t)$ from the dynamics of the test mass, resulting in:
 \[
@@ -135,7 +135,7 @@ We take a look at the possible values of $U$:
 \end{itemize}
 At this point we have to take into account that the sphere we are considering might change its volume and density, assuming that the total mass $M$ stays fixed:
 \[
-M=\frac{4}{3}\pi R^3(t)\rho(t)\to\Dot{R}^2=R_0^2\Dot{a}^2(t)=\frac{8}{3}\pi G\rho(t)R_0^2a^2(t)+2U
+M=\frac{4}{3}\pi R^3(t)\rho(t)\to\Dot{R}^2(t)=R_0^2\Dot{a}^2(t)=\frac{8}{3}\pi G\rho(t)R_0^2a^2(t)+2U
 \]
 where we used the fact that $R(t)=R_0a(t)$. Last thing left to do is to divide both sides by $R_0^2a^2(t)$ which gives us:
 \beginbox{Friedmann Equation (classical derivation)}
@@ -166,16 +166,18 @@ H^2(t)=\left(\frac{\Dot{a}(t)}{a(t)}\right)^2=\frac{8\pi G}{3c^2}\varepsilon(t)-
 \]
 \endbox
 Now we can perform some tricks, i.e. dividing everything by $H^2(t)$ and defining the \textbf{critical density} as:
+\beginbox{Critical Energy Density}
 \[
 \frac{1}{\varepsilon_c(t)}:=\frac{8\pi G}{3c^2H^2(t)} \quad \varepsilon_c(t_0)=4.9\pm0.3\,\text{GeV/m$^3$}
 \]
+\endbox
 Plugging this into the previous expression one gets:
 \[
 1-\frac{\varepsilon(t)}{\varepsilon_c(t)}=-\frac{kc^2}{R_0^2a^2(t)H^2(t)}
 \]
 This tells us that if we are able to measure the ratio $\frac{\varepsilon(t)}{\varepsilon_c(t)}$ we can tell the sign of $k$, hence the curvature of the Universe. The expression above can be rewritten in a more compact and elegant form:
 \[
-1=\Omega_\varepsilon+\Omega_c
+1=\Omega_\varepsilon(t)+\Omega_c(t)
 \]
 where $\Omega_\varepsilon=\frac{\varepsilon(t)}{\varepsilon_c(t)}$ and $\Omega_c=-\frac{kc^2}{R_0^2a^2(t)H^2(t)}$.\\
 Now we want to move even further and compute the ratio $\frac{\Ddot{a}(t)}{a(t)}$:
@@ -196,7 +198,7 @@ V(t)=\frac{4}{3}\pi R^3(t)=\frac{4}{3}\pi R_0^3a^3(t)\to\Dot{V}(t)=4\pi a^2(t)\D
 \]
 We substitute this in the expression above to find:
 \[
-\Dot{\varepsilon}(t)+3(\varepsilon(t)+p)\frac{\Dot{a}(t)}{a(t)}=0\Rightarrow\Dot{\varepsilon}(t)=-3\frac{\Dot{a}(t)}{a}(\varepsilon(t)+p)
+\Dot{\varepsilon}(t)+3(\varepsilon(t)+p)\frac{\Dot{a}(t)}{a(t)}=0\Rightarrow\Dot{\varepsilon}(t)=-3\frac{\Dot{a}(t)}{a}[\varepsilon(t)+p]
 \]
 Now that we know the expression for $\Dot{\varepsilon}(t)$ we can write:
 \[
@@ -228,7 +230,7 @@ It is also possible to divide by $H^2(t_0)$ to get:
 \]
 Nowadays, the dominant contribution is given by $\Omega_\Lambda^0$ while at the beginning of the Universe with a small value of $a(t)$, the term proportional to $\Omega_r^0$ was the dominant one. In the expression above, the energy contribution of $\varepsilon(t)$ had been splitted into contribution from matter $\varepsilon_m(t)$ and contribution from waves $\varepsilon_r(t)$. The Friedmann equation can be written as:
 \[
-\frac{H^2(t)}{H_0^2}=\frac{8\pi G}{3c^2H_0^2}\left[\frac{\varepsilon_m(0)}{a^3(t)}+\frac{\varepsilon_r(0)}{a^4(t)}\right]-\frac{kc^2}{R_0^2a^2(t)H_0^2}+\frac{\Lambda}{3H_0^2}
+\frac{H^2(t)}{H_0^2}=\frac{8\pi G}{3c^2H_0^2}\left[\frac{\varepsilon_m(t_0)}{a^3(t)}+\frac{\varepsilon_r(t_0)}{a^4(t)}\right]-\frac{kc^2}{R_0^2a^2(t)H_0^2}+\frac{\Lambda}{3H_0^2}
 \]
 Moreover, we computed the acceleration/fluid equation, introducing also the cosmological constant. We now want to establish a relation between distance and redshift but to do that we have to go to \nth{2} order in the expansion:
 \[
@@ -293,9 +295,11 @@ At a certain point, electrons combined with protons to form hydrogen atoms (\tex
 where $n_e$ is the electrons density and $\sigma_e$ the electrons cross section.\\
 If $\Gamma(t)<H(t)$ it means that there cannot be any interaction because the Universe is expanding too fast. By working out the dependence of $\Gamma(t)$ and $H(t)$ on the scale factor and then imposing $\Gamma(t)=H(t)$, it is possible to show that photons decoupling occurred at a redshift of $Z=1090$ when the Universe was at a temperature of $T=2970$\;K.\\
 Moreover, the wavelength is re-scaled $\lambda_\gamma=\lambda Z$, i.e. the energy is reduced by a factor $\sim1000$ having then $T\sim2.97$\;K. The CMB temperature is precisely measured to be $T_0=2.7$\;K. We know there is a black body distribution, so we can plug this in the expressions obtained before to find:
+\beginbox{Density of Photons}
 \[
-n_\gamma^0=\beta T_0^3\approx4\cdot10^8\;\text{m$^{-3}$} \quad \varepsilon_\gamma^0\approx0.26\;\text{MeV/m$^3$}
+T_0=2.7\,\text{K}\quad n_\gamma^0=\beta T_0^3\approx4\cdot10^8\;\text{m$^{-3}$} \quad \varepsilon_\gamma^0\approx0.26\;\text{MeV/m$^3$}
 \]
+\endbox
 However, the critical energy density is $\varepsilon_c^0=4.9$\;GeV/m$^3$. This tells us that the contribution from radiation is equal to $\Omega_\gamma^0\approx5\cdot10^{-5}$ and therefore it is negligible today.\\
 The dipole distortion of the CMB results from the fact that the Universe is not perfectly homogeneous today. The distortions on a smaller angular scale tell us that the universe was not perfectly homogeneous at the time of last scattering either, at $Z\approx1100$. The angular size of the temperature fluctuations reflects in part the physical size of the density
 and velocity fluctuations at $Z\approx1100$.\\
@@ -335,13 +339,14 @@ Combining results from supernovae and CMB, we end up with:
 \[
 \Omega_m^0=0.3 \quad \Omega_\Lambda^0=0.7 \quad \Omega_c^0=0
 \]
-% We have seen that the energy density of the CMB is much smaller than the critical energy. However, since the energy per CMB photon is small, the density of CMB photons in the Universe is large. 
-% Define now $\eta=\frac{n_B^0}{n_\gamma^0}=6\cdot10^{-10}$, this is interesting because we know from the average temperature of CMB $n_\gamma^0\approx4\cdot10^8$\,m$^{-3}$, therefore we can compute $n_B^0$:
-% \[
-% n_B^0=6\cdot10^{-10}\cdot4\cdot10^8\,\text{m$^{-3}$}=0.24\,\text{m$^{-3}$}\Rightarrow\varepsilon_B^0=0.24\,\text{GeV/m$^3$}
-% \]
-% Since $\varepsilon_c^0=5$\,GeV/m$^3$ this results in $\Omega_B^0=0.05$. There is another piece in the puzzle, $\Omega_m^0=0.3$ so there is another 0.25 missing which is an evidence for the existence of dark matter.\\
-However, detailed studies of the amounts of deuterium and other elements present in primordial gas clouds indicate that the density parameter of baryonic matter must be $\Omega_B^0\approx0.05$. It seems that there is another piece in the puzzle to explain the total amount of matter in the Universe. There is roughly a 0.25 missing, which is an evidence for the existence of \textbf{dark matter}.\\
+We measure the ratio between baryon and photon density:
+\[\eta=\frac{n_B^0}{n_\gamma^0}=6\cdot10^{-10}
+\]
+This is interesting because we know from the average temperature of CMB that $n_\gamma^0\approx4\cdot10^8$\,m$^{-3}$, therefore we can compute $n_B^0$:
+\[
+n_B^0=6\cdot10^{-10}\cdot4\cdot10^8\,\text{m$^{-3}$}=0.24\,\text{m$^{-3}$}\Rightarrow\varepsilon_B^0=0.24\,\text{GeV/m$^3$}
+\]
+Since $\varepsilon_c^0=5$\,GeV/m$^3$ this results in $\Omega_B^0=0.05$. There is roughly a 0.25 missing, which is an evidence for the existence of \textbf{dark matter}.\\
 The majority of the matter in the Universe is non-baryonic dark matter (DM), which does not absorb, emit or scatter light of any wavelength. One way of detecting DM is to look for its \textbf{gravitational effects} on visible matter. A classic method of detecting DM involves looking at the \textbf{orbital speeds} of starts in spiral galaxies, such as our own galaxy for example.\\
 Suppose that a star is on a circular orbit around the center of its galaxy. Given the radius of the orbit $R$ and the orbital speed $v$, the star experiences an acceleration equal to $a=\frac{v^2}{R}$ towards the center of the galaxy. If the acceleration is provided by the gravitational attraction of the galaxy, then we have:
 \[
@@ -549,7 +554,7 @@ $H$ is proportional to $\sqrt{G_F}(kT)^2$ so we find:
 \[
 \frac{\Gamma}{H}=\frac{G_F^2}{\sqrt{G_F}}(kT)^3=1\Rightarrow T=10^{10}\,\text{K}
 \]
-We set the ratio $\frac{\Gamma}{H}$ equal to 1 to find the temperature at which the interaction rate starts to be smaller than $H$. The temperature we obtain means that this decoupling took place one second after the Big Bang, resulting in the \textbf{cosmic neutrino background} C$\nu$B. For photons, this decoupling took place roughly 300 years after the Big Bang, which is reasonable since neutrinos are weakly interactive. Unlike CMB, we are not able to detect C$\nu$B, therefore it is not possible to estimate its temperature. However, we can still estimate it indirectly: at very high temperature, the Universe mainly consisted of neutrinos, electrons, positrons and photons all in thermal equilibrium with each other. As temperature cooled down, neutrinos decoupled from the rest of matter and all leptons and photons interactions with these neutrinos stopped. Despite this decoupling, neutrinos and photons remained at the same temperature but when the temperature dropped below the double the mass of electrons $T_1\sim1$\,MeV electrons and positrons annihilated, transferring their heat and entropy to the photons and therefore increasing their temperature, resulting in a sort of \textit{jump} to $T_2$.
+We set the ratio $\frac{\Gamma}{H}$ equal to 1 to find the temperature at which the interaction rate started to be smaller than $H$. The temperature we obtain means that this decoupling took place one second after the Big Bang, resulting in the \textbf{cosmic neutrino background} C$\nu$B. For photons, this decoupling took place roughly 300 years after the Big Bang, which is reasonable since neutrinos are weakly interactive. Unlike CMB, we are not able to detect C$\nu$B, therefore it is not possible to estimate its temperature. However, we can still estimate it indirectly: at very high temperature, the Universe mainly consisted of neutrinos, electrons, positrons and photons all in thermal equilibrium with each other. As temperature cooled down, neutrinos decoupled from the rest of matter and all leptons and photons interactions with these neutrinos stopped. Despite this decoupling, neutrinos and photons remained at the same temperature but when the temperature dropped below the double the mass of electrons $T_1\sim1$\,MeV electrons and positrons annihilated, transferring their heat and entropy to the photons and therefore increasing their temperature, resulting in a sort of \textit{jump} to $T_2$.
 \begin{center}
 \begin{tikzpicture}
   %\draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
@@ -564,12 +569,14 @@ We set the ratio $\frac{\Gamma}{H}$ equal to 1 to find the temperature at which 
   \draw[dashed, color=black] (1.25,1.75) -- (0,1.75) node[left] {$T_1\sim1$\,MeV};
   \draw[dashed, color=black] (1.25,2.75) -- (0,2.75) node[left] {$T_2$};
   \draw[dashed, color=black] (2.8, 1.2) -- (2.8,0) node[below] {today};
+  \draw[dashed, color=black] (2.8, 1.2) -- (0,1.2) node[left] {$T_{0,\gamma}=2.7\,\text{K}$};
+  \draw[dashed, color=black] (2.8, 0.2) -- (0,0.2) node[left] {$T_{0,\nu}=?$};
   % \x r means to convert '\x' from degrees to _r_adians:
   % \draw[color=blue]   plot (\x,{sin(\x r)})    node[right] {$f(x) = \sin x$};
   % \draw[color=orange] plot (\x,{0.05*exp(\x)}) node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
 \end{tikzpicture}
 \end{center}
-The CMB temperature today is $T_0=2.7$\,K: if we could know the jump from $T_1$ from $T_2$, we would be able to know the temperature of neutrinos today. The idea is that the conserved quantity in this system is the \textbf{entropy}:
+The CMB temperature today is $T_{0,\gamma}=2.7$\,K: if we could know the jump from $T_1$ from $T_2$, we would be able to know the temperature of neutrinos today. The idea is that the conserved quantity in this system is the \textbf{entropy}:
 \[
 S\propto g\frac{\varepsilon(T)}{T}
 \]
@@ -586,14 +593,22 @@ With similar arguments we can also compute the number of neutrinos $n_\nu$:
 \[
 n_{\nu_i}=\frac{3}{11}n_\gamma\Rightarrow n_\nu=\frac{9}{11}n_\gamma\approx3.4\cdot10^8\,\text{m$^{-3}$}
 \]
-where the index $i$ is the one for the three families $e,\mu,\tau$. The number of neutrinos and photons are roughly the same, energy density tells us:
+where the index $i$ is the one for the three families $e,\mu,\tau$. 
+\beginbox{Density of Neutrinos}
 \[
-\Omega_\nu=\frac{\varepsilon}{\varepsilon_c}=\frac{n_\nu E_\nu}{\varepsilon_c}\ge\frac{n_\nu m_\nu}{\varepsilon_c}
+T_{0,\nu}=1.05\,\text{K}\quad n_{\nu}\approx3.4\cdot10^8\,\text{m$^{-3}$}
+\]
+\endbox
+The number of neutrinos and photons are roughly the same, energy density tells us:
+\[
+\Omega_\nu=\frac{\varepsilon_\nu}{\varepsilon_c}=\frac{n_\nu E_\nu}{\varepsilon_c}\ge\frac{n_\nu m_\nu}{\varepsilon_c}
 \]
 We do not know the energy of a single neutrino, but it cannot be smaller than its mass $m_\nu$. Neutrinos are the best candidate of hot DM so it is possible to put an upper limit to the neutrino mass:
+\beginbox{Upper Limit on Neutrino Mass}
 \[
 \Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}\Rightarrow m_{\text{tot}}=\sum_im_i<0.3\,\text{eV}
 \]
+\endbox
 This is just from cosmology, there is actually no experiment on Earth which can compete with this measure.\\
 How can we measure C$\nu$B? We look at some possibilities and we start with \textbf{single interaction detection}:
 \[
@@ -604,11 +619,25 @@ How can we measure C$\nu$B? We look at some possibilities and we start with \tex
 \end{aligned}
 \right.
 \]
-The observable here is the Q-value. In choosing the proper $\beta$ decaying nuclei, we would like to have a small half-life, a high fraction of decays at the endpoint and low $Q$-values for neutrino mass experiments. How about electronic capture?
-\[
-(A,Z)\to(A,Z-1)^*+\nu_e \quad (A,Z-1)^*\to(A,Z-1)+E_i
-\]
-Here the measurable quantity is $E_i$, i.e. the de-excitation energy of the i-th atomic shell. In principle, the energy spectrum is given by a series of lines shaped by the neutrino phase-space. The delta function in the phase-space does not allow us to measure the spectrum endpoint. However, due to uncertainty principle the lines have a natural width, the delta function has to be replaced with a Breit-Wigner distribution and this allows $E$ to reach the $Q$-value and produce a neutrino with zero energy. We need a nucleus with $E_i$ close to $Q$ to have a small suppression from the Breit-Wigner. If there is no overdensity in the neutrino distribution at the Earth then the detection is impossible. With no relic neutrinos overdensity, the requirements on the target mass are enormously demanding and upcoming experiments will only be sensitive to overdensity of relic neutrinos.\\
+The observable here is the Q-value. In choosing the proper $\beta$ decaying nuclei, we would like to have a small half-life, a high fraction of decays at the endpoint and low Q-values for neutrino mass experiments. How about electronic capture?
+\begin{center}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex (a) {$(A,Z)$};
+    \vertex [right=2cm of a] (b) {$(A,Z-1)^*$};
+    \vertex [below right=0cm and 1.25cm  of b] (prova) {$+\;\nu_e$};
+    \vertex [below=1cm of b] (c);
+    \vertex [right=0.75cm of c] (d) {$(A,Z-1)+E_i$};
+
+    \diagram* {
+    (a) -> [plain] (b),
+    (b) -- [plain] (c),
+    (c) -> [plain] (d),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+Here the measurable quantity is $E_i$, i.e. the de-excitation energy of the i-th atomic shell. In principle, the energy spectrum is given by a series of lines shaped by the neutrino phase-space. The delta function in the phase-space does not allow us to measure the spectrum endpoint. However, due to uncertainty principle the lines have a natural width, the delta function has to be replaced with a Breit-Wigner distribution and this allows $E$ to reach the Q-value and produce a neutrino with zero energy. We need a nucleus with $E_i$ close to $Q$ to have a small suppression from the Breit-Wigner. If there is no overdensity in the neutrino distribution at the Earth then the detection is impossible. With no relic neutrinos overdensity, the requirements on the target mass are enormously demanding and upcoming experiments will only be sensitive to overdensity of relic neutrinos.\\
 In the last decade, we have focused on neutrinos coming from the Sun, where the main reaction for neutrinos production is:
 \[
 4p\to\text{$^4$He}+2e^++2\nu_e
@@ -624,11 +653,11 @@ One of the first experiments to detect neutrinos produced in the Sun was the \te
 And it has a threshold of $E_\nu=0.814$\,MeV. Due to the relatively short half-life of $^{37}$Ar, helium was periodically pumped in to collect the argon which was produced in the reaction and then infer the neutrino flux. Experimental results were very close to one third of theoretical predictions, but neither the calculations or the experiment seemed to be wrong and this puzzled scientists. This deficit became known as the \textbf{solar neutrinos problem}.\\
 The \textbf{Sudbury Neutrino Observatory} (SNO) in Canada solved this problem. SNO was located 2 km underground and used 1000 tons of ultra-pure heavy water contained in a sphere of 6 meters of radius. The sphere was surrounded by 9500 PMTs, the acrylic vessel surrounding the sphere was filled with 7300 tons of light water to shield from external background. Three types of reactions take place:
 \begin{itemize}
-    \item Charged Current: $\nu_e+d\to p+p+e^-$. Solar neutrinos have energy smaller than the mass of $\mu$ and $\tau$, hence only electron neutrinos can participate in this reaction. Most of the energy is transferred to the electron, which is then detectable via Cherenkov effect. Electrons are produced in all directions but there is a weak preference for the opposite direction with respect to the incoming direction of the neutrinos.
-    \item Neutral Current: $\nu_\alpha+d\to p+n+\nu_\alpha$, where $\alpha=e,\mu,\tau$. This is important because it is sensitive to all flavours with equal cross section. From the flux measured through this interaction it is possible to understand if the deficit observed in other experiments was due to the fact that they were sensitive only to electron neutrinos or if it was due to the theoretical model.
-    \item Elastic Scattering: $\nu_\alpha+e^-\to\nu_\alpha+e^-$, where $\alpha=e,\mu,\tau$. All three flavours of neutrinos can take place in this interaction through the exchange of a $Z$ boson, electronic neutrinos can also exchange a $W$ boson and therefore dominate this interaction. It has a low statistics but a strong direction sensitivity. 
+    \item \underline{Charged Current}: $\nu_e+d\to p+p+e^-$. Solar neutrinos have energy smaller than the mass of $\mu$ and $\tau$, hence only electron neutrinos can participate in this reaction. Most of the energy is transferred to the electron, which is then detectable via Cherenkov effect. Electrons are produced in all directions but there is a weak preference for the opposite direction with respect to the incoming direction of the neutrinos.
+    \item \underline{Neutral Current}: $\nu_\alpha+d\to p+n+\nu_\alpha$, where $\alpha=e,\mu,\tau$. This is important because it is sensitive to all flavours with equal cross section. From the flux measured through this interaction it is possible to understand if the deficit observed in other experiments was due to the fact that they were sensitive only to electron neutrinos or if it was due to the theoretical model.
+    \item \underline{Elastic Scattering}: $\nu_\alpha+e^-\to\nu_\alpha+e^-$, where $\alpha=e,\mu,\tau$. All three flavours of neutrinos can take place in this interaction through the exchange of a $Z$ boson, electronic neutrinos can also exchange a $W$ boson and therefore dominate this interaction. It has a low statistics but a strong direction sensitivity. 
 \end{itemize}
-First results showed that neutrinos changed their flavour during their travel from the Sun to the detector. The neutrino flux for muonic and tauonic flavour agreed with theoretical predictions, while for the electronic neutrinos the flux was roughly one third of the other two. Since the Sun produced only electronic neutrinos, this means that two thirds of the electronic neutrinos changed their flavour. This transition can be explained with the fact that neutrinos \textbf{oscillates}, which implied that they have a non-zero mass.
+First results showed that neutrinos \textbf{changed their flavour} during their travel from the Sun to the detector. The neutrino flux for muonic and tauonic flavour agreed with theoretical predictions, while for the electronic neutrinos the flux was roughly one third of the other two. Since the Sun produces only electronic neutrinos, this means that two thirds of the electronic neutrinos changed their flavour. This transition can be explained with the fact that neutrinos \textbf{oscillates}, which implies that they have a non-zero mass.
 \[
 \ket{\nu_\alpha}\longrightarrow\ket{\nu_\alpha},\ket{\nu_\beta},\ket{\nu_\gamma}
 \]
@@ -670,12 +699,14 @@ U=\left(\begin{array}{cc}
     -\sin\theta & \cos\theta
 \end{array}\right)
 \]
-We explicitly compute $p_{\alpha\beta}$:
+We explicitly compute $p_{\alpha\beta}$.
+\beginbox{Oscillation Probability in the Vacuum}
 \begin{align*}
 p_{\alpha\beta}=&\sin^2\theta\cos^2\theta-\sin^2\theta\cos^2\theta\exp{-i\frac{\Delta m^2L}{2E}}\\
 &-\cos^2\theta\sin^2\theta\exp{-i\frac{\Delta m^2L}{2E}}+\cos^2\theta\sin^2\theta\\
 =&2\sin^2\theta\cos^2\theta\left[1-\cos\left(\frac{\Delta m^2L}{2E}\right)\right]=\sin^2(2\theta)\sin^2\left(\frac{\Delta m^2L}{4E}\right)
 \end{align*}
+\endbox
 It follows that $p_{\alpha\alpha}=1-p_{\alpha\beta}$ and in the case of no mixing, i.e. $\theta=0$, $p_{\alpha\alpha}=1$ and $p_{\alpha\beta}=0$.
 % In the matrix form, we can write:
 % \begin{align*}
@@ -684,11 +715,17 @@ It follows that $p_{\alpha\alpha}=1-p_{\alpha\beta}$ and in the case of no mixin
 % \end{align*}
 Using the Hamiltonian formalism, we can write:
 \[
-i\frac{d}{dt}\ket{\nu_\alpha,t}=U_{\alpha j}^*i\frac{d}{dt}\ket{\nu_j,t}=U_{\alpha j}^*E_j\ket{\nu_j,t}=U_{\alpha j}^*E_jU_{\beta j}\ket{\nu_\beta,t}\Rightarrow i\frac{d}{dt}\ket{\nu_\alpha,t}=(H_{\text{osc}})_{\alpha\beta}\ket{\nu_\beta,t}
+% i\frac{d}{dt}\ket{\nu_\alpha,t}=U_{\alpha j}^*i\frac{d}{dt}\ket{\nu_j,t}=U_{\alpha j}^*E_j\ket{\nu_j,t}=U_{\alpha j}^*E_jU_{\beta j}\ket{\nu_\beta,t}\Rightarrow
+i\frac{d}{dt}\ket{\nu_j,t}=\text{diag}(E)_{jk}\ket{\nu_k,t}=\text{diag}(E)_{jk}U^\dagger_{\beta k}\ket{\nu_\beta,t}
+%=(H_{\text{osc}})_{\alpha\beta}\ket{\nu_\beta,t}
 \]
-where we have introduced:
+By multiplying everything on the left by $U_{\alpha j}$ we get:
 \[
-H_{\text{osc}}=U^*\text{diag}(E)U \quad \text{diag}(E)_{jk}=\left\{\begin{aligned}
+i\frac{d}{dt}U_{\alpha j}\ket{\nu_j,t}=i\frac{d}{dt}\ket{\nu_\alpha,t}=U_{\alpha j}\text{diag}(E)_{jk}U^\dagger_{\beta k}\ket{\nu_\beta,t}
+\]
+where we can define the oscillation Hamiltonian in the vacuum as:
+\[
+H_{\text{osc}}=U\text{diag}(E)U^\dagger \quad \text{diag}(E)_{jk}=\left\{\begin{aligned}
 &E_j &&\text{if $j=k$}\\
 &0 &&\text{if $j\neq k$} 
 \end{aligned}
@@ -700,7 +737,7 @@ E_i=\sqrt{p^2+m_i^2}\simeq p+\frac{1}{2}\frac{m_i^2}{E}
 \]
 The first term gives a contribution proportional to the identity which will result in a phase factor common to all flavours and therefore irrelevant for oscillations. The second term will give the most interesting contribution so that we have:
 \[
-H_{\text{osc}}=\frac{1}{2E}U^*\text{diag}(m^2)U\longleftrightarrow H_{\text{osc}}=\frac{1}{2E}U^*\text{diag}(\Delta m^2)U
+H_{\text{osc}}=\frac{1}{2E}U\text{diag}(m^2)U^\dagger\longleftrightarrow H_{\text{osc}}=\frac{1}{2E}U\text{diag}(\Delta m^2)U^\dagger
 \]
 Working in the simplified model with just two families we have:
 \[
@@ -794,9 +831,11 @@ H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2_{\text{eff}}}{4E}\left(\begin{ar
 \end{array}\right)
 \]
 which as usual leads to:
+\beginbox{Oscillation Probability in Matter}
 \[
 \text{prob}(\nu_\alpha\to\nu_\beta)=p_{\alpha\beta}=\sin^2(2\theta_{\text{eff}})\sin^2\left(\frac{\Delta m^2_{\text{eff}}L}{4E}\right)
 \]
+\endbox
 % The quantity $x$ is equal to $x=\frac{2EG_Fn_e\sqrt{2}}{\Delta m^2}$, to give some numbers we find $n_e=6.4\cdot10^{31}$\,m$^{-3}$ in the Sun, $G_F=1.1\cdot10^{-5}$\,GeV, $\Delta m^2=7.6\cdot10^{-5}$\,eV$^2$ and $E=(0-10)$\,MeV resulting in $x=0.27[(0-10)\,\text{MeV}]$. Assuming now $E=10$\,MeV, we obtain $\sin(2\theta_{\text{eff}})=0$ and $\cos(2\theta_{\text{eff}})=1$, hence $\theta_{\text{eff}}=\frac{\pi}{2}$:
 % \[
 % \ket{\nu_e}=\cos\theta_{\text{eff}}\ket{\nu_1}+\sin\theta_{\text{eff}}\ket{\nu_2}\simeq\ket{\nu_2}
@@ -818,7 +857,7 @@ This gives us 6 $\overline{\nu}_e$ per fission, i.e. a flux of $2\cdot10^{20}\ov
 \[
 \overline{\nu}_e+p\to e^++n
 \]
-which has a cross section $\sim63\cdot10^{44}$\,cm$^2$/fission and a threshold of 1.8 MeV. An experiment who used reactor neutrinos is \textbf{KamLAND} located in Japan and surrounded by more than 50 nuclear reactors of various nuclear power plants. We know the average distance and with inverse beta decay it is possible to measure the energy of $\overline{\nu}_e$. The ratio $L_0/E_{\overline{\nu}_e}$ gives a strong proof of neutrino oscillations. SNO measures $\theta_{12}$ but gives no information about $\Delta m^2$, while KamLAND gives us an idea of $\Delta m^2$ from the frequency but it is not very precise. The most precise oscillation parameters are obtained combining reactor and solar results.\\
+which has a cross section $\sim63\cdot10^{-44}$\,cm$^2$/fission and a threshold of 1.8 MeV. An experiment who used reactor neutrinos is \textbf{KamLAND} located in Japan and surrounded by more than 50 nuclear reactors of various nuclear power plants. We know the average distance and with inverse beta decay it is possible to measure the energy of $\overline{\nu}_e$. The ratio $L_0/E_{\overline{\nu}_e}$ gives a strong proof of neutrino oscillations. SNO measures $\theta_{12}$ but gives no information about $\Delta m^2$, while KamLAND gives us an idea of $\Delta m^2$ from the frequency but it is not very precise. The most precise oscillation parameters are obtained combining reactor and solar results.\\
 Moving now the sources of higher energies we have atmospheric neutrinos, $E\sim$\,GeV. Atmospheric neutrinos are produced in cosmic rays shower:\\
 \begin{minipage}{0.5\textwidth}
 \begin{center}
@@ -889,18 +928,18 @@ Moving now the sources of higher energies we have atmospheric neutrinos, $E\sim$
 \end{center}
 \end{minipage}
 From these processes, we expect a rate of muon neutrinos approximately double the rate of electron neutrinos. \textbf{Super-Kamiokande} in Japan consist of 50000 tons of ultra-pure water surrounded by PMTs. Neutrinos interaction in water can produce a charged particle which will give Cherenkov light. The idea was to detect both neutrinos coming from the top and from the bottom, with the latter having the opportunity to oscillate. By looking at the difference between top and bottom, it is possible to measure neutrinos oscillations. By looking at the data, there was no evidence on oscillation in the $e$-signal, while it was present in the $\mu$-signal. Moreover, if $\nu_\mu$ oscillate into $\nu_e$, we would see more $\nu_e$ at a precise value of $\cos\theta$ but that is not the case: $\nu_\mu$ oscillate into something else, a neutrino of a new flavour $\nu_\tau$.\\
-Oscillations tell us that neutrinos have mass and that neutrinos flavour eigenstates $(\nu_e,\nu_\mu,\nu_\tau)$ are a mixture of mass eigenstates $(\nu_1,\nu_2,\nu_3)$. Measurements tell us the sign of $\Delta m^2$:
+Oscillations tell us that neutrinos have mass and that neutrinos flavour eigenstates $(\nu_e,\nu_\mu,\nu_\tau)$ are a mixture of mass eigenstates $(\nu_1,\nu_2,\nu_3)$. Measurements tell us:
 \[
 \Delta m^2_{\text{atm}}\sim2.5\cdot10^{-3}\,\text{eV$^{-2}$} \quad \Delta m^2_{\text{sol}}\sim7.5\cdot10^{-5}\,\text{eV$^{-2}$}
 \]
-However, we do not know the sign of $\Delta m^2$, since the leading order vacuum oscillation formula is only sensitive to $\sin^2(\Delta m^2)$.
 \begin{figure}[h]
     \centering
-    \includegraphics{hierarchy.jpg}
+    \includegraphics[width=7cm,height=6.125cm]{hierarchy2.jpg}
     \caption{Pictorial view of current results}
     \label{hierarchy}
 \end{figure}\\
 \noindent
+However, we do not know the sign of $\Delta m^2$, since the leading order vacuum oscillation formula is only sensitive to $\sin^2(\Delta m^2)$.
 The hierarchical structure of the mass is still unknown and this is known as the \textbf{hierarchy problem}. From this, it is possible to conclude that the third mixing angle $\theta_{13}$ which is the amount of $\nu_e$ in the \nth{3} state is much smaller compared to the other two mixing angles.\\
 The \textbf{Daya Bay experiment} consists of eight detectors, clustered in three locations within 1.9 km of six nuclear reactors. Each detector consists of 20 tons of liquid scintillator surrounded by PMTs. The experiment is designed to measure the mixing angle $\theta_{13}$ using anti-neutrinos produced in the nearby reactors, obtaining $\theta_{13}\neq0$:
 \[
@@ -1031,7 +1070,7 @@ The only process in which it is possible to distinguish between Majorana and Dir
 \[
 (A,Z)\to(A,Z+2)+2e^-+2\overline{\nu}_e
 \]
-This can happen in some even-even nuclei where a single beta decay is energetically forbidden. Two beta decays are allowed, but a simultaneous decay of two nucleons in the same nucleus is extremely unlikely, the experimentally observed lifetimes of such decay processes are in the range $10^{18}-10^{21}$ years. The Feynman diagrams for such process are the following:
+This can happen in some even-even nuclei where a single beta decay is energetically forbidden. Two beta decays are allowed, but a simultaneous decay of two nucleons in the same nucleus is extremely unlikely, the experimentally observed lifetimes of such decay processes are in the range $10^{18}-10^{21}$ years. The Feynman diagrams for such processes are the following:
 \begin{center}
 \begin{tikzpicture}
   \begin{feynman}
