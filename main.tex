@@ -121,11 +121,11 @@ m\Ddot{R}(t)=-G\frac{mM}{R^2(t)}
 \]
 We are interested in $\Ddot{R}(t)$ which is the acceleration per unit mass. Take into account now the \textbf{energy density}, defined as follows:
 \[
-\varepsilon=\int dt\Ddot{R}(t)\Dot{R}(t)=\int d\Dot{R}\Dot{R}(t)=\frac{\Dot{R}^2(t)}{2}
+\varepsilon(t)=\int dt\Ddot{R}(t)\Dot{R}(t)=\int d\Dot{R}\Dot{R}(t)=\frac{\Dot{R}^2(t)}{2}
 \]
 However, we can express $\Ddot{R}(t)$ from the dynamics of the test mass, resulting in:
 \[
-\varepsilon=\int dt\left(-G\frac{M}{R^2(t)}\right)\Dot{R}(t)=-GM\int \frac{dR}{R^2(t)}=\frac{GM}{R(t)}\Rightarrow\frac{\Dot{R}^2}{2}=\frac{GM}{R(t)}+U
+\varepsilon(t)=\int dt\left(-G\frac{M}{R^2(t)}\right)\Dot{R}(t)=-GM\int \frac{dR}{R^2(t)}=\frac{GM}{R(t)}\Rightarrow\frac{\Dot{R}^2}{2}=\frac{GM}{R(t)}+U
 \]
 We take a look at the possible values of $U$:
 \begin{itemize}
@@ -403,7 +403,7 @@ There are some hypothesis on its nature,
 % \delta(\Vec{r})\xrightarrow[\text{FT}]{}\Vec{k}=\frac{1}{V}\int d^3re^{i\Vec{k}\cdot\Vec{r}}\delta(\Vec{r})
 % \]
 % From measurements, we understand that
-and measurements tell us that the large majority of dark matter is due to non-relativistic particles, i.e. \textbf{cold dark matter}. Observations tell us that hot dark matter contribute is very small, $\Omega_{\text{HDM}}7\cdot10^{-3}$.\\
+and measurements tell us that the large majority of dark matter is due to non-relativistic particles, i.e. \textbf{cold dark matter}. Observations tell us that hot dark matter contribute is very small, $\Omega_{\text{HDM}}<7\cdot10^{-3}$.\\
 To get the correct value of DM amount in the Universe, we have to combine its non-relativistic nature with a cross section comparable with the one of the weak interaction:
 % Given a DM particle $\chi$, in principle we could observe two processes: \textbf{annihilation} of $\chi\chi$ into two Standard Model particles \textit{or} \textbf{production} of two $\chi\chi$ starting from two Standard Model particles. There is also a \textbf{dilution} effect due to the factor $a^3(t)$: given a density $n(t)=\frac{N}{a^3(t)}$ we can see how it evolves with time.
 % \[
@@ -550,11 +550,12 @@ Neutrinos are weakly interactive particles and electrons are fermions, so we fin
 \right.
 \Rightarrow\Gamma\simeq G_F^2(kT)^5
 \]
-$H$ is proportional to $\sqrt{G_F}(kT)^2$ so we find:
+$H$ is proportional to $\sqrt{G}(kT)^2$ so we find:
 \[
-\frac{\Gamma}{H}=\frac{G_F^2}{\sqrt{G_F}}(kT)^3=1\Rightarrow T=10^{10}\,\text{K}
+\frac{\Gamma}{H}=\frac{G_F^2}{\sqrt{G}}(kT)^3=1\Rightarrow T=10^{10}\,\text{K}
 \]
-We set the ratio $\frac{\Gamma}{H}$ equal to 1 to find the temperature at which the interaction rate started to be smaller than $H$. The temperature we obtain means that this decoupling took place one second after the Big Bang, resulting in the \textbf{cosmic neutrino background} C$\nu$B. For photons, this decoupling took place roughly 300 years after the Big Bang, which is reasonable since neutrinos are weakly interactive. Unlike CMB, we are not able to detect C$\nu$B, therefore it is not possible to estimate its temperature. However, we can still estimate it indirectly: at very high temperature, the Universe mainly consisted of neutrinos, electrons, positrons and photons all in thermal equilibrium with each other. As temperature cooled down, neutrinos decoupled from the rest of matter and all leptons and photons interactions with these neutrinos stopped. Despite this decoupling, neutrinos and photons remained at the same temperature but when the temperature dropped below the double the mass of electrons $T_1\sim1$\,MeV electrons and positrons annihilated, transferring their heat and entropy to the photons and therefore increasing their temperature, resulting in a sort of \textit{jump} to $T_2$.
+We set the ratio $\frac{\Gamma}{H}$ equal to 1 to find the temperature at which the interaction rate started to be smaller than $H$. The temperature we obtain means that this decoupling took place one second after the Big Bang, resulting in the \textbf{cosmic neutrino background} C$\nu$B. For photons, this decoupling took place roughly 300 years after the Big Bang, which is reasonable since neutrinos are weakly interactive. Unlike CMB, we are not able to detect C$\nu$B, therefore it is not possible to estimate its temperature. However, we can still estimate it indirectly: at very high temperature, the Universe mainly consisted of neutrinos, electrons, positrons and photons all in thermal equilibrium with each other. Photons created electrons and positrons via pair production, electrons and positrons created photons by annihilation. As temperature cooled down, neutrinos decoupled from the rest of matter and all leptons and photons interactions with these neutrinos stopped.\\
+Despite this decoupling, neutrinos and photons remained at the same temperature but when the temperature dropped below the double the mass of electrons $T_1\sim1$\,MeV pair production was no longer possible, electrons and positrons annihilated transferring their heat and entropy to the photons and therefore increasing their temperature, resulting in a sort of \textit{jump} to $T_2$.
 \begin{center}
 \begin{tikzpicture}
   %\draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
@@ -580,7 +581,7 @@ The CMB temperature today is $T_{0,\gamma}=2.7$\,K: if we could know the jump fr
 \[
 S\propto g\frac{\varepsilon(T)}{T}
 \]
-where we are considering only photons and $g$ is the effective number of degrees of freedom. Since from black body radiation we know that $\varepsilon(T)\propto gT^4$, we have $S\propto gT^3$ hence:
+where we are considering only photons and $g$ is the effective number of degrees of freedom. Since from black body radiation we know that $\varepsilon(T)\propto \alpha T^4$, we have $S\propto gT^3$ hence:
 \[
 g_1T_1^3=g_2T_2^3
 \]
@@ -591,9 +592,9 @@ By integrating $\frac{d\varepsilon}{d\nu}$ to find $\varepsilon$, we obtain $g=2
 Therefore we finally find $T_{0,\nu}=0.7\cdot T_{0,\gamma}=0.7\cdot2.7$\,K$=1.05$\,K.\\
 With similar arguments we can also compute the number of neutrinos $n_\nu$:
 \[
-n_{\nu_i}=\frac{3}{11}n_\gamma\Rightarrow n_\nu=\frac{9}{11}n_\gamma\approx3.4\cdot10^8\,\text{m$^{-3}$}
+n_{\nu_\alpha}=\frac{3}{11}n_\gamma\Rightarrow n_\nu=\frac{9}{11}n_\gamma\approx3.4\cdot10^8\,\text{m$^{-3}$}
 \]
-where the index $i$ is the one for the three families $e,\mu,\tau$. 
+where the index $\alpha$ is for the three families $e,\mu,\tau$. 
 \beginbox{Density of Neutrinos}
 \[
 T_{0,\nu}=1.05\,\text{K}\quad n_{\nu}\approx3.4\cdot10^8\,\text{m$^{-3}$}
@@ -646,7 +647,7 @@ with a Q-value of $Q=26.73$\,MeV and neutrinos mean energy $\Braket{E_\nu}\appro
 \[
 \phi(\nu_e)=\frac{N(\nu_e)}{4\pi D^2}=6.4\cdot10^{10}\,\nu_e/\text{(cm$^2$s)}
 \]
-One of the first experiments to detect neutrinos produced in the Sun was the \textbf{Homestake experiment}, located in South Dakota and operating from 1970 to 1994. The detector used 380 m$^3$ of C$_2$Cl$^4$, with a 24\% abundance of $^{37}$Cl. After an interaction with a neutrino, the reaction which takes place is the following:
+One of the first experiments to detect neutrinos produced in the Sun was the \textbf{Homestake experiment}, located in South Dakota and operating from 1970 to 1994. The detector used 380 m$^3$ of C$_2$Cl$_4$, with a 24\% abundance of $^{37}$Cl. After an interaction with a neutrino, the reaction which takes place is the following:
 \[
 \nu_e+\text{$^{37}$Cl}\to\text{$^{37}$Ar}+e^-
 \]
@@ -703,7 +704,7 @@ We explicitly compute $p_{\alpha\beta}$.
 \beginbox{Oscillation Probability in the Vacuum}
 \begin{align*}
 p_{\alpha\beta}=&\sin^2\theta\cos^2\theta-\sin^2\theta\cos^2\theta\exp{-i\frac{\Delta m^2L}{2E}}\\
-&-\cos^2\theta\sin^2\theta\exp{-i\frac{\Delta m^2L}{2E}}+\cos^2\theta\sin^2\theta\\
+&-\cos^2\theta\sin^2\theta\exp{+i\frac{\Delta m^2L}{2E}}+\cos^2\theta\sin^2\theta\\
 =&2\sin^2\theta\cos^2\theta\left[1-\cos\left(\frac{\Delta m^2L}{2E}\right)\right]=\sin^2(2\theta)\sin^2\left(\frac{\Delta m^2L}{4E}\right)
 \end{align*}
 \endbox
@@ -932,15 +933,15 @@ Oscillations tell us that neutrinos have mass and that neutrinos flavour eigenst
 \[
 \Delta m^2_{\text{atm}}\sim2.5\cdot10^{-3}\,\text{eV$^{-2}$} \quad \Delta m^2_{\text{sol}}\sim7.5\cdot10^{-5}\,\text{eV$^{-2}$}
 \]
+However, we do not know the sign of $\Delta m^2$, since the leading order vacuum oscillation formula is only sensitive to $\sin^2(\Delta m^2)$.
+The hierarchical structure of the mass is still unknown and this is known as the \textbf{hierarchy problem}. From this, it is possible to conclude that the third mixing angle $\theta_{13}$ which is the amount of $\nu_e$ in the \nth{3} state is much smaller compared to the other two mixing angles.\\
 \begin{figure}[h]
     \centering
     \includegraphics[width=7cm,height=6.125cm]{hierarchy2.jpg}
     \caption{Pictorial view of current results}
     \label{hierarchy}
-\end{figure}\\
+\end{figure}\\\\\\\\
 \noindent
-However, we do not know the sign of $\Delta m^2$, since the leading order vacuum oscillation formula is only sensitive to $\sin^2(\Delta m^2)$.
-The hierarchical structure of the mass is still unknown and this is known as the \textbf{hierarchy problem}. From this, it is possible to conclude that the third mixing angle $\theta_{13}$ which is the amount of $\nu_e$ in the \nth{3} state is much smaller compared to the other two mixing angles.\\
 The \textbf{Daya Bay experiment} consists of eight detectors, clustered in three locations within 1.9 km of six nuclear reactors. Each detector consists of 20 tons of liquid scintillator surrounded by PMTs. The experiment is designed to measure the mixing angle $\theta_{13}$ using anti-neutrinos produced in the nearby reactors, obtaining $\theta_{13}\neq0$:
 \[
 \sin^2(2\theta_{13})=0.084\pm0.005\Rightarrow \theta_{13}\approx8^\circ
@@ -1019,8 +1020,8 @@ Therefore, with two families we cannot have CP violation. Let's look now at the 
 \]
 In this case, it might be possible that $p(\nu_\alpha\to\nu_\beta)\neq p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)$. The amount of CP violation can be quantified:
 \begin{align*}
-p(\nu_\alpha\to\nu_\beta)-p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)&=\sum_{jk}U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*\exp{-i\frac{\Delta m^2L}{4E}}-\sum_{jk}(\text{h.c.})\exp{-i\frac{\Delta m^2L}{4E}}\\
-&=\sum_{jk}2\underbrace{\mathfrak{Im}[U_{\alpha j}U_{\beta j}U_{\alpha k}^*U_{\beta k}^*]}_{\text{Jarlskog invariant}}\exp{-i\frac{\Delta m^2L}{4E}}
+p(\nu_\alpha\to\nu_\beta)-p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)&=\sum_{jk}U_{\alpha j}^*U_{\beta j}U_{\alpha k}U_{\beta k}^*\exp{-i\frac{\Delta m^2L}{2E}}-\sum_{jk}(\text{h.c.})\exp{-i\frac{\Delta m^2L}{2E}}\\
+&=\sum_{jk}2\underbrace{\mathfrak{Im}[U_{\alpha j}^*U_{\beta j}U_{\alpha k}U_{\beta k}^*]}_{\text{Jarlskog invariant}}\exp{-i\frac{\Delta m^2L}{4E}}
 \end{align*}
 The \textbf{Jarlskog invariant} measures the amount of CP violation and it is parametrized as:
 \[
