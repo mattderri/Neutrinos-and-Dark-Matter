@@ -536,7 +536,7 @@ This particular mechanism can be used to produce (solar) or detect (DM halo) axi
 QCD tells us that the mass range is between 1 and 100 $\mu$eV while cosmology tells us that they are non-relativistic, although they have a very small mass. they are considered as cold DM candidates, even if experiments are much more difficult. Axions searches were usually left behind but they are now starting to be considered seriously since WIMPs are not in a good shape.
 \newpage
 \section{Neutrinos}
-We now move our attention to \textbf{neutrinos} and, as done before, we start from cosmology to see when they decoupled from plasma. The idea is that this decoupling takes place when $\Gamma\le H$, where $\Gamma$ is given by:
+We now move our attention to \textbf{neutrinos} and, as done before, we start from cosmology to see when they decoupled from plasma. The idea is that this decoupling took place when $\Gamma\le H$, where $\Gamma$ is given by:
 \[
 \Gamma=\sigma n_ec
 \]
@@ -554,8 +554,12 @@ $H$ is proportional to $\sqrt{G}(kT)^2$ so we find:
 \[
 \frac{\Gamma}{H}=\frac{G_F^2}{\sqrt{G}}(kT)^3=1\Rightarrow T=10^{10}\,\text{K}
 \]
-We set the ratio $\frac{\Gamma}{H}$ equal to 1 to find the temperature at which the interaction rate started to be smaller than $H$. The temperature we obtain means that this decoupling took place one second after the Big Bang, resulting in the \textbf{cosmic neutrino background} C$\nu$B. For photons, this decoupling took place roughly 300 years after the Big Bang, which is reasonable since neutrinos are weakly interactive. Unlike CMB, we are not able to detect C$\nu$B, therefore it is not possible to estimate its temperature. However, we can still estimate it indirectly: at very high temperature, the Universe mainly consisted of neutrinos, electrons, positrons and photons all in thermal equilibrium with each other. Photons created electrons and positrons via pair production, electrons and positrons created photons by annihilation. As temperature cooled down, neutrinos decoupled from the rest of matter and all leptons and photons interactions with these neutrinos stopped.\\
-Despite this decoupling, neutrinos and photons remained at the same temperature but when the temperature dropped below the double the mass of electrons $T_1\sim1$\,MeV pair production was no longer possible, electrons and positrons annihilated transferring their heat and entropy to the photons and therefore increasing their temperature, resulting in a sort of \textit{jump} to $T_2$.
+We set the ratio $\frac{\Gamma}{H}$ equal to 1 to find the temperature at which the interaction rate started to be smaller than $H$. The temperature we obtain means that this decoupling took place one second after the Big Bang, resulting in the \textbf{cosmic neutrino background} C$\nu$B. For photons, this decoupling took place roughly 300 years after the Big Bang, which is reasonable since neutrinos are weakly interactive. Unlike CMB, we are not able to detect C$\nu$B, therefore it is not possible to estimate its temperature. However, we can still estimate it indirectly: at very high temperature, the Universe mainly consisted of neutrinos, electrons, positrons and photons all in thermal equilibrium with each other. Photons created electrons and positrons via pair production, electrons and positrons created photons by annihilation.
+\[
+\gamma\to e^-e^+ \quad e^-e^+\to\gamma\gamma
+\]
+As temperature cooled down, neutrinos decoupled from the rest of matter and all leptons and photons interactions with these neutrinos stopped.\\
+Despite this decoupling, neutrinos and photons remained at the same temperature but when the temperature dropped below the double the mass of electrons $T_1\sim1$\,MeV pair production was no longer possible. Electrons and positrons annihilated transferring their heat and entropy to the photons and therefore increasing their temperature, resulting in a sort of \textit{jump} to $T_2$.
 \begin{center}
 \begin{tikzpicture}
   %\draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
@@ -589,25 +593,29 @@ By integrating $\frac{d\varepsilon}{d\nu}$ to find $\varepsilon$, we obtain $g=2
 \[
 \frac{T_1}{T_2}=\left(\frac{g_2}{g_1}\right)^{1/3}=\left(\frac{2}{2+\frac{7}{4}+\frac{7}{4}}\right)^{1/3}=0.7
 \]
-Therefore we finally find $T_{0,\nu}=0.7\cdot T_{0,\gamma}=0.7\cdot2.7$\,K$=1.05$\,K.\\
+Therefore we finally find $T_{0,\nu}=0.7\cdot T_{0,\gamma}=0.7\cdot2.7$\,K$=1.95$\,K.\\
 With similar arguments we can also compute the number of neutrinos $n_\nu$:
 \[
-n_{\nu_\alpha}=\frac{3}{11}n_\gamma\Rightarrow n_\nu=\frac{9}{11}n_\gamma\approx3.4\cdot10^8\,\text{m$^{-3}$}
+n_{\overline{\nu}_\alpha}=n_{\nu_\alpha}=\frac{3}{22}n_\gamma\Rightarrow \Braket{n_\nu}=\Braket{n_{\overline{\nu}}}\simeq55\,\text{cm$^{-3}$/flavour}
 \]
 where the index $\alpha$ is for the three families $e,\mu,\tau$. 
 \beginbox{Density of Neutrinos}
 \[
-T_{0,\nu}=1.05\,\text{K}\quad n_{\nu}\approx3.4\cdot10^8\,\text{m$^{-3}$}
+T_{0,\nu}=1.95\,\text{K}\quad \Braket{n_\nu}\simeq55\,\text{cm$^{-3}$/flavour}
 \]
 \endbox
 The number of neutrinos and photons are roughly the same, energy density tells us:
 \[
 \Omega_\nu=\frac{\varepsilon_\nu}{\varepsilon_c}=\frac{n_\nu E_\nu}{\varepsilon_c}\ge\frac{n_\nu m_\nu}{\varepsilon_c}
 \]
-We do not know the energy of a single neutrino, but it cannot be smaller than its mass $m_\nu$. Neutrinos are the best candidate of hot DM so it is possible to put an upper limit to the neutrino mass:
+where $n_\nu$ denotes the total density of neutrinos and anti-neutrinos. We do not know the energy of a single neutrino, but it cannot be smaller than its mass $m_\nu$. Neutrinos are the best candidate of hot DM so it is possible to put an upper limit to the neutrino mass. We use a sort of average mass $\Braket{m_\nu}=\frac{1}{3}\sum_i m_{\nu_i}$ to put a limit over the total mass of neutrinos. 
+\[
+\frac{n_\nu\Braket{m_\nu}}{\varepsilon_c}\le\Omega_{\text{HDM}}\Rightarrow\Braket{m_\nu}=\frac{1}{3}\sum_im_{\nu_i}\le\frac{\varepsilon_c\Omega_\nu}{n_\nu}
+\]
+We then get:
 \beginbox{Upper Limit on Neutrino Mass}
 \[
-\Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}\Rightarrow m_{\text{tot}}=\sum_im_i<0.3\,\text{eV}
+\Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}\Rightarrow m_{\text{tot}}=\sum_im_{\nu_i}\le3\frac{\varepsilon_c\Omega_\nu}{n_\nu}=0.3\,\text{eV}
 \]
 \endbox
 This is just from cosmology, there is actually no experiment on Earth which can compete with this measure.\\
@@ -615,12 +623,12 @@ How can we measure C$\nu$B? We look at some possibilities and we start with \tex
 \[
 \left\{
 \begin{aligned}
-&\text{$\beta$ decay}: &&(A,Z)\to(A,Z+1)+e^-+\overline{\nu}_e &&E_e=Q-E_\nu-m_\nu\\
+&\text{$\beta$ decay}: &&(A,Z)\to(A,Z+1)+e^-+\overline{\nu}_e &&E_e=Q-m_\nu\\
 &\text{Neutrino capture}: &&\nu_e+(A,Z)\to(A,Z+1)+e^- &&E_e=Q+m_\nu
 \end{aligned}
 \right.
 \]
-The observable here is the Q-value. In choosing the proper $\beta$ decaying nuclei, we would like to have a small half-life, a high fraction of decays at the endpoint and low Q-values for neutrino mass experiments. How about electronic capture?
+The observable here is the Q-value. In choosing the proper $\beta$ decaying nuclei, we would like to have a small half-life, a high fraction of decays at the endpoint and therefore low Q-values for neutrino mass experiments. How about electronic capture?
 \begin{center}
 \begin{tikzpicture}
   \begin{feynman}
@@ -1166,7 +1174,7 @@ $\beta\beta0\nu$ can only occur if neutrinos are Majorana particles and if neutr
 This is called \textbf{matter creation} because it is a process which \textit{favour} creation of matter instead of anti-matter. The cross in the diagram corresponds to the \textbf{chirality flip} which is proportional to $m^2_{\beta\beta}=|\sum_jU_{ej}^2m_j|^2$ and it depends on the effective Majorana neutrino mass.\\
 The \textbf{CUORE experiment} is currently investigating $\beta\beta0\nu$ in $^{130}$Te. It uses 742 kg of TeO$_2$ crystals ($\sim$246 kg of $^{130}$Te) and it looks for peaks around the known decay energy of $^{130}$Te.\\
 There is still one last topic that we will not cover in detail. The observed flux of reactor neutrinos shows some inconsistencies with three flavour oscillations, especially in the measurements relative to a short baseline, namely the distance from the reactor to the detector. This deficit can be interpreted as a \nth{4} mass eigenstate which does not take place in the interactions, i.e. it does not have a flavour eigenstate, called \textbf{sterile neutrinos}. However, we must remain cautious because it is based on our knowledge of reactor neutrinos, which is hard to know precisely because of the numerous isotopes which can be present in the reaction. Computing such a spectrum is a very difficult job and the point is that no one wants to do this job.\\
-Another problem is the absolute mass scale. As we have seen, we have constraints from cosmology and $\beta\beta0\nu$, together with measurements of beta decay which gives us information about the mass of the electronic neutrino. From beta decay, we count the number of electrons as a function of their energy. To get information near the Q-values, we have to improve our resolution and to do that we have to filter electrons which do not have an energy larger than a chosen threshold. This selection is done by introducing a potential in the experimental apparatus, with a width large enough so that the tunnelling probability is basically zero. However, this is not a flux of collimated electrons, so a magnetic field aligns all the electrons in order to make them parallel to the $\hat{x}$ axis.\\ \textbf{KATRIN} was designed based on this idea and it uses 200 tons of tritium, which has one of the least energetic beta decays:
+Another problem is the absolute mass scale. As we have seen, we have constraints from cosmology and $\beta\beta0\nu$, together with measurements of beta decay which gives us information about the mass of the electronic neutrino. From beta decay, we count the number of electrons as a function of their energy. To get information near the Q-values, we have to improve our resolution and to do that we have to filter electrons which do not have an energy larger than a chosen threshold. This selection is done by introducing a potential in the experimental apparatus, with a width large enough so that the tunnelling probability is basically zero. By varying the filter potential and counting the transmitted electrons for each setting, the integral tritium spectrum is determined. However, this is not a flux of collimated electrons, so a magnetic field aligns all the electrons in order to make them parallel to the $\hat{x}$ axis.\\ \textbf{KATRIN} was designed based on this idea and it uses 200 tons of tritium, which has one of the least energetic beta decays:
 \[
 \text{$^3_1$H}\to\text{$^3_2$He}+e^-+\overline{\nu}_e
 \]
