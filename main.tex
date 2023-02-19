@@ -198,7 +198,7 @@ V(t)=\frac{4}{3}\pi R^3(t)=\frac{4}{3}\pi R_0^3a^3(t)\to\Dot{V}(t)=4\pi a^2(t)\D
 \]
 We substitute this in the expression above to find:
 \[
-\Dot{\varepsilon}(t)+3(\varepsilon(t)+p)\frac{\Dot{a}(t)}{a(t)}=0\Rightarrow\Dot{\varepsilon}(t)=-3\frac{\Dot{a}(t)}{a}[\varepsilon(t)+p]
+\Dot{\varepsilon}(t)+3[\varepsilon(t)+p]\frac{\Dot{a}(t)}{a(t)}=0\Rightarrow\Dot{\varepsilon}(t)=-3\frac{\Dot{a}(t)}{a}[\varepsilon(t)+p]
 \]
 Now that we know the expression for $\Dot{\varepsilon}(t)$ we can write:
 \[
@@ -297,11 +297,11 @@ If $\Gamma(t)<H(t)$ it means that there cannot be any interaction because the Un
 Moreover, the wavelength is re-scaled $\lambda_\gamma=\lambda Z$, i.e. the energy is reduced by a factor $\sim1000$ having then $T\sim2.97$\;K. The CMB temperature is precisely measured to be $T_0=2.7$\;K. We know there is a black body distribution, so we can plug this in the expressions obtained before to find:
 \beginbox{Density of Photons}
 \[
-T_0=2.7\,\text{K}\quad n_\gamma^0=\beta T_0^3\approx4\cdot10^8\;\text{m$^{-3}$} \quad \varepsilon_\gamma^0\approx0.26\;\text{MeV/m$^3$}
+T_0=2.7\,\text{K}\quad n_\gamma^0=\beta T_0^3\approx4\cdot10^8\;\text{m$^{-3}$} \quad \varepsilon_\gamma^0=\alpha T_0^4\approx0.26\;\text{MeV/m$^3$}
 \]
 \endbox
-However, the critical energy density is $\varepsilon_c^0=4.9$\;GeV/m$^3$. This tells us that the contribution from radiation is equal to $\Omega_\gamma^0\approx5\cdot10^{-5}$ and therefore it is negligible today.\\
-The dipole distortion of the CMB results from the fact that the Universe is not perfectly homogeneous today. The distortions on a smaller angular scale tell us that the universe was not perfectly homogeneous at the time of last scattering either, at $Z\approx1100$. The angular size of the temperature fluctuations reflects in part the physical size of the density
+However, the critical energy density today is $\varepsilon_c^0=4.9$\;GeV/m$^3$. This tells us that the contribution from radiation is equal to $\Omega_\gamma^0\approx5\cdot10^{-5}$ and therefore it is negligible today.\\
+The dipole distortion of the CMB results from the fact that the Universe is not perfectly homogeneous today. The distortions on a smaller angular scale tell us that the universe was not perfectly homogeneous at the time of last scattering either. The angular size of the temperature fluctuations reflects in part the physical size of the density
 and velocity fluctuations at $Z\approx1100$.\\
 % \textbf{Dark matter} (DM) decoupled way before photons, therefore there was a distribution of DM which created a lot of potential wells and consequently attracted other mass. Density started to become larger, increasing temperature. This lead to an expansion in volume which lead to the temperature decreasing and so on. We then observe \textbf{acoustic oscillations} which propagates at speed $c_s=\frac{c}{\sqrt{3}}$. What distance do they travel?
 % \[
@@ -327,7 +327,7 @@ Using the expansion in spherical harmonics, we can write the correlation functio
 \[
 C(\theta)=\frac{1}{4\pi}\sum_lC_l(2l+1)P_l(\cos\theta)
 \]
-where $P_l$ are the Legendre polynomials. In this way, a measured correlation function $C(\theta)$ can be broken down into its multiple moments $C_l$. Generally speaking, a term $C_l$ is
+where $P_l$ are the Legendre polynomials. In this way, a measured correlation function $C(\theta)$ can be broken down into its multipole moments $C_l$. Generally speaking, a term $C_l$ is
 a measure of temperature fluctuations on the angular scale $\theta\sim180^\circ/l$. Cosmologists like to plot the following quantity:
 \[
 \Delta_T=\left(\frac{l(l+1)}{2\pi}C_l\right)^{1/2}\Braket{T}
@@ -350,7 +350,7 @@ Since $\varepsilon_c^0=5$\,GeV/m$^3$ this results in $\Omega_B^0=0.05$. There is
 The majority of the matter in the Universe is non-baryonic dark matter (DM), which does not absorb, emit or scatter light of any wavelength. One way of detecting DM is to look for its \textbf{gravitational effects} on visible matter. A classic method of detecting DM involves looking at the \textbf{orbital speeds} of starts in spiral galaxies, such as our own galaxy for example.\\
 Suppose that a star is on a circular orbit around the center of its galaxy. Given the radius of the orbit $R$ and the orbital speed $v$, the star experiences an acceleration equal to $a=\frac{v^2}{R}$ towards the center of the galaxy. If the acceleration is provided by the gravitational attraction of the galaxy, then we have:
 \[
-a=\frac{v^2}{R}=\frac{GM(R)}{R^2}\Rightarrow\sqrt{\frac{GM(R)}{R}}
+a=\frac{v^2}{R}=\frac{GM(R)}{R^2}\Rightarrow v=\sqrt{\frac{GM(R)}{R}}
 \]
 The surface brightness of the disk of a spiral galaxy typically falls off exponentially with distance from the center:
 \[
@@ -403,26 +403,28 @@ There are some hypothesis on its nature,
 % \delta(\Vec{r})\xrightarrow[\text{FT}]{}\Vec{k}=\frac{1}{V}\int d^3re^{i\Vec{k}\cdot\Vec{r}}\delta(\Vec{r})
 % \]
 % From measurements, we understand that
-and measurements tell us that the large majority of dark matter is due to non-relativistic particles, i.e. \textbf{cold dark matter}. Observations tell us that hot dark matter contribute is very small, $\Omega_{\text{HDM}}<7\cdot10^{-3}$.\\
-To get the correct value of DM amount in the Universe, we have to combine its non-relativistic nature with a cross section comparable with the one of the weak interaction:
+and measurements tell us that the large majority of dark matter is due to non-relativistic particles, i.e. \textbf{cold dark matter}. In the cold dark matter theory, structures grow hierarchically, with small objects collapsing under their self-gravity first and merging to form larger and more massive objects. Predictions of cold dark matter are in general agreement with observations of cosmological large-scale structure.\\
+In the hot dark matter theory, structures do not form hierarchically but by fragmentation, with the largest superclusters forming first and subsequently fragmenting into smaller pieces like our galaxy the Milky Way.\\
+Most cosmologists favor the cold dark matter theory as a description of how the Universe went from a smooth initial state at early times (as shown by CMB) to the irregular distribution of galaxies and their clusters seen today. Observations tell us that the hot dark matter contribute is very small, $\Omega_{\text{HDM}}<7\cdot10^{-3}$.\\
 % Given a DM particle $\chi$, in principle we could observe two processes: \textbf{annihilation} of $\chi\chi$ into two Standard Model particles \textit{or} \textbf{production} of two $\chi\chi$ starting from two Standard Model particles. There is also a \textbf{dilution} effect due to the factor $a^3(t)$: given a density $n(t)=\frac{N}{a^3(t)}$ we can see how it evolves with time.
 % \[
 % \Dot{n}(t)=-\frac{3N}{a^4(t)}\Dot{a}(t)=-3n(t)H(t)
 % \]
 % Then, for annihilation and production one finds:
 % \[
-% \Gamma_a=nv\sigma_a\to\Dot{n}_a(t)=-n(t)\Gamma_a=-n^2(t)v\sigma_a \quad \Gamma_p=n_{SM}v_{SM}\sigma_p\to\Dot{n}_p(t)=n^2_{SM}(t)v_{SM}\sigma_p
+% \Gamma_{\text{a}}=nv\sigma_{\text{a}}\to\Dot{n}_{\text{a}}(t)=-n(t)\Gamma_{\text{a}}=-n^2(t)v\sigma_{\text{a}} \quad \Gamma_{\text{p}}=n_{\text{SM}}v_{\text{SM}}\sigma_{\text{p}}\to\Dot{n}_{\text{p}}(t)=n^2_{\text{SM}}(t)v_{\text{SM}}\sigma_{\text{p}}
 % \]
 % At the equilibrium, production and annihilation should compensate each other:
 % \[
-% n_{eq}^2v\sigma_a=n_{SM}^2v_{SM}\sigma_p\Rightarrow\Dot{n}(t)=-3n(t)H(t)+\Dot{n}_p(t)+\Dot{n}_a(t)=-3n(t)H(t)+\sigma_av(n_{eq}^2-n^2)
+% n_{\text{eq}}^2v\sigma_{\text{a}}=n_{\text{SM}}^2v_{\text{SM}}\sigma_{\text{p}}\Rightarrow\Dot{n}(t)=-3n(t)H(t)+\Dot{n}_{\text{p}}(t)+\Dot{n}_{\text{a}}(t)=-3n(t)H(t)+\sigma_{\text{a}}v(n_{\text{eq}}^2-n^2)
 % \]
 % Keeping $n$ close to $n_{eq}$, we get:
 % \[
 % n_{eq}\propto T^{3/2}\exp{-\frac{m_\chi c^2}{kT}}
 % \]
+If we combine its non-relativistic nature with its weakly interactive nature, we can obtain some information about its mass:
 \[
-\sigma=G_F^2m_\chi^2(\hbar c)^2\approx10^{-36}\,\text{cm$^2$} \Rightarrow m_\chi=5\,\text{GeV}
+\sigma=G_F^2m_\chi^2(\hbar c)^2\approx10^{-36}\,\text{cm$^2$} \Rightarrow m_\chi\approx5\,\text{GeV}
 \]
 This is telling us that we are dealing with \textbf{weakly interacting massive particles} (WIMP).\\
 In the Minimal Supersymmetric Standard Model (MSSM), every SM particle has a partner with a spin difference of $1/2$. In particular, for the gauge bosons we have the neutralinos $\chi_1, \chi_2, \chi_3$. Suppose now that $\chi_1$ is the lightest supsersymmetric particle and it is a WIMP candidate: how do we detect it? The idea is to observe \textbf{nuclear recoil} in elastic scattering. We do not look at electron recoil because in order to get the maximum energy transfer the mass of the target should be similar to the mass of the projectile. It is a better idea to use heavy nuclei, which can vary in a wide mass range since $m_\chi\in[5,100]$\,GeV. The recoil energy of the nucleus after the scatter of an angle $\theta$ in the center of mass is given by:
@@ -610,12 +612,12 @@ The number of neutrinos and photons are roughly the same, energy density tells u
 \]
 where $n_\nu$ denotes the total density of neutrinos and anti-neutrinos. We do not know the energy of a single neutrino, but it cannot be smaller than its mass $m_\nu$. Neutrinos are the best candidate of hot DM so it is possible to put an upper limit to the neutrino mass. We use a sort of average mass $\Braket{m_\nu}=\frac{1}{3}\sum_i m_{\nu_i}$ to put a limit over the total mass of neutrinos. 
 \[
-\frac{n_\nu\Braket{m_\nu}}{\varepsilon_c}\le\Omega_{\text{HDM}}\Rightarrow\Braket{m_\nu}=\frac{1}{3}\sum_im_{\nu_i}\le\frac{\varepsilon_c\Omega_\nu}{n_\nu}
+\frac{n_\nu\Braket{m_\nu}}{\varepsilon_c}\le\Omega_{\text{HDM}}\Rightarrow\Braket{m_\nu}=\frac{1}{3}\sum_im_{\nu_i}\le\frac{\varepsilon_c\Omega_{\text{HDM}}}{n_\nu}
 \]
 We then get:
 \beginbox{Upper Limit on Neutrino Mass}
 \[
-\Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}\Rightarrow m_{\text{tot}}=\sum_im_{\nu_i}\le3\frac{\varepsilon_c\Omega_\nu}{n_\nu}=0.3\,\text{eV}
+\Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}\Rightarrow m_{\text{tot}}=\sum_im_{\nu_i}\le3\frac{\varepsilon_c\Omega_{\text{HDM}}}{n_\nu}=0.3\,\text{eV}
 \]
 \endbox
 This is just from cosmology, there is actually no experiment on Earth which can compete with this measure.\\
@@ -862,7 +864,7 @@ To have a better control on the frequency, instead of using solar neutrinos we w
 \[
 n\to p+e^-+\overline{\nu}_e
 \]
-This gives us 6 $\overline{\nu}_e$ per fission, i.e. a flux of $2\cdot10^{20}\overline{\nu}_e/s$ per GW. How do we detect these anti-neutrinos? The golden channel is the inverse beta-decay:
+This gives us 6 $\overline{\nu}_e$ per fission, i.e. a flux of $2\cdot10^{20}\,\overline{\nu}_e/s$ per GW. How do we detect these anti-neutrinos? The golden channel is the inverse beta-decay:
 \[
 \overline{\nu}_e+p\to e^++n
 \]
