@@ -674,26 +674,32 @@ First results showed that neutrinos \textbf{changed their flavour} during their 
 \]
 This implies that neutrino states of flavour $\alpha$ can be seen as the following superposition:
 \[
-\ket{\nu_\alpha}=\sum_jU_{\alpha j}^*\ket{\nu_j}
+\begin{pmatrix}
+    \nu_e\\ \nu_\mu\\ \nu_\tau
+\end{pmatrix}=U\begin{pmatrix}
+    \nu_1\\ \nu_2\\ \nu_3
+\end{pmatrix}
+\quad
+\ket{\nu_\alpha}=\sum_jU_{\alpha j}\ket{\nu_j}
 \]
 with $UU^\dagger=\mathbbm{1}$. Treating $\ket{\nu_j}$ as plane wave states, the wave function at a distance
 $L$ from the production point and at a time $T$ after production is given by:
 \[
-\ket{\nu_\alpha(T,L)}=\sum_jU^*_{\alpha j}\exp{-i(E_jT-p_jL)}\ket{\nu_j}
+\ket{\nu_\alpha(T,L)}=\sum_jU_{\alpha j}\exp{-i(E_jT-p_jL)}\ket{\nu_j}
 \]
 Note that the energy $E_j$ and the momentum $p_j$ are in general different for the different
 mass eigenstates because the kinematics of the production process is different for different
 masses. The detector measures the neutrino flavour, i.e. it detects neutrinos in a state:
 \[
-\bra{\nu_\beta}=\sum_jU_{\beta j}\bra{\nu_j}
+\bra{\nu_\beta}=\sum_jU_{\beta j}^*\bra{\nu_j}
 \]
 Therefore, the amplitude for a neutrino produced as $\ket{\nu_\alpha}$ to be detected as $\bra{\nu_\beta}$ is:
 \[
-\braket{\nu_\beta}{\nu_\alpha(T,L)}=\sum_{jk}U_{\alpha j}^*U_{\beta k}\exp{-i(E_jT-p_jL)}\braket{\nu_k}{\nu_j}=\sum_jU_{\alpha j}^*U_{\beta j}\exp{-i(E_jT-p_jL)}
+\braket{\nu_\beta}{\nu_\alpha(T,L)}=\sum_{jk}U_{\alpha j}U_{\beta k}^*\exp{-i(E_jT-p_jL)}\braket{\nu_k}{\nu_j}=\sum_jU_{\alpha j}U_{\beta j}^*\exp{-i(E_jT-p_jL)}
 \]
 where we used the fact that $\braket{\nu_k}{\nu_j}$ form an orthogonal basis, resulting in a factor $\delta_{ij}$. Hence, the oscillation probability is:
 \[
-\text{prob}(\nu_\alpha\to\nu_\beta)=p_{\alpha\beta}=|\braket{\nu_\beta}{\nu_\alpha(T,L)}|^2=\sum_{jk}U_{\alpha j}^*U_{\beta j}U_{\alpha k}U_{\beta k}^*\exp{-i(E_j-E_k)T+i(p_j-p_k)L}
+\text{prob}(\nu_\alpha\to\nu_\beta)=p_{\alpha\beta}=|\braket{\nu_\beta}{\nu_\alpha(T,L)}|^2=\sum_{jk}U_{\alpha j}U_{\beta j}^*U_{\alpha k}^*U_{\beta k}\exp{-i(E_j-E_k)T+i(p_j-p_k)L}
 \]
 The sum of the exponential will be the sum of random vectors which averages to zero, unless $E_j=E_k$. This results in:
 \[
@@ -701,7 +707,7 @@ p_j=\sqrt{E_j^2-m_j^2}\underset{E_j\gg m_j}{\simeq}E_j\left(1-\frac{m_j^2}{2E_j^
 \]
 We can define $\Delta m_{jk}^2:=m_j^2-m_k^2$, so we have:
 \[
-p_{\alpha\beta}=\sum_{jk}U_{\alpha j}^*U_{\beta j}U_{\alpha k}U_{\beta k}^*\exp{-i\frac{\Delta m_{jk}^2L}{2E}}
+p_{\alpha\beta}=\sum_{jk}U_{\alpha j}U_{\beta j}^*U_{\alpha k}^*U_{\beta k}^*\exp{-i\frac{\Delta m_{jk}^2L}{2E}}
 \]
 Consider now the simple case of having just 2 flavours. The \textbf{mixing matrix} can be written as:
 \[
@@ -872,7 +878,7 @@ which has a cross section $\sim63\cdot10^{-44}$\,cm$^2$/fission and a threshold 
 An experiment which uses reactor neutrinos is \textbf{KamLAND} located in Japan and surrounded by 53 nuclear reactors of various nuclear power plants. The main part of the detector consists of 1000 tons of liquid scintillator. As the positron travels through this liquid scintillator, it emits light in all directions. After a few centimeters, it runs into an electron and annihilates, emitting a second burst of light. Since the positron's energy is closely related to the energy of the antineutrino, it is possible to determine the original antineutrino's energy just by counting the number of pulses recorded by the PMTs. A positron event by itself is not enough to distinguish an anti-neutrino event, we need to observe also the neutron which binds with the proton to form a deuteron, emitting another flash of light. When a neutron-like event occurs within a few hundred microseconds after a positron-like event, it is almost certain that the two were created by an anti-neutrino. The goal in the end is to measure the rate of antineutrinos arriving at KamLAND and to determine their energy distribution. We look for $\overline{\nu}_e$ but they can oscillate from the reactors to the detector, so there is a chance that the particle passes through the detector undetected. Oscillations are measured by estimating this deficit. Together with the rate, the energy spectrum carries additional information. The ratio $L_0/E_{\overline{\nu}_e}$ gives a strong proof of neutrino oscillations, the most precise oscillation parameters are obtained combining results from reactor and solar neutrinos.\\
 \beginbox{KamLAND Results}
 \[
-\Delta m^2_{21}=(7.59\pm0.21)\cdot10^{-5}\,\text{eV$^{-2}$} \quad \tan^2\theta_{12}=0.47^{+0.06}_{-0.05}
+\Delta m^2_{21}=(7.59\pm0.21)\cdot10^{-5}\,\text{eV$^{2}$} \quad \tan^2\theta_{12}=0.47^{+0.06}_{-0.05}
 \]
 \endbox
 Moving now the sources of higher energies we have \textbf{atmospheric neutrinos}, with $E\sim$\,GeV. Atmospheric neutrinos are produced in cosmic rays showers:\\
@@ -948,7 +954,7 @@ From these processes, we expect a rate of muon neutrinos approximately double th
 \textbf{Super-Kamiokande} in Japan consist of 50000 tons of ultra-pure water surrounded by PMTs. Neutrinos interaction in water can produce a charged particle which will give Cherenkov light. The idea was to detect both neutrinos coming from the top and from the bottom, with the latter having the opportunity to oscillate. By looking at the difference between top and bottom, it is possible to measure neutrinos oscillations. By looking at the data, there was no evidence on oscillation in the $e$-signal, while it was present in the $\mu$-signal. Moreover, if $\nu_\mu$ oscillate into $\nu_e$, we would see more $\nu_e$ at a precise value of $\cos\theta$ but that is not the case: $\nu_\mu$ oscillate into something else, a neutrino of a \textbf{new flavour} $\nu_\tau$.\\
 Oscillations tell us that neutrinos have mass and that neutrinos flavour eigenstates $(\nu_e,\nu_\mu,\nu_\tau)$ are a mixture of mass eigenstates $(\nu_1,\nu_2,\nu_3)$. Measurements tell us:
 \[
-\Delta m^2_{\text{atm}}\sim2.5\cdot10^{-3}\,\text{eV$^{-2}$} \quad \Delta m^2_{\text{sol}}\sim7.5\cdot10^{-5}\,\text{eV$^{-2}$}
+\Delta m^2_{\text{atm}}\sim2.5\cdot10^{-3}\,\text{eV$^{2}$} \quad \Delta m^2_{\text{sol}}\sim7.5\cdot10^{-5}\,\text{eV$^{2}$}
 \]
 However, we do not know the sign of $\Delta m^2$, since the leading order vacuum oscillation formula is only sensitive to $\sin^2(\Delta m^2)$.
 The hierarchical structure of the mass is still unknown and this is known as the \textbf{hierarchy problem}. From this, it is possible to conclude that the third mixing angle $\theta_{13}$ which is the amount of $\nu_e$ in the \nth{3} state is much smaller compared to the other two mixing angles.
@@ -1180,5 +1186,6 @@ Another problem is the absolute mass scale. As we have seen, we have constraints
 \[
 \text{$^3_1$H}\to\text{$^3_2$He}+e^-+\overline{\nu}_e
 \]
-The electron and the neutrino share only 18.6 keV of energy between them.  If the neutrino is a massless particle, there is no lower bound to the energy the neutrino can carry, so the electron energy spectrum should extend all the way to the 18.6 keV limit. On the other hand, if the neutrino has mass, the electron spectrum should drop off short of the total energy limit and have a different shape. First results put an upper bound of electron neutrino mass to 1.1 eV which was reduced nowadays to 0.8 eV. 
+The electron and the neutrino share only 18.6 keV of energy between them.  If the neutrino is a massless particle, there is no lower bound to the energy the neutrino can carry, so the electron energy spectrum should extend all the way to the 18.6 keV limit. On the other hand, if the neutrino has mass, the electron spectrum should drop off short of the total energy limit and have a different shape. The filter is needed since the events of interest are the ones in which the electron carries most of the energy and the neutrino almost none, therefore by sorting out the electrons based on their energy it is possible to discriminate between interesting and non interesting events and not overwhelm the detector.\\
+First results put an upper bound of electron neutrino mass to 1.1 eV which was reduced nowadays to 0.8 eV. 
 \end{document}
