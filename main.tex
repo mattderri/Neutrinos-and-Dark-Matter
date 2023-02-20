@@ -204,7 +204,7 @@ Now that we know the expression for $\Dot{\varepsilon}(t)$ we can write:
 \[
 \frac{\Ddot{a}(t)}{a(t)}=\frac{4\pi G}{3c^2}\left[-3\varepsilon(t)-3p+2\varepsilon(t)\right]=-\frac{4\pi G}{3c^2}[\varepsilon(t)+3p]
 \]
-This is telling us that with \textit{only} gravitational force the Universe would \textbf{contract}, there should be something else in opposition to the negative sign. This \textit{something else} is the \textbf{cosmological constant} $\Lambda$:
+This is telling us that with \textit{only} gravitational force the Universe would \textbf{contract}, in contrast with current observations: there should be something else in opposition to the negative sign. This \textit{something else} is the \textbf{cosmological constant} $\Lambda$:
 \beginbox{Cosmological Constant} 
 \[
 \frac{\Ddot{a}(t)}{a(t)}=-\frac{4\pi G}{3c^2}[\varepsilon(t)+3p]+\frac{\Lambda}{3}
@@ -649,11 +649,7 @@ The observable here is the Q-value. In choosing the proper $\beta$ decaying nucl
 \end{tikzpicture}
 \end{center}
 Here the measurable quantity is $E_i$, i.e. the de-excitation energy of the i-th atomic shell. In principle, the energy spectrum is given by a series of lines shaped by the neutrino phase-space. The delta function in the phase-space does not allow us to measure the spectrum endpoint. However, due to uncertainty principle the lines have a natural width, the delta function has to be replaced with a Breit-Wigner distribution and this allows $E$ to reach the Q-value and produce a neutrino with zero energy. We need a nucleus with $E_i$ close to $Q$ to have a small suppression from the Breit-Wigner. If there is no overdensity in the neutrino distribution at the Earth then the detection is impossible. With no relic neutrinos overdensity, the requirements on the target mass are enormously demanding and upcoming experiments will only be sensitive to overdensity of relic neutrinos.\\
-In the last decade, we have focused on neutrinos coming from the Sun, where the main reaction for neutrinos production is:
-\[
-4p\to\text{$^4$He}+2e^++2\nu_e
-\]
-with a Q-value of $Q=26.73$\,MeV and neutrinos mean energy $\Braket{E_\nu}\approx0.3$\,MeV. There are models which relates the neutrino flux with the Sun luminosity, in particular the Standard Solar Model tells us that:
+In the last decade, we have focused on neutrinos coming from the Sun, \textbf{solar neutrinos}. There are models which relates the neutrino flux with the Sun luminosity, in particular the Standard Solar Model tells us that:
 \[
 \phi(\nu_e)=\frac{N(\nu_e)}{4\pi D^2}=6.4\cdot10^{10}\,\nu_e/\text{(cm$^2$s)}
 \]
@@ -661,18 +657,22 @@ One of the first experiments to detect neutrinos produced in the Sun was the \te
 \[
 \nu_e+\text{$^{37}$Cl}\to\text{$^{37}$Ar}+e^-
 \]
-And it has a threshold of $E_\nu=0.814$\,MeV. Due to the relatively short half-life of $^{37}$Ar, helium was periodically pumped in to collect the argon which was produced in the reaction and then infer the neutrino flux. Experimental results were very close to one third of theoretical predictions, but neither the calculations or the experiment seemed to be wrong and this puzzled scientists. This deficit became known as the \textbf{solar neutrinos problem}.\\
+And it has a threshold of $E_\nu=0.814$\,MeV. The threshold makes the experiment sensitive only to neutrinos produced in the following reactions:
+\[
+\text{$^8$B}\to\text{$^8$Be}+e^++\nu_e \quad p+e^-+p\to\text{$^2$H}+\nu_e \quad \text{$^7$Be}+e^-\to\text{$^7$Li}+\nu_e
+\]
+Due to the relatively short half-life of $^{37}$Ar, helium was periodically pumped in to collect the argon which was produced in the reaction and then infer the neutrino flux. Experimental results were very close to one third of theoretical predictions, but neither the calculations or the experiment seemed to be wrong and this puzzled scientists. This deficit became known as the \textbf{solar neutrinos problem}.\\
 The \textbf{Sudbury Neutrino Observatory} (SNO) in Canada solved this problem. SNO was located 2 km underground and used 1000 tons of ultra-pure heavy water contained in a sphere of 6 meters of radius. The sphere was surrounded by 9500 PMTs, the acrylic vessel surrounding the sphere was filled with 7300 tons of light water to shield from external background. Three types of reactions take place:
 \begin{itemize}
-    \item \underline{Charged Current}: $\nu_e+d\to p+p+e^-$. Solar neutrinos have energy smaller than the mass of $\mu$ and $\tau$, hence only electron neutrinos can participate in this reaction. Most of the energy is transferred to the electron, which is then detectable via Cherenkov effect. Electrons are produced in all directions but there is a weak preference for the opposite direction with respect to the incoming direction of the neutrinos.
-    \item \underline{Neutral Current}: $\nu_\alpha+d\to p+n+\nu_\alpha$, where $\alpha=e,\mu,\tau$. This is important because it is sensitive to all flavours with equal cross section. From the flux measured through this interaction it is possible to understand if the deficit observed in other experiments was due to the fact that they were sensitive only to electron neutrinos or if it was due to the theoretical model.
-    \item \underline{Elastic Scattering}: $\nu_\alpha+e^-\to\nu_\alpha+e^-$, where $\alpha=e,\mu,\tau$. All three flavours of neutrinos can take place in this interaction through the exchange of a $Z$ boson, electronic neutrinos can also exchange a $W$ boson and therefore dominate this interaction. It has a low statistics but a strong direction sensitivity. 
+    \item \underline{Charged Current}: $\nu_e+d\to p+p+e^-$. $d$ denotes the deuteron nucleus, formed by a proton and a neutron. In this type of interaction, a neutron is converted into a proton. Solar neutrinos have energy smaller than the mass of $\mu$ and $\tau$, hence only electron neutrinos can participate in this reaction. Most of the energy is transferred to the electron, which is then detectable via Cherenkov effect. The energy threshold is $E_{\text{th}}=1.44$\, MeV. However, the experiment is sensitive only to electrons which have enough energy to make them distinguishable from the background. The energy threshold for neutrinos is then higher and the experiment is sensitive only to solar neutrinos produced via $^8$B$\to^8$Be$+e^++\nu_e$.
+    \item \underline{Neutral Current}: $\nu_\alpha+d\to p+n+\nu_\alpha$, where $\alpha=e,\mu,\tau$. This process is particularly relevant because it is sensitive to all flavours with equal cross section. The neutrino \textit{breaks} the deuteron in a proton and a neutron, which is then detected via neutronic capture. When a neutron gets captured, a photon is emitted in a totally uncorrelated direction with respect to the Sun and this can be used to discriminate them from photons emitted via Cherenkov in other interactions. The energy threshold is $E_{\text{th}}=2.224$\,MeV and again only neutrinos from $^8$B can partecipate. From the flux measured through this interaction it is possible to understand if the deficit observed in other experiments was due to the fact that they were sensitive only to electron neutrinos or if it was due to the theoretical model.
+    \item \underline{Elastic Scattering}: $\nu_\alpha+e^-\to\nu_\alpha+e^-$, where $\alpha=e,\mu,\tau$. All three flavours of neutrinos can take place in this interaction through the exchange of a $Z$ boson, electronic neutrinos can also exchange a $W$ boson and therefore dominate this interaction. This reaction has no energy threshold, but the detection threshold makes this process sensitive only to neutrinos produced via $^8$B. 
 \end{itemize}
 First results showed that neutrinos \textbf{changed their flavour} during their travel from the Sun to the detector. The neutrino flux for muonic and tauonic flavour agreed with theoretical predictions, while for the electronic neutrinos the flux was roughly one third of the other two. Since the Sun produces only electronic neutrinos, this means that two thirds of the electronic neutrinos changed their flavour. This transition can be explained with the fact that neutrinos \textbf{oscillates}, which implies that they have a non-zero mass.
 \[
 \ket{\nu_\alpha}\longrightarrow\ket{\nu_\alpha},\ket{\nu_\beta},\ket{\nu_\gamma}
 \]
-This implies that neutrino states of flavour $\alpha$ can be seen as the following superposition:
+This implies that neutrino flavour eigenstates can be seen as a superposition of mass eigenstates:
 \[
 \begin{pmatrix}
     \nu_e\\ \nu_\mu\\ \nu_\tau
@@ -682,7 +682,7 @@ This implies that neutrino states of flavour $\alpha$ can be seen as the followi
 \quad
 \ket{\nu_\alpha}=\sum_jU_{\alpha j}\ket{\nu_j}
 \]
-with $UU^\dagger=\mathbbm{1}$. Treating $\ket{\nu_j}$ as plane wave states, the wave function at a distance
+where $\alpha$ denotes flavour eigenstates, $j$ mass eigenstates and $UU^\dagger=\mathbbm{1}$. Treating $\ket{\nu_j}$ as plane wave states, the wave function at a distance
 $L$ from the production point and at a time $T$ after production is given by:
 \[
 \ket{\nu_\alpha(T,L)}=\sum_jU_{\alpha j}\exp{-i(E_jT-p_jL)}\ket{\nu_j}
@@ -697,7 +697,7 @@ Therefore, the amplitude for a neutrino produced as $\ket{\nu_\alpha}$ to be det
 \[
 \braket{\nu_\beta}{\nu_\alpha(T,L)}=\sum_{jk}U_{\alpha j}U_{\beta k}^*\exp{-i(E_jT-p_jL)}\braket{\nu_k}{\nu_j}=\sum_jU_{\alpha j}U_{\beta j}^*\exp{-i(E_jT-p_jL)}
 \]
-where we used the fact that $\braket{\nu_k}{\nu_j}$ form an orthogonal basis, resulting in a factor $\delta_{ij}$. Hence, the oscillation probability is:
+where we used the fact that $\braket{\nu_k}{\nu_j}$ form an orthogonal basis, resulting in a factor $\delta_{ij}$. Hence, the \textbf{oscillation probability} is:
 \[
 \text{prob}(\nu_\alpha\to\nu_\beta)=p_{\alpha\beta}=|\braket{\nu_\beta}{\nu_\alpha(T,L)}|^2=\sum_{jk}U_{\alpha j}U_{\beta j}^*U_{\alpha k}^*U_{\beta k}\exp{-i(E_j-E_k)T+i(p_j-p_k)L}
 \]
@@ -740,7 +740,7 @@ By multiplying everything on the left by $U_{\alpha j}$ we get:
 \[
 i\frac{d}{dt}U_{\alpha j}\ket{\nu_j,t}=i\frac{d}{dt}\ket{\nu_\alpha,t}=U_{\alpha j}\text{diag}(E)_{jk}U^\dagger_{\beta k}\ket{\nu_\beta,t}
 \]
-where we can define the oscillation Hamiltonian in the vacuum as:
+from which it is possible to define the oscillation Hamiltonian in the vacuum as:
 \[
 H_{\text{osc}}=U\text{diag}(E)U^\dagger \quad \text{diag}(E)_{jk}=\left\{\begin{aligned}
 &E_j &&\text{if $j=k$}\\
@@ -866,7 +866,7 @@ which as usual leads to:
 % \end{aligned}\right.
 % \]
 Notice that in the case of oscillations in vacuum, we cannot know the sign of $\Delta m^2=m_2^2-m_1^2$. The frequency depends on it, but we do not know if $m_2>m_1$ or $m_2<m_1$. Instead, with oscillations in a medium, we exploit the fact that the sign of $x$ corresponds to the sign of $\Delta m^2$, which modifies the amplitude of oscillations. Oscillations in vacuum do not give us sensitivity on the mass order, while they do when we work with matter.\\
-To have a better control on the frequency, instead of using solar neutrinos we work with reactor neutrinos. Reactors emit neutrons from uranium and plutonium, these neutrons then interact:
+To have a better control on the frequency, instead of using solar neutrinos we work with \textbf{reactor neutrinos}. Reactors emit neutrons from uranium and plutonium, these neutrons then interact:
 \[
 n\to p+e^-+\overline{\nu}_e
 \]
@@ -875,7 +875,7 @@ This gives us 6 $\overline{\nu}_e$ per fission, i.e. a flux of $2\cdot10^{20}\,\
 \overline{\nu}_e+p\to e^++n
 \]
 which has a cross section $\sim63\cdot10^{-44}$\,cm$^2$/fission and a threshold of 1.8 MeV.\\
-An experiment which uses reactor neutrinos is \textbf{KamLAND} located in Japan and surrounded by 53 nuclear reactors of various nuclear power plants. The main part of the detector consists of 1000 tons of liquid scintillator. As the positron travels through this liquid scintillator, it emits light in all directions. After a few centimeters, it runs into an electron and annihilates, emitting a second burst of light. Since the positron's energy is closely related to the energy of the antineutrino, it is possible to determine the original antineutrino's energy just by counting the number of pulses recorded by the PMTs. A positron event by itself is not enough to distinguish an anti-neutrino event, we need to observe also the neutron which binds with the proton to form a deuteron, emitting another flash of light. When a neutron-like event occurs within a few hundred microseconds after a positron-like event, it is almost certain that the two were created by an anti-neutrino. The goal in the end is to measure the rate of antineutrinos arriving at KamLAND and to determine their energy distribution. We look for $\overline{\nu}_e$ but they can oscillate from the reactors to the detector, so there is a chance that the particle passes through the detector undetected. Oscillations are measured by estimating this deficit. Together with the rate, the energy spectrum carries additional information. The ratio $L_0/E_{\overline{\nu}_e}$ gives a strong proof of neutrino oscillations, the most precise oscillation parameters are obtained combining results from reactor and solar neutrinos.\\
+An experiment which uses reactor neutrinos is \textbf{KamLAND} located in Japan and surrounded by 53 nuclear reactors of various nuclear power plants. The main part of the detector consists of 1000 tons of liquid scintillator. As the positron travels through this liquid scintillator, it emits light in all directions. After a few centimeters, it runs into an electron and annihilates, emitting a second burst of light. Since the positron's energy is closely related to the energy of the anti-neutrino, it is possible to determine the original anti-neutrino's energy just by counting the number of pulses recorded by the PMTs. A positron event by itself is not enough to distinguish an anti-neutrino event, we need to observe also the neutron which binds with the proton to form a deuteron, emitting another flash of light. When a neutron-like event occurs within a few hundred microseconds after a positron-like event, it is almost certain that the two were created by an anti-neutrino. The goal in the end is to measure the rate of antineutrinos arriving at KamLAND and to determine their energy distribution. We look for $\overline{\nu}_e$ but they can oscillate from the reactors to the detector, so there is a chance that the particle passes through the detector undetected. Oscillations are measured by estimating this deficit. Together with the rate, the energy spectrum carries additional information. The ratio $L_0/E_{\overline{\nu}_e}$ gives a strong proof of neutrino oscillations, the most precise oscillation parameters are obtained combining results from reactor and solar neutrinos.\\
 \beginbox{KamLAND Results}
 \[
 \Delta m^2_{21}=(7.59\pm0.21)\cdot10^{-5}\,\text{eV$^{2}$} \quad \tan^2\theta_{12}=0.47^{+0.06}_{-0.05}
@@ -1050,8 +1050,8 @@ Therefore, with two families we cannot have CP violation. Let's look now at the 
 \]
 In this case, it might be possible that $p(\nu_\alpha\to\nu_\beta)\neq p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)$. The amount of CP violation can be quantified:
 \begin{align*}
-p(\nu_\alpha\to\nu_\beta)-p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)&=\sum_{jk}U_{\alpha j}^*U_{\beta j}U_{\alpha k}U_{\beta k}^*\exp{-i\frac{\Delta m^2L}{2E}}-\sum_{jk}(\text{h.c.})\exp{-i\frac{\Delta m^2L}{2E}}\\
-&=\sum_{jk}2\underbrace{\mathfrak{Im}[U_{\alpha j}^*U_{\beta j}U_{\alpha k}U_{\beta k}^*]}_{\text{Jarlskog invariant}}\exp{-i\frac{\Delta m^2L}{4E}}
+p(\nu_\alpha\to\nu_\beta)-p(\overline{\nu}_\alpha\to\overline{\nu}_\beta)&=\sum_{jk}U_{\alpha j}U_{\beta j}^*U_{\alpha k}^*U_{\beta k}\exp{-i\frac{\Delta m^2L}{2E}}-\sum_{jk}(\text{h.c.})\exp{-i\frac{\Delta m^2L}{2E}}\\
+&=\sum_{jk}2\underbrace{\mathfrak{Im}[U_{\alpha j}U_{\beta j}^*U_{\alpha k}^*U_{\beta k}]}_{\text{Jarlskog invariant}}\exp{-i\frac{\Delta m^2L}{4E}}
 \end{align*}
 The \textbf{Jarlskog invariant} measures the amount of CP violation and it is parametrized as:
 \[
