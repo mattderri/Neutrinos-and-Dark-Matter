@@ -7,7 +7,7 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{wrapfig}
-\usepackage{subcaption}
+%\usepackage{subcaption}
 \usepackage{textcomp}
 \usepackage{geometry}
 \usepackage{pdfpages}
@@ -18,14 +18,14 @@
 \usepackage{fancyhdr}
 \usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage{tcolorbox}
+\usepackage[most]{tcolorbox}
 \usepackage{bbm}
 \usepackage{braket}
 \usepackage{amssymb}
 \usepackage{pifont}
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
-\usepackage[table]{xcolor, colortbl}
+\usepackage[table]{colortbl}
 \usepackage{cancel}
 \DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
@@ -39,11 +39,14 @@
 \usepackage{circuitikz}
 \usetikzlibrary{arrows,shapes,positioning}
 \usepackage{subfig}
-\newcommand{\beginbox}[1]{\begin{tcolorbox}[width=\textwidth,colback={black!40},title={#1},colbacktitle={purple!55},coltitle=black]}
-\renewcommand{\endbox}{\end{tcolorbox}\noindent}
+\usepackage{pgfplots}
+% \newcommand{\begin{mybox}}[1]{\begin{tcolorbox}[width=\textwidth,colback={black!40},title={#1},colbacktitle={purple!55},coltitle=black]}
+% \renewcommand{\end{mybox}\noindent}{\end{tcolorbox}\noindent}
 % \begin{tcolorbox}[width=\textwidth,colback={yellow!50},title={Rosenbluth Cross Section},colbacktitle={gray!50},coltitle=black]
-
-\title{\textbf{Appunti del corso di}\\\textbf{Neutrinos and Dark Matter}}
+\newtcolorbox{mybox}{
+    arc=0pt,width=\textwidth,colback={blue!30},boxrule=0pt,frame hidden
+}
+\title{\textbf{Neutrinos and Dark Matter}}
 \author{Matteo D'Errigo}
 
 \begin{document}
@@ -58,11 +61,13 @@ We know that the universe is expanding so the question is: \textit{is it acceler
 d(t)=r\cdot a(t)\to\Dot{d}(t)=r\cdot\Dot{a}(t)
 \]
 Putting these two expressions together gives us:
-\beginbox{Hubble Constant}
+\begin{mybox}
+\textbf{Hubble Constant{\color{blue!30}{g}}}
+\hrule
 \[
 v(t):=\Dot{d}(t)=\frac{\Dot{a}(t)}{a(t)}d(t)=H(t)d(t)
 \]
-\endbox
+\end{mybox}\noindent
 Where we have defined the ratio $\frac{\Dot{a}(t)}{a(t)}$ as the \textbf{Hubble constant} $H(t)$ (although it is \textit{not} really constant). At a reference time $t_0$ chosen to be today, it is possible to compute the value of the Hubble constant:
 \[
 v(t_0)=H_0\cdot d(t_0)\to H_0=68\,\text{km/(Mpc$\cdot$s)}=2\cdot10^{-18}\,\text{s$^{-1}$}
@@ -77,11 +82,13 @@ where we have performed a first order approximation since $H_0$ is small. Moreov
 V(t)=V(t_0)\exp{3H_0(t-t_0)}\simeq V(t_0)[1+3H_0(t-t_0)]
 \]
 Taking now the ratio of these two expressions allows us to compute the \textbf{Hubble time}.
-\beginbox{Hubble Time}
+\begin{mybox}
+\textbf{Hubble Time {\color{blue!30}{g}}}
+\hrule
 \[
 t_H:=\frac{1}{H_0}=\frac{d(t_0)}{V(t_0)}=14.4\,\text{Gy}
 \]
-\endbox
+\end{mybox}\noindent
 This value is really close to the actual age of the Universe, 13.7 Gy. This discrepancy can be explained by considering the fact that the Hubble constant was greater in the past.\\
 If we compute the distance that light has travelled during this time, we end up with:
 \[
@@ -105,11 +112,13 @@ Moreover, we know that $d(t)=r\cdot a(t)$, from which we can write:
 a(t)=a(t_0)[1+H_0(t-t_0)]=1+H_0(t-t_0)\to\frac{1}{a(t_{\text{e}})}=\frac{1}{1+H_0(t_{\text{e}}-t_0)}\simeq1-H_0(t_{\text{e}}-t_0)
 \]
 Therefore, at first order in our expansion we have:
-\beginbox{Redshift}
+\begin{mybox}
+\textbf{Redshift{\color{blue!30}{g}}}
+\hrule
 \[
 Z=H_0(t_0-t_{\text{e}})
 \]
-\endbox
+\end{mybox}\noindent
 Typically, what is observed is light for which it holds true that:
 \[
 d=c\Delta t=\frac{Zc}{H_0}
@@ -138,11 +147,13 @@ At this point we have to take into account that the sphere we are considering mi
 M=\frac{4}{3}\pi R^3(t)\rho(t)\to\Dot{R}^2(t)=R_0^2\Dot{a}^2(t)=\frac{8}{3}\pi G\rho(t)R_0^2a^2(t)+2U
 \]
 where we used the fact that $R(t)=R_0a(t)$. Last thing left to do is to divide both sides by $R_0^2a^2(t)$ which gives us:
-\beginbox{Friedmann Equation (classical derivation)}
+\begin{mybox}
+\textbf{Friedmann Equation (classical derivation)}
+\hrule
 \[
 H^2(t)=\left(\frac{\Dot{a}(t)}{a(t)}\right)^2=\frac{8}{3}\pi G\rho(t)+\frac{2U}{R_0^2a^2(t)}
 \]
-\endbox
+\end{mybox}\noindent
 What we have done so far was a classical treatment, now we move to the relativistic case where the energy density can be expressed as $\varepsilon(t)=\rho(t)c^2$. The tricky part comes when we have to define the initial conditions, which were simply given by the factor proportional to $U$ in the previous formulation. Working with \textbf{Minkowski metric}, we know that:
 \[
 ds^2=-cdt^2+dr^2+r^2d\Omega^2=-cdt^2+dr^2+r^2[d\theta^2+\sin^2\theta d\varphi^2]
@@ -160,17 +171,21 @@ The \textbf{Robertson-Walker metric} for a homogeneous, isotropic and expanding 
 ds^2=-cdt^2+a^2(t)[dr^2+S_k^2(r)d\Omega^2]
 \]
 General relativity tells us that $2U$ goes into $-kc^2$, therefore we have:
-\beginbox{Friedmann Equation (relativistic version)}
+\begin{mybox}
+\textbf{Friedmann Equation (relativistic version)}
+\hrule
 \[
 H^2(t)=\left(\frac{\Dot{a}(t)}{a(t)}\right)^2=\frac{8\pi G}{3c^2}\varepsilon(t)-\frac{kc^2}{R_0^2a^2(t)}
 \]
-\endbox
+\end{mybox}\noindent
 Now we can perform some tricks, i.e. dividing everything by $H^2(t)$ and defining the \textbf{critical density} as:
-\beginbox{Critical Energy Density}
+\begin{mybox}
+\textbf{Critical Energy Density}
+\hrule
 \[
 \frac{1}{\varepsilon_c(t)}:=\frac{8\pi G}{3c^2H^2(t)} \quad \varepsilon_c(t_0)=4.9\pm0.3\,\text{GeV/m$^3$}
 \]
-\endbox
+\end{mybox}\noindent
 Plugging this into the previous expression one gets:
 \[
 1-\frac{\varepsilon(t)}{\varepsilon_c(t)}=-\frac{kc^2}{R_0^2a^2(t)H^2(t)}
@@ -205,21 +220,25 @@ Now that we know the expression for $\Dot{\varepsilon}(t)$ we can write:
 \frac{\Ddot{a}(t)}{a(t)}=\frac{4\pi G}{3c^2}\left[-3\varepsilon(t)-3p+2\varepsilon(t)\right]=-\frac{4\pi G}{3c^2}[\varepsilon(t)+3p]
 \]
 This is telling us that with \textit{only} gravitational force the Universe would \textbf{contract}, in contrast with current observations: there should be something else in opposition to the negative sign. This \textit{something else} is the \textbf{cosmological constant} $\Lambda$:
-\beginbox{Cosmological Constant} 
+\begin{mybox}
+\textbf{Cosmological Constant} 
+\hrule
 \[
 \frac{\Ddot{a}(t)}{a(t)}=-\frac{4\pi G}{3c^2}[\varepsilon(t)+3p]+\frac{\Lambda}{3}
 \]
-\endbox
+\end{mybox}\noindent
 Assume now that the contribution of the cosmological constant $\Lambda$ is the dominant one and that $H(t)$ is constant over a short time-scale, hence:
 \[
 \Ddot{a}(t)=H(t)\Dot{a}(t)=H^2(t)a(t)\to H^2(t)=\frac{\Ddot{a}(t)}{a(t)}\simeq\frac{\Lambda}{3}
 \]
 It is therefore possible to extend the Friedmann equation:
-\beginbox{Full Metal Friedmann Equation}
+\begin{mybox}
+\textbf{Full Metal Friedmann Equation}
+\hrule
 \[
 H^2(t)=\left(\frac{\Dot{a}(t)}{a(t)}\right)^2=\frac{8\pi G}{3c^2}\varepsilon(t)-\frac{kc^2}{R_0^2a^2(t)}+\frac{\Lambda}{3}
 \]
-\endbox
+\end{mybox}\noindent
 Dividing everything by $H^2(t)$ gives us:
 \[
 1=\Omega_\varepsilon(t)+\Omega_c(t)+\Omega_\Lambda(t)
@@ -295,11 +314,13 @@ At a certain point, electrons combined with protons to form hydrogen atoms (\tex
 where $n_e$ is the electrons density and $\sigma_e$ the electrons cross section.\\
 If $\Gamma(t)<H(t)$ it means that there cannot be any interaction because the Universe is expanding too fast. By working out the dependence of $\Gamma(t)$ and $H(t)$ on the scale factor and then imposing $\Gamma(t)=H(t)$, it is possible to show that photons decoupling occurred at a redshift of $Z=1090$ when the Universe was at a temperature of $T=2970$\;K.\\
 Moreover, the wavelength is re-scaled $\lambda_\gamma=\lambda Z$, i.e. the energy is reduced by a factor $\sim1000$ having then $T\sim2.97$\;K. The CMB temperature is precisely measured to be $T_0=2.7$\;K. We know there is a black body distribution, so we can plug this in the expressions obtained before to find:
-\beginbox{Density of Photons}
+\begin{mybox}
+\textbf{Density of Photons}
+\hrule
 \[
 T_0=2.7\,\text{K}\quad n_\gamma^0=\beta T_0^3\approx4\cdot10^8\;\text{m$^{-3}$} \quad \varepsilon_\gamma^0=\alpha T_0^4\approx0.26\;\text{MeV/m$^3$}
 \]
-\endbox
+\end{mybox}\noindent
 However, the critical energy density today is $\varepsilon_c^0=4.9$\;GeV/m$^3$. This tells us that the contribution from radiation is equal to $\Omega_\gamma^0\approx5\cdot10^{-5}$ and therefore it is negligible today.\\
 The dipole distortion of the CMB results from the fact that the Universe is not perfectly homogeneous today. The distortions on a smaller angular scale tell us that the universe was not perfectly homogeneous at the time of last scattering either. The angular size of the temperature fluctuations reflects in part the physical size of the density
 and velocity fluctuations at $Z\approx1100$.\\
@@ -358,11 +379,13 @@ I(R)=I_0\exp{-R/R_s}
 \]
 with the scale length $R_s$ typically of the order of a few kiloparsecs, for our galaxy, $R_s=4$\,kpc. Once we are a few scale lengths away from the center of the galaxy, the mass of the stars inside $R$ becomes essentially constant. Therefore, if stars contributed to all (or at least most) of the mass in the galaxy, the velocity would fall as $v\propto\sqrt{1/R}$. However, measurements give no sign of this decrease in the orbital speed. Since the orbital speed of stars at large distances is greater than it would be if stars and gas were the only matter present, we deduce the existence of a \textbf{dark halo} within which the visible stellar disk is embedded.\\
 There are different models to describe dark matter distribution, one of the most used ones is the Navarro-Frenk-White model.
-\beginbox{Navarro-Frenk-White Model}
+\begin{mybox}
+\textbf{Navarro-Frenk-White Model{color{blue!30}{g}}}
+\hrule
 \[
 \rho(R)=\frac{\rho_0}{\left(\frac{R}{R_d}\right)^\gamma\left[1+\left(\frac{R}{R_d}\right)^\alpha\right]^{\frac{\beta-\gamma}{\alpha}}}
 \]
-\endbox
+\end{mybox}\noindent
 For our galaxy $\gamma=\alpha=1$, $\beta=3$, $R_d=20$\,kpc. For $R<R_d$, the density goes like $\rho\sim\frac{1}{R}$ and we get $\rho_0=0.3$\, Gev/cm$^3$.\\
 % \hline\\
 % \noindent\\
@@ -601,11 +624,13 @@ With similar arguments we can also compute the number of neutrinos $n_\nu$:
 n_{\overline{\nu}_\alpha}=n_{\nu_\alpha}=\frac{3}{22}n_\gamma\Rightarrow \Braket{n_\nu}=\Braket{n_{\overline{\nu}}}\simeq55\,\text{cm$^{-3}$/flavour}
 \]
 where the index $\alpha$ is for the three families $e,\mu,\tau$. 
-\beginbox{Density of Neutrinos}
+\begin{mybox}
+\textbf{Density of Neutrinos}
+\hrule
 \[
 T_{0,\nu}=1.95\,\text{K}\quad \Braket{n_\nu}\simeq55\,\text{cm$^{-3}$/flavour}
 \]
-\endbox
+\end{mybox}\noindent
 The number of neutrinos and photons are roughly the same, energy density tells us:
 \[
 \Omega_\nu=\frac{\varepsilon_\nu}{\varepsilon_c}=\frac{n_\nu E_\nu}{\varepsilon_c}\ge\frac{n_\nu m_\nu}{\varepsilon_c}
@@ -615,11 +640,13 @@ where $n_\nu$ denotes the total density of neutrinos and anti-neutrinos. We do n
 \frac{n_\nu\Braket{m_\nu}}{\varepsilon_c}\le\Omega_{\text{HDM}}\Rightarrow\Braket{m_\nu}=\frac{1}{3}\sum_im_{\nu_i}\le\frac{\varepsilon_c\Omega_{\text{HDM}}}{n_\nu}
 \]
 We then get:
-\beginbox{Upper Limit on Neutrino Mass}
+\begin{mybox}
+\textbf{Upper Limit on Neutrino Mass}
+\hrule
 \[
 \Omega_\nu<\Omega_{\text{HDM}}<7\cdot10^{-3}\Rightarrow m_{\text{tot}}=\sum_im_{\nu_i}\le3\frac{\varepsilon_c\Omega_{\text{HDM}}}{n_\nu}=0.3\,\text{eV}
 \]
-\endbox
+\end{mybox}\noindent
 This is just from cosmology, there is actually no experiment on Earth which can compete with this measure.\\
 How can we measure C$\nu$B? We look at some possibilities and we start with \textbf{single interaction detection}:
 \[
@@ -717,13 +744,15 @@ U=\left(\begin{array}{cc}
 \end{array}\right)
 \]
 We explicitly compute $p_{\alpha\beta}$.
-\beginbox{Oscillation Probability in the Vacuum}
+\begin{mybox}
+\textbf{Oscillation Probability in the Vacuum}
+\hrule
 \begin{align*}
 p_{\alpha\beta}=&\sin^2\theta\cos^2\theta-\sin^2\theta\cos^2\theta\exp{-i\frac{\Delta m^2L}{2E}}\\
 &-\cos^2\theta\sin^2\theta\exp{+i\frac{\Delta m^2L}{2E}}+\cos^2\theta\sin^2\theta\\
 =&2\sin^2\theta\cos^2\theta\left[1-\cos\left(\frac{\Delta m^2L}{2E}\right)\right]=\sin^2(2\theta)\sin^2\left(\frac{\Delta m^2L}{4E}\right)
 \end{align*}
-\endbox
+\end{mybox}\noindent
 It follows that $p_{\alpha\alpha}=1-p_{\alpha\beta}$ and in the case of no mixing, i.e. $\theta=0$, $p_{\alpha\alpha}=1$ and $p_{\alpha\beta}=0$.
 % In the matrix form, we can write:
 % \begin{align*}
@@ -848,11 +877,13 @@ H_{\text{osc}}^{\text{matter}}=\frac{\Delta m^2_{\text{eff}}}{4E}\left(\begin{ar
 \end{array}\right)
 \]
 which as usual leads to:
-\beginbox{Oscillation Probability in Matter}
+\begin{mybox}
+\textbf{Oscillation Probability in Matter}
+\hrule
 \[
 \text{prob}(\nu_\alpha\to\nu_\beta)=p_{\alpha\beta}=\sin^2(2\theta_{\text{eff}})\sin^2\left(\frac{\Delta m^2_{\text{eff}}L}{4E}\right)
 \]
-\endbox
+\end{mybox}\noindent
 % The quantity $x$ is equal to $x=\frac{2EG_Fn_e\sqrt{2}}{\Delta m^2}$, to give some numbers we find $n_e=6.4\cdot10^{31}$\,m$^{-3}$ in the Sun, $G_F=1.1\cdot10^{-5}$\,GeV, $\Delta m^2=7.6\cdot10^{-5}$\,eV$^2$ and $E=(0-10)$\,MeV resulting in $x=0.27[(0-10)\,\text{MeV}]$. Assuming now $E=10$\,MeV, we obtain $\sin(2\theta_{\text{eff}})=0$ and $\cos(2\theta_{\text{eff}})=1$, hence $\theta_{\text{eff}}=\frac{\pi}{2}$:
 % \[
 % \ket{\nu_e}=\cos\theta_{\text{eff}}\ket{\nu_1}+\sin\theta_{\text{eff}}\ket{\nu_2}\simeq\ket{\nu_2}
@@ -876,11 +907,13 @@ This gives us 6 $\overline{\nu}_e$ per fission, i.e. a flux of $2\cdot10^{20}\,\
 \]
 which has a cross section $\sim63\cdot10^{-44}$\,cm$^2$/fission and a threshold of 1.8 MeV.\\
 An experiment which uses reactor neutrinos is \textbf{KamLAND} located in Japan and surrounded by 53 nuclear reactors of various nuclear power plants. The main part of the detector consists of 1000 tons of liquid scintillator. As the positron travels through this liquid scintillator, it emits light in all directions. After a few centimeters, it runs into an electron and annihilates, emitting a second burst of light. Since the positron's energy is closely related to the energy of the anti-neutrino, it is possible to determine the original anti-neutrino's energy just by counting the number of pulses recorded by the PMTs. A positron event by itself is not enough to distinguish an anti-neutrino event, we need to observe also the neutron which binds with the proton to form a deuteron, emitting another flash of light. When a neutron-like event occurs within a few hundred microseconds after a positron-like event, it is almost certain that the two were created by an anti-neutrino. The goal in the end is to measure the rate of antineutrinos arriving at KamLAND and to determine their energy distribution. We look for $\overline{\nu}_e$ but they can oscillate from the reactors to the detector, so there is a chance that the particle passes through the detector undetected. Oscillations are measured by estimating this deficit. Together with the rate, the energy spectrum carries additional information. The ratio $L_0/E_{\overline{\nu}_e}$ gives a strong proof of neutrino oscillations, the most precise oscillation parameters are obtained combining results from reactor and solar neutrinos.\\
-\beginbox{KamLAND Results}
+\begin{mybox}
+\textbf{KamLAND Results{\color{blue!30}{g}}}
+\hrule
 \[
 \Delta m^2_{21}=(7.59\pm0.21)\cdot10^{-5}\,\text{eV$^{2}$} \quad \tan^2\theta_{12}=0.47^{+0.06}_{-0.05}
 \]
-\endbox
+\end{mybox}\noindent
 Moving now the sources of higher energies we have \textbf{atmospheric neutrinos}, with $E\sim$\,GeV. Atmospheric neutrinos are produced in cosmic rays showers:\\
 \begin{minipage}{0.5\textwidth}
 \begin{center}
@@ -970,11 +1003,13 @@ The \textbf{Daya Bay experiment} consists of eight detectors, clustered in three
 \text{prob}(\overline{\nu}_e\to\overline{\nu}_e)\simeq1-\sin^2(2\theta_{13})\sin^2\left(\frac{\Delta m^2_{ee}L}{4E}\right)
 \]
 The most significant results correspond to the discovery of $\theta_{13}\neq0$:
-\beginbox{Daya Bay Results}
+\begin{mybox}
+\textbf{Daya Bay Results}
+\hrule
 \[
 \sin^2(2\theta_{13})=0.084\pm0.005 \quad |\Delta m^2_{ee}|=2.44^{+0.10}_{-0.11}\cdot10^{-3}\,\text{eV$^2$}
 \]
-\endbox
+\end{mybox}\noindent
 where $\Delta m^2_{ee}$ is the $\nu_e$ weighted average of $\Delta m^2_{31}$ and $\Delta m^2_{32}$, $\Delta m^2_{ee}=\cos^2\theta_{12}\Delta m^2_{31}+\sin^2\theta_{12}\Delta m^2_{32}$.\\
 Considering now the three families, the mixing matrix $U$ becomes a $3\times3$ complex matrix with 18 parameters, 9 real ones and 9 phases. However, there are some constraints which reduce these degrees of freedom:
 \[
@@ -1182,10 +1217,45 @@ $\beta\beta0\nu$ can only occur if neutrinos are Majorana particles and if neutr
 This is called \textbf{matter creation} because it is a process which \textit{favour} creation of matter instead of anti-matter. The cross in the diagram corresponds to the \textbf{chirality flip} which is proportional to $m^2_{\beta\beta}=|\sum_jU_{ej}^2m_j|^2$ and it depends on the effective Majorana neutrino mass.\\
 The \textbf{CUORE experiment} is currently investigating $\beta\beta0\nu$ in $^{130}$Te. It uses 742 kg of TeO$_2$ crystals ($\sim$246 kg of $^{130}$Te) and it looks for peaks around the known decay energy of $^{130}$Te.\\
 There is still one last topic that we will not cover in detail. The observed flux of reactor neutrinos shows some inconsistencies with three flavour oscillations, especially in the measurements relative to a short baseline, namely the distance from the reactor to the detector. This deficit can be interpreted as a \nth{4} mass eigenstate which does not take place in the interactions, i.e. it does not have a flavour eigenstate, called \textbf{sterile neutrinos}. However, we must remain cautious because it is based on our knowledge of reactor neutrinos, which is hard to know precisely because of the numerous isotopes which can be present in the reaction. Computing such a spectrum is a very difficult job and the point is that no one wants to do this job.\\
-Another problem is the absolute mass scale. As we have seen, we have constraints from cosmology and $\beta\beta0\nu$, together with measurements of beta decay which gives us information about the mass of the electronic neutrino. From beta decay, we count the number of electrons as a function of their energy. To get information near the Q-values, we have to improve our resolution and to do that we have to filter electrons which do not have an energy larger than a chosen threshold. This selection is done by introducing a potential in the experimental apparatus, with a width large enough so that the tunnelling probability is basically zero. By varying the filter potential and counting the transmitted electrons for each setting, the integral tritium spectrum is determined. However, this is not a flux of collimated electrons, so a magnetic field aligns all the electrons in order to make them parallel to the $\hat{x}$ axis.\\ \textbf{KATRIN} was designed based on this idea and it uses 200 tons of tritium, which has one of the least energetic beta decays:
+Another problem is the absolute mass scale. As we have seen, we have constraints from cosmology and $\beta\beta0\nu$, together with measurements of beta decay which gives us information about the mass of the electronic neutrino. From beta decay, we count the number of electrons as a function of their energy. To get information near the Q-values, we have to improve our resolution and to do that we have to filter electrons which do not have an energy larger than a chosen threshold. This selection is done by introducing a potential in the experimental apparatus, with a width large enough so that the tunnelling probability is basically zero. By varying the filter potential and counting the transmitted electrons for each setting, the integral tritium spectrum is determined. However, this is not a flux of collimated electrons, so a magnetic field aligns all the electrons in order to make them parallel to the $\hat{x}$ axis.\\ \textbf{KATRIN} was designed based on this idea and it uses tritium, which has one of the least energetic beta decays:
 \[
 \text{$^3_1$H}\to\text{$^3_2$He}+e^-+\overline{\nu}_e
 \]
 The electron and the neutrino share only 18.6 keV of energy between them.  If the neutrino is a massless particle, there is no lower bound to the energy the neutrino can carry, so the electron energy spectrum should extend all the way to the 18.6 keV limit. On the other hand, if the neutrino has mass, the electron spectrum should drop off short of the total energy limit and have a different shape. The filter is needed since the events of interest are the ones in which the electron carries most of the energy and the neutrino almost none, therefore by sorting out the electrons based on their energy it is possible to discriminate between interesting and non interesting events and not overwhelm the detector.\\
-First results put an upper bound of electron neutrino mass to 1.1 eV which was reduced nowadays to 0.8 eV. 
+First results put an upper bound of electron neutrino mass to 1.1 eV which was reduced nowadays to 0.8 eV.\\
+% \begin{tikzpicture}
+% \begin{axis}[
+% xmin=-10, xmax=90, ymin=-0.4, ymax=1,
+% xlabel=$(\frac{W}{S})_{TO}$,
+% ylabel=$(\frac{T}{W})_{TO}$,
+% title={boh }]
+% \addplot[domain=-10:90, color=red]{x/167};
+% \addplot[domain=-10:90, color=blue]{x/189};
+% \addplot[domain=-10:90, color=green]{x/210};
+% \addplot[domain=-10:90, color=orange]{x/231};
+% \end{axis}
+% \end{tikzpicture}
+% \begin{center}
+% \begin{tikzpicture}
+%   %\draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
+
+%   \draw[-] (-10,-0.4) -- (90,-0.4) node[right] {$a$};
+%   \draw[-] (-10,1) -- (90,1) node[right] {$a$};
+%   \draw[-] (0,-0.4) -- (0,1) node[above] {$T$};
+%   \draw[-] (90,-0.4) -- (90,1) node[above] {$T$};
+
+%   \draw[color=blue] [domain=1.25:2.8] plot (\x,-\x+3) node[right] {$\nu$};
+%   \draw[color=black] [domain=0:1.25] plot (\x,-\x+3);
+%   \draw[color=red] [domain=1.25:2.8] plot(\x,-\x+4) node[right] {$\gamma$};
+%   \draw[color=red] (1.25,1.75) -- (1.25, 2.75);
+%   \draw[dashed, color=black] (1.25,1.75) -- (0,1.75) node[left] {$T_1\sim1$\,MeV};
+%   \draw[dashed, color=black] (1.25,2.75) -- (0,2.75) node[left] {$T_2$};
+%   \draw[dashed, color=black] (2.8, 1.2) -- (2.8,0) node[below] {today};
+%   \draw[dashed, color=black] (2.8, 1.2) -- (0,1.2) node[left] {$T_{0,\gamma}=2.7\,\text{K}$};
+%   \draw[dashed, color=black] (2.8, 0.2) -- (0,0.2) node[left] {$T_{0,\nu}=?$};
+%   % \x r means to convert '\x' from degrees to _r_adians:
+%   % \draw[color=blue]   plot (\x,{sin(\x r)})    node[right] {$f(x) = \sin x$};
+%   % \draw[color=orange] plot (\x,{0.05*exp(\x)}) node[right] {$f(x) = \frac{1}{20} \mathrm e^x$};
+% \end{tikzpicture}
+% \end{center}
 \end{document}
